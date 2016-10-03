@@ -1,17 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>reales | real estate web application</title>
+    <title>O'Farrill RealState | @yield('title')</title>
 
-    <link href="css/font-awesome.css" rel="stylesheet">
-    <link href="css/simple-line-icons.css" rel="stylesheet">
-    <link href="css/fullscreen-slider.css" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/app.css" rel="stylesheet">
+    <link href="{!! asset('css/font-awesome.css') !!}" rel="stylesheet">
+    <link href="{!! asset('css/simple-line-icons.css') !!}" rel="stylesheet">
+    <link href="{!! asset('css/fullscreen-slider.css') !!}" rel="stylesheet">
+    <link href="{!! asset('css/bootstrap.css') !!}" rel="stylesheet">
+    <link href="{!! asset('css/app.css') !!}" rel="stylesheet">
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -32,13 +31,19 @@
         <li><span></span></li>
     </ul>
     <div class="home-header">
-        <div class="home-logo osLight"><span class="fa fa-home"></span> Reales</div>
+        <div class="home-logo osLight">
+            <span class="fa">
+                <img src="{!! asset('images/web/logo_white.png') !!}">
+            </span>
+        </div>
         <a href="#" class="home-navHandler visible-xs"><span class="fa fa-bars"></span></a>
         <div class="home-nav">
             <ul>
-                <li><a href="#" data-toggle="modal" data-target="#signup">Sign Up</a></li>
-                <li><a href="#" data-toggle="modal" data-target="#signin">Sign In</a></li>
-                <li><a href="add.html" class="btn btn-green">List a Property</a></li>
+                {{--<li><a href="#" data-toggle="modal" data-target="#signup">Sign Up</a></li>--}}
+                {{--<li><a href="#" data-toggle="modal" data-target="#signin">Sign In</a></li>--}}
+                <li><a href="{!! route("properties.index") !!}">Propiedades</a></li>
+                <li style="padding-top: 9px;"><a href="#">Contacto</a></li>
+                {{--<li><a href="add.html" class="btn btn-green">List a Property</a></li>--}}
             </ul>
         </div>
     </div>
@@ -69,7 +74,8 @@
                     <span class="dropdown-label">Bathrooms</span> <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu dropdown-select">
-                    <li class="active"><input type="radio" name="bathno" checked="checked"><a href="#">Bathrooms</a></li>
+                    <li class="active"><input type="radio" name="bathno" checked="checked"><a href="#">Bathrooms</a>
+                    </li>
                     <li><input type="radio" name="bathno"><a href="#">1</a></li>
                     <li><input type="radio" name="bathno"><a href="#">2</a></li>
                     <li><input type="radio" name="bathno"><a href="#">3</a></li>
@@ -89,21 +95,26 @@
                 </div>
             </div>
             <div class="form-group hidden-xs adv">
-                <div class="checkbox custom-checkbox"><label><input type="checkbox"><span class="fa fa-check"></span> For Rent</label></div>
+                <div class="checkbox custom-checkbox"><label><input type="checkbox"><span class="fa fa-check"></span>
+                        For Rent</label></div>
             </div>
             <div class="form-group hidden-xs adv">
-                <div class="checkbox custom-checkbox"><label><input type="checkbox"><span class="fa fa-check"></span> For Sale</label></div>
+                <div class="checkbox custom-checkbox"><label><input type="checkbox"><span class="fa fa-check"></span>
+                        For Sale</label></div>
             </div>
             <div class="form-group">
                 <a href="explore.html" class="btn btn-green">Search</a>
-                <a href="#" class="btn btn-o btn-white pull-right visible-xs" id="advanced">Advanced Search <span class="fa fa-angle-up"></span></a>
+                <a href="#" class="btn btn-o btn-white pull-right visible-xs" id="advanced">Advanced Search <span
+                            class="fa fa-angle-up"></span></a>
             </div>
         </form>
     </div>
 </div>
 <div class="highlight">
     <div class="h-title osLight">Find your new place with Reales</div>
-    <div class="h-text osLight">Fusce risus metus, placerat in consectetur eu, porttitor a est sed sed dolor lorem cras adipiscing</div>
+    <div class="h-text osLight">Fusce risus metus, placerat in consectetur eu, porttitor a est sed sed dolor lorem cras
+        adipiscing
+    </div>
 </div>
 
 <!-- Content -->
@@ -289,7 +300,14 @@
                         <span class="fa fa-star text-yellow"></span>
                     </div>
                     <div class="agent-contact">
-                        <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-green"><span class="fa fa-envelope-o"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-facebook"><span class="fa fa-facebook"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-twitter"><span class="fa fa-twitter"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-google"><span class="fa fa-google-plus"></span></a>
+                        <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-green"><span
+                                    class="fa fa-envelope-o"></span></a> <a href="#"
+                                                                            class="btn btn-sm btn-icon btn-round btn-o btn-facebook"><span
+                                    class="fa fa-facebook"></span></a> <a href="#"
+                                                                          class="btn btn-sm btn-icon btn-round btn-o btn-twitter"><span
+                                    class="fa fa-twitter"></span></a> <a href="#"
+                                                                         class="btn btn-sm btn-icon btn-round btn-o btn-google"><span
+                                    class="fa fa-google-plus"></span></a>
                     </div>
                 </div>
             </div>
@@ -308,7 +326,14 @@
                         <span class="fa fa-star text-yellow"></span>
                     </div>
                     <div class="agent-contact">
-                        <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-green"><span class="fa fa-envelope-o"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-facebook"><span class="fa fa-facebook"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-twitter"><span class="fa fa-twitter"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-google"><span class="fa fa-google-plus"></span></a>
+                        <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-green"><span
+                                    class="fa fa-envelope-o"></span></a> <a href="#"
+                                                                            class="btn btn-sm btn-icon btn-round btn-o btn-facebook"><span
+                                    class="fa fa-facebook"></span></a> <a href="#"
+                                                                          class="btn btn-sm btn-icon btn-round btn-o btn-twitter"><span
+                                    class="fa fa-twitter"></span></a> <a href="#"
+                                                                         class="btn btn-sm btn-icon btn-round btn-o btn-google"><span
+                                    class="fa fa-google-plus"></span></a>
                     </div>
                 </div>
             </div>
@@ -327,7 +352,14 @@
                         <span class="fa fa-star text-yellow"></span>
                     </div>
                     <div class="agent-contact">
-                        <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-green"><span class="fa fa-envelope-o"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-facebook"><span class="fa fa-facebook"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-twitter"><span class="fa fa-twitter"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-google"><span class="fa fa-google-plus"></span></a>
+                        <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-green"><span
+                                    class="fa fa-envelope-o"></span></a> <a href="#"
+                                                                            class="btn btn-sm btn-icon btn-round btn-o btn-facebook"><span
+                                    class="fa fa-facebook"></span></a> <a href="#"
+                                                                          class="btn btn-sm btn-icon btn-round btn-o btn-twitter"><span
+                                    class="fa fa-twitter"></span></a> <a href="#"
+                                                                         class="btn btn-sm btn-icon btn-round btn-o btn-google"><span
+                                    class="fa fa-google-plus"></span></a>
                     </div>
                 </div>
             </div>
@@ -346,7 +378,14 @@
                         <span class="fa fa-star text-yellow"></span>
                     </div>
                     <div class="agent-contact">
-                        <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-green"><span class="fa fa-envelope-o"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-facebook"><span class="fa fa-facebook"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-twitter"><span class="fa fa-twitter"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-google"><span class="fa fa-google-plus"></span></a>
+                        <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-green"><span
+                                    class="fa fa-envelope-o"></span></a> <a href="#"
+                                                                            class="btn btn-sm btn-icon btn-round btn-o btn-facebook"><span
+                                    class="fa fa-facebook"></span></a> <a href="#"
+                                                                          class="btn btn-sm btn-icon btn-round btn-o btn-twitter"><span
+                                    class="fa fa-twitter"></span></a> <a href="#"
+                                                                         class="btn btn-sm btn-icon btn-round btn-o btn-google"><span
+                                    class="fa fa-google-plus"></span></a>
                     </div>
                 </div>
             </div>
@@ -361,14 +400,20 @@
                 <div class="item active">
                     <img src="images/avatar-2.png" class="home-testim-avatar" alt="Jane Smith">
                     <div class="home-testim">
-                        <div class="home-testim-text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words</div>
+                        <div class="home-testim-text">There are many variations of passages of Lorem Ipsum available,
+                            but the majority have suffered alteration in some form, by injected humour, or randomised
+                            words
+                        </div>
                         <div class="home-testim-name">Jane Smith</div>
                     </div>
                 </div>
                 <div class="item">
                     <img src="images/avatar-3.png" class="home-testim-avatar" alt="Rust Cohle">
                     <div class="home-testim">
-                        <div class="home-testim-text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words</div>
+                        <div class="home-testim-text">There are many variations of passages of Lorem Ipsum available,
+                            but the majority have suffered alteration in some form, by injected humour, or randomised
+                            words
+                        </div>
                         <div class="home-testim-name">Rust Cohle</div>
                     </div>
                 </div>
@@ -415,7 +460,14 @@
                         <p>San Francisco, CA 94133</p>
                         <p>United States</p>
                     </li>
-                    <li><a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-white"><span class="fa fa-facebook"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-white"><span class="fa fa-twitter"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-white"><span class="fa fa-google-plus"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-white"><span class="fa fa-linkedin"></span></a> </li>
+                    <li><a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-white"><span
+                                    class="fa fa-facebook"></span></a> <a href="#"
+                                                                          class="btn btn-sm btn-icon btn-round btn-o btn-white"><span
+                                    class="fa fa-twitter"></span></a> <a href="#"
+                                                                         class="btn btn-sm btn-icon btn-round btn-o btn-white"><span
+                                    class="fa fa-google-plus"></span></a> <a href="#"
+                                                                             class="btn btn-sm btn-icon btn-round btn-o btn-white"><span
+                                    class="fa fa-linkedin"></span></a></li>
                 </ul>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
@@ -444,12 +496,14 @@
                 <form role="form">
                     <div class="form-group">
                         <div class="btn-group-justified">
-                            <a href="explore.html" class="btn btn-lg btn-facebook"><span class="fa fa-facebook pull-left"></span>Sign In with Facebook</a>
+                            <a href="explore.html" class="btn btn-lg btn-facebook"><span
+                                        class="fa fa-facebook pull-left"></span>Sign In with Facebook</a>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="btn-group-justified">
-                            <a href="explore.html" class="btn btn-lg btn-google"><span class="fa fa-google-plus pull-left"></span>Sign In with Google</a>
+                            <a href="explore.html" class="btn btn-lg btn-google"><span
+                                        class="fa fa-google-plus pull-left"></span>Sign In with Google</a>
                         </div>
                     </div>
                     <div class="signOr">OR</div>
@@ -462,7 +516,8 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-xs-6">
-                                <div class="checkbox custom-checkbox"><label><input type="checkbox"><span class="fa fa-check"></span> Remember me</label></div>
+                                <div class="checkbox custom-checkbox"><label><input type="checkbox"><span
+                                                class="fa fa-check"></span> Remember me</label></div>
                             </div>
                             <div class="col-xs-6 align-right">
                                 <p class="help-block"><a href="#" class="text-green">Forgot password?</a></p>
@@ -491,12 +546,14 @@
                 <form role="form">
                     <div class="form-group">
                         <div class="btn-group-justified">
-                            <a href="explore.html" class="btn btn-lg btn-facebook"><span class="fa fa-facebook pull-left"></span>Sign Up with Facebook</a>
+                            <a href="explore.html" class="btn btn-lg btn-facebook"><span
+                                        class="fa fa-facebook pull-left"></span>Sign Up with Facebook</a>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="btn-group-justified">
-                            <a href="explore.html" class="btn btn-lg btn-google"><span class="fa fa-google-plus pull-left"></span>Sign Up with Google</a>
+                            <a href="explore.html" class="btn btn-lg btn-google"><span
+                                        class="fa fa-google-plus pull-left"></span>Sign Up with Google</a>
                         </div>
                     </div>
                     <div class="signOr">OR</div>
@@ -520,7 +577,8 @@
                             <a href="explore.html" class="btn btn-lg btn-green">Sign Up</a>
                         </div>
                     </div>
-                    <p class="help-block">Already a Reales member? <a href="#" class="modal-si text-green">Sign In</a></p>
+                    <p class="help-block">Already a Reales member? <a href="#" class="modal-si text-green">Sign In</a>
+                    </p>
                 </form>
             </div>
         </div>
@@ -533,7 +591,8 @@
 <script src="js/jquery.placeholder.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/jquery.touchSwipe.min.js"></script>
-<script src="http://maps.googleapis.com/maps/api/js?sensor=true&amp;libraries=geometry&amp;libraries=places" type="text/javascript"></script>
+<script src="http://maps.googleapis.com/maps/api/js?sensor=true&amp;libraries=geometry&amp;libraries=places"
+        type="text/javascript"></script>
 <script src="js/infobox.js"></script>
 <script src="js/jquery.visible.js"></script>
 <script src="js/home.js" type="text/javascript"></script>
