@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'properties'], function () {
     Route::get('/', 'PropertiesController@index')->name('properties.index');
-    Route::get('/show', 'PropertiesController@show')->name('properties.show');
+    Route::get('/show/{id}', 'PropertiesController@show')->name('properties.show');
 });
 
 Route::group(['middleware' => ''], function () {

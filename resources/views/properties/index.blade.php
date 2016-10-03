@@ -79,7 +79,7 @@
     <div class="resultsList">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <a href="single.html" class="card">
+                <a href="{!! route('properties.show',['id'=>1]) !!}" class="card">
                     <div class="figure">
                         <img src="images/prop/1-1.png" alt="image">
                         <div class="figCaption">
@@ -111,7 +111,7 @@
                 </a>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <a href="single.html" class="card">
+                <a href="{!! route('properties.show',['id'=>1]) !!}" class="card">
                     <div class="figure">
                         <img src="images/prop/2-1.png" alt="image">
                         <div class="figCaption">
@@ -143,7 +143,7 @@
                 </a>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <a href="single.html" class="card">
+                <a href="{!! route('properties.show',['id'=>1]) !!}" class="card">
                     <div class="figure">
                         <img src="images/prop/3-1.png" alt="image">
                         <div class="figCaption">
@@ -175,7 +175,7 @@
                 </a>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <a href="single.html" class="card">
+                <a href="{!! route('properties.show',['id'=>1]) !!}" class="card">
                     <div class="figure">
                         <img src="images/prop/4-1.png" alt="image">
                         <div class="figCaption">
@@ -207,7 +207,7 @@
                 </a>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <a href="single.html" class="card">
+                <a href="{!! route('properties.show',['id'=>1]) !!}" class="card">
                     <div class="figure">
                         <img src="images/prop/5-1.png" alt="image">
                         <div class="figCaption">
@@ -239,7 +239,7 @@
                 </a>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <a href="single.html" class="card">
+                <a href="{!! route('properties.show',['id'=>1]) !!}" class="card">
                     <div class="figure">
                         <img src="images/prop/1-1.png" alt="image">
                         <div class="figCaption">
@@ -271,7 +271,7 @@
                 </a>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <a href="single.html" class="card">
+                <a href="{!! route('properties.show',['id'=>1]) !!}" class="card">
                     <div class="figure">
                         <img src="images/prop/2-1.png" alt="image">
                         <div class="figCaption">
@@ -303,7 +303,7 @@
                 </a>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <a href="single.html" class="card">
+                <a href="{!! route('properties.show',['id'=>1]) !!}" class="card">
                     <div class="figure">
                         <img src="images/prop/3-1.png" alt="image">
                         <div class="figCaption">
@@ -335,7 +335,7 @@
                 </a>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <a href="single.html" class="card">
+                <a href="{!! route('properties.show',['id'=>1]) !!}" class="card">
                     <div class="figure">
                         <img src="images/prop/4-1.png" alt="image">
                         <div class="figCaption">
@@ -367,7 +367,7 @@
                 </a>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <a href="single.html" class="card">
+                <a href="{!! route('properties.show',['id'=>1]) !!}" class="card">
                     <div class="figure">
                         <img src="images/prop/5-1.png" alt="image">
                         <div class="figCaption">

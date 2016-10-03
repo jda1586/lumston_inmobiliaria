@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>O'Farrill RealState | @yield('title')</title>
 
-    @section('links')
+    @section('_header')
         <link href="{!! asset('css/font-awesome.css') !!}" rel="stylesheet">
         <link href="{!! asset('css/simple-line-icons.css') !!}" rel="stylesheet">
         <link href="{!! asset('css/jquery-ui.css') !!}" rel="stylesheet">
@@ -146,7 +146,7 @@
     <div class="clearfix"></div>
 </div>
 
-@section('_header')
+@section('_footer')
     <script src="{!! asset('js/jquery-2.1.1.min.js') !!}"></script>
     <script src="{!! asset('js/jquery-ui.min.js') !!}"></script>
     <script src="{!! asset('js/jquery-ui-touch-punch.js') !!}"></script>
@@ -154,7 +154,7 @@
     <script src="{!! asset('js/bootstrap.js') !!}"></script>
     <script src="{!! asset('js/jquery.touchSwipe.min.js') !!}"></script>
     <script src="{!! asset('js/jquery.slimscroll.min.js') !!}"></script>
-    <script src="http://maps.googleapis.com/maps/api/js?sensor=true&amp;libraries=geometry&amp;libraries=places"
+    <script src="http://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyA0pbui5wdR5fWMiaZ6CaGQ3p9Fv1R3nxs&sensor=true&amp;libraries=geometry&amp;libraries=places"
             type="text/javascript"></script>
     <script src="{!! asset('js/infobox.js') !!}"></script>
     <script src="{!! asset('js/jquery.tagsinput.min.js') !!}"></script>

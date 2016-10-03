@@ -13,7 +13,7 @@ class PropertiesController extends Controller
         return view('properties.index');
     }
 
-    public function show()
+    public function show($id)
     {
         return view('properties.show');
     }
