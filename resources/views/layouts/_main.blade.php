@@ -36,12 +36,28 @@
     <a href="#" class="navHandler"><span class="fa fa-bars"></span></a>
     <div class="search">
         <span class="searchIcon icon-magnifier"></span>
-        <input type="text" placeholder="Busca casas, departamento, ....">
+        <input type="text" placeholder="Busca casas, departamento, ...">
     </div>
     <div class="headerUserWraper">
         <a href="#" class="headerUser">
             <div class="userTop pull-left">
                 <span class="headerUserName">Contacto</span>
+            </div>
+            <div class="clearfix"></div>
+        </a>
+    </div>
+    <div class="headerUserWraper">
+        <a href="#" class="headerUser">
+            <div class="userTop pull-left">
+                <span class="headerUserName">Blog</span>
+            </div>
+            <div class="clearfix"></div>
+        </a>
+    </div>
+    <div class="headerUserWraper">
+        <a href="#" class="headerUser">
+            <div class="userTop pull-left">
+                <span class="headerUserName">Agentes</span>
             </div>
             <div class="clearfix"></div>
         </a>

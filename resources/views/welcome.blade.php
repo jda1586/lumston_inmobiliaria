@@ -39,79 +39,24 @@
         <a href="#" class="home-navHandler visible-xs"><span class="fa fa-bars"></span></a>
         <div class="home-nav">
             <ul>
-                {{--<li><a href="#" data-toggle="modal" data-target="#signup">Sign Up</a></li>--}}
-                {{--<li><a href="#" data-toggle="modal" data-target="#signin">Sign In</a></li>--}}
                 <li><a href="{!! route("properties.index") !!}">Propiedades</a></li>
-                <li style="padding-top: 9px;"><a href="#">Contacto</a></li>
-                {{--<li><a href="add.html" class="btn btn-green">List a Property</a></li>--}}
+                <li><a href="#">Agentes</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li style="padding-top: 9px;"><a href="#" data-toggle="modal" data-target="#signin">Ingresar</a></li>
+                <li><a href="#" class="btn btn-green" data-toggle="modal" data-target="#signup">Registrate</a></li>
             </ul>
         </div>
     </div>
     <div class="home-caption">
-        <div class="home-title">Now it's easy to find your future home</div>
-        <div class="home-subtitle">With Reales - Real Estate HTML Template</div>
-        <a href="#" class="btn btn-lg btn-black">Learn More</a>
+        <div class="home-title">Ahora es mas facil encontrar tu nueva casa</div>
+        <div class="home-subtitle">---</div>
+        <a href="#" class="btn btn-lg btn-black">Leer más</a>
     </div>
-    <div class="search-panel">
-        <form class="form-inline" role="form">
-            <div class="form-group">
-                <input type="text" class="form-control" id="city" placeholder="City" autocomplete="off">
-            </div>
-            <div class="form-group hidden-xs adv">
-                <a href="#" data-toggle="dropdown" class="btn btn-white dropdown-toggle">
-                    <span class="dropdown-label">Bedrooms</span> <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu dropdown-select">
-                    <li class="active"><input type="radio" name="bedno" checked="checked"><a href="#">Bedrooms</a></li>
-                    <li><input type="radio" name="bedno"><a href="#">1</a></li>
-                    <li><input type="radio" name="bedno"><a href="#">2</a></li>
-                    <li><input type="radio" name="bedno"><a href="#">3</a></li>
-                    <li><input type="radio" name="bedno"><a href="#">4</a></li>
-                </ul>
-            </div>
-            <div class="form-group hidden-xs adv">
-                <a href="#" data-toggle="dropdown" class="btn btn-white dropdown-toggle">
-                    <span class="dropdown-label">Bathrooms</span> <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu dropdown-select">
-                    <li class="active"><input type="radio" name="bathno" checked="checked"><a href="#">Bathrooms</a>
-                    </li>
-                    <li><input type="radio" name="bathno"><a href="#">1</a></li>
-                    <li><input type="radio" name="bathno"><a href="#">2</a></li>
-                    <li><input type="radio" name="bathno"><a href="#">3</a></li>
-                    <li><input type="radio" name="bathno"><a href="#">4</a></li>
-                </ul>
-            </div>
-            <div class="form-group hidden-xs adv">
-                <div class="input-group">
-                    <div class="input-group-addon">$</div>
-                    <input class="form-control price" type="text" placeholder="From">
-                </div>
-            </div>
-            <div class="form-group hidden-xs adv">
-                <div class="input-group">
-                    <div class="input-group-addon">$</div>
-                    <input class="form-control price" type="text" placeholder="To">
-                </div>
-            </div>
-            <div class="form-group hidden-xs adv">
-                <div class="checkbox custom-checkbox"><label><input type="checkbox"><span class="fa fa-check"></span>
-                        For Rent</label></div>
-            </div>
-            <div class="form-group hidden-xs adv">
-                <div class="checkbox custom-checkbox"><label><input type="checkbox"><span class="fa fa-check"></span>
-                        For Sale</label></div>
-            </div>
-            <div class="form-group">
-                <a href="explore.html" class="btn btn-green">Search</a>
-                <a href="#" class="btn btn-o btn-white pull-right visible-xs" id="advanced">Advanced Search <span
-                            class="fa fa-angle-up"></span></a>
-            </div>
-        </form>
-    </div>
+
 </div>
 <div class="highlight">
-    <div class="h-title osLight">Find your new place with Reales</div>
+    <div class="h-title osLight">Encuentra ese nuevo lugar con nosotros</div>
     <div class="h-text osLight">Fusce risus metus, placerat in consectetur eu, porttitor a est sed sed dolor lorem cras
         adipiscing
     </div>
@@ -121,13 +66,13 @@
 
 <div class="home-wrapper">
     <div class="home-content">
-        <h2 class="osLight">Our Services</h2>
+        <h2 class="osLight">Conocenos</h2>
         <div class="row pb40">
             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 s-menu-item">
                 <a href="#">
                     <span class="icon-pointer s-icon"></span>
                     <div class="s-content">
-                        <h2 class="s-main osLight">Find places anywhere in the world</h2>
+                        <h2 class="s-main osLight">Encuentra lugares en todo el país</h2>
                         <h3 class="s-sub osLight">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
                     </div>
                 </a>
@@ -136,7 +81,7 @@
                 <a href="#">
                     <span class="icon-users s-icon"></span>
                     <div class="s-content">
-                        <h2 class="s-main osLight">We have agents with experience</h2>
+                        <h2 class="s-main osLight">Tenemos agentes con experiencia</h2>
                         <h3 class="s-sub osLight">Nulla convallis egestas rhoncus consectetur adipiscing elit</h3>
                     </div>
                 </a>
@@ -145,7 +90,7 @@
                 <a href="#">
                     <span class="icon-home s-icon"></span>
                     <div class="s-content">
-                        <h2 class="s-main osLight">Buy or rent beautiful properties</h2>
+                        <h2 class="s-main osLight">Compra o renta hermosas propiedades</h2>
                         <h3 class="s-sub osLight">Donec facilisis fermentum sem, ac viverra ante luctus vel</h3>
                     </div>
                 </a>
@@ -154,13 +99,13 @@
                 <a href="#">
                     <span class="icon-cloud-upload s-icon"></span>
                     <div class="s-content">
-                        <h2 class="s-main osLight">With agent account you can list properties</h2>
+                        <h2 class="s-main osLight">---</h2>
                         <h3 class="s-sub osLight">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
                     </div>
                 </a>
             </div>
         </div>
-        <h2 class="osLight">Recently Listed Properties</h2>
+        <h2 class="osLight">Lo mas nuevo</h2>
         <div class="row pb40">
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                 <a href="single.html" class="propWidget-2">
@@ -169,7 +114,7 @@
                         <img class="blur" src="images/prop/1-1.png" alt="Modern Residence in New York">
                         <div class="opac"></div>
                         <div class="priceCap osLight"><span>$1,750,000</span></div>
-                        <div class="figType">FOR SALE</div>
+                        <div class="figType">VENTA</div>
                         <h3 class="osLight">Modern Residence in New York</h3>
                         <div class="address">39 Remsen St, Brooklyn, NY 11201, USA</div>
                         <ul class="rating">
@@ -189,7 +134,7 @@
                         <img class="blur" src="images/prop/2-1.png" alt="Hauntingly Beautiful Estate">
                         <div class="opac"></div>
                         <div class="priceCap osLight"><span>$1,550,000</span></div>
-                        <div class="figType">FOR RENT</div>
+                        <div class="figType">RENTA</div>
                         <h3 class="osLight">Hauntingly Beautiful Estate</h3>
                         <div class="address">39 Remsen St, Brooklyn, NY 11201, USA</div>
                         <ul class="rating">
@@ -209,7 +154,7 @@
                         <img class="blur" src="images/prop/3-1.png" alt="Luxury Mansion">
                         <div class="opac"></div>
                         <div class="priceCap osLight"><span>$2,350,000</span></div>
-                        <div class="figType">FOR SALE</div>
+                        <div class="figType">VENTA</div>
                         <h3 class="osLight">Luxury Mansion</h3>
                         <div class="address">39 Remsen St, Brooklyn, NY 11201, USA</div>
                         <ul class="rating">
@@ -229,7 +174,7 @@
                         <img class="blur" src="images/prop/4-1.png" alt="Sophisticated Residence">
                         <div class="opac"></div>
                         <div class="priceCap osLight"><span>$1,340,000</span></div>
-                        <div class="figType">FOR RENT</div>
+                        <div class="figType">RENTA</div>
                         <h3 class="osLight">Sophisticated Residence</h3>
                         <div class="address">39 Remsen St, Brooklyn, NY 11201, USA</div>
                         <ul class="rating">
@@ -249,7 +194,7 @@
                         <img class="blur" src="images/prop/5-1.png" alt="House With a Lovely Glass">
                         <div class="opac"></div>
                         <div class="priceCap osLight"><span>$1,930,000</span></div>
-                        <div class="figType">FOR SALE</div>
+                        <div class="figType">VENTA</div>
                         <h3 class="osLight">House With a Lovely Glass</h3>
                         <div class="address">39 Remsen St, Brooklyn, NY 11201, USA</div>
                         <ul class="rating">
@@ -269,7 +214,7 @@
                         <img class="blur" src="images/prop/1-1.png" alt="Modern Residence in New York">
                         <div class="opac"></div>
                         <div class="priceCap osLight"><span>$1,750,000</span></div>
-                        <div class="figType">FOR SALE</div>
+                        <div class="figType">VENTA</div>
                         <h3 class="osLight">Modern Residence in New York</h3>
                         <div class="address">39 Remsen St, Brooklyn, NY 11201, USA</div>
                         <ul class="rating">
@@ -427,62 +372,140 @@
 <div class="home-footer">
     <div class="home-wrapper">
         <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-                <div class="osLight footer-header">Company</div>
-                <ul class="footer-nav pb20">
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Jobs</a></li>
-                    <li><a href="#">Press</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="#">Help</a></li>
-                    <li><a href="#">Policies</a></li>
-                    <li><a href="#">Terms & Privacy</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-                <div class="osLight footer-header">Discover</div>
-                <ul class="footer-nav pb20">
-                    <li><a href="#">Become a Member</a></li>
-                    <li><a href="#">Properties List</a></li>
-                    <li><a href="#">Sign In</a></li>
-                    <li><a href="#">Widgets</a></li>
-                    <li><a href="#">Components</a></li>
-                    <li><a href="#">Tables</a></li>
-                    <li><a href="#">Lists</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                <div class="osLight footer-header">Get in Touch</div>
-                <ul class="footer-nav pb20">
-                    <li class="footer-phone"><span class="fa fa-phone"></span> 800 234 67 89</li>
-                    <li class="footer-address osLight">
-                        <p>516 Green St</p>
-                        <p>San Francisco, CA 94133</p>
-                        <p>United States</p>
-                    </li>
-                    <li><a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-white"><span
-                                    class="fa fa-facebook"></span></a> <a href="#"
-                                                                          class="btn btn-sm btn-icon btn-round btn-o btn-white"><span
-                                    class="fa fa-twitter"></span></a> <a href="#"
-                                                                         class="btn btn-sm btn-icon btn-round btn-o btn-white"><span
-                                    class="fa fa-google-plus"></span></a> <a href="#"
-                                                                             class="btn btn-sm btn-icon btn-round btn-o btn-white"><span
-                                    class="fa fa-linkedin"></span></a></li>
-                </ul>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                <div class="osLight footer-header">Subscribe to Our Newsletter</div>
-                <form role="form">
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Email Address">
+
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <ul class="footer-nav pb20">
+                <li>
+                    <div class="osLight footer-header">Propiedades</div>
+                    <div>
+                        <ul class="footer-nav pb20">
+                            <li><a href="#">Properties List</a></li>
+                            <li><a href="#">Single Property</a></li>
+                            <li><a href="#">Search by City: San Francisco</a></li>
+                            <li><a href="#">Search by Category: Apartment</a></li>
+                            <li><a href="#">Search by Type: For Rent</a></li>
+                            <li><a href="#">Search by Price: Less than $70,000</a></li>
+                        </ul>
                     </div>
-                    <div class="form-group">
-                        <a href="#" class="btn btn-green btn-block">Subscribe</a>
+                </li>
+                <li>
+                    <div class="osLight footer-header">Agentes</div>
+                    <div>
+                        <ul class="footer-nav pb20">
+                            <li>
+                                <a href="http://mariusn.com/themes/reales-wp/agents/jane-smith/">Agent Page</a>
+                            </li>
+                        </ul>
                     </div>
-                </form>
-            </div>
+                </li>
+            </ul>
         </div>
-        <div class="copyright">Real estate web application<br> &copy; 2014</div>
+
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <ul class="footer-nav pb20">
+                <li id="recent_properties_widget-4" class="widget-container recent_properties_sidebar">
+                    <div class="osLight footer-header">Lo mas nuevo</div>
+                    <div>
+                        <ul class="footer-nav pb20">
+                            <li>
+                                <a href="http://mariusn.com/themes/reales-wp/properties/modern-residence/">
+                                    <div style="float: left; margin-right: 10px;">
+                                        <img src="http://mariusn.com/themes/reales-wp/wp-content/uploads/2014/12/bg-1-120x120.jpg" width="60" height="60">
+                                    </div>
+                                    <div>
+                                        <div>Modern Residence</div>
+                                        <div style="font-size: 11px; color: gray;">547 35th Ave, San Francisco, 94121, United States</div>
+                                        <div>$1,200,000  <span class="badge">For Sale</span></div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://mariusn.com/themes/reales-wp/properties/sophisticated-residence/">
+                                    <div style="float: left; margin-right: 10px;">
+                                        <img src="http://mariusn.com/themes/reales-wp/wp-content/uploads/2015/02/img-prop-120x120.jpg" width="60" height="60">
+                                    </div>
+                                    <div>
+                                        <div>Sophisticated Residence</div>
+                                        <div style="font-size: 11px; color: gray;">600 40th Ave, San Francisco, 94121, United States</div>
+                                        <div>$799,000  <span class="badge">For Sale</span></div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://mariusn.com/themes/reales-wp/properties/luxury-mansion/">
+                                    <div  style="float: left; margin-right: 10px;">
+                                        <img src="http://mariusn.com/themes/reales-wp/wp-content/uploads/2014/12/bg-5-1024x576-120x120.jpg" width="60" height="60">
+                                    </div>
+                                    <div>
+                                        <div>Luxury Mansion</div>
+                                        <div style="font-size: 11px; color: gray;">10 Romain St, San Francisco, 123456, Romania</div>
+                                        <div>$3,400 /mo <span class="badge">For Rent</span></div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <ul class="footer-nav pb20">
+                <li id="recent-posts-3" class="widget-container widget_recent_entries">
+                    <div class="osLight footer-header">Desde nuestro Blog</div>
+                    <ul class="footer-nav pb20">
+                        <li>
+                            <a href="#">Modern Two-Level Pool House in Los Angeles</a>
+                        </li>
+                        <li>
+                            <a href="#">Private Contemporary Home Balancing Openness</a>
+                        </li>
+                        <li>
+                            <a href="#">Stylish Modern Ranch Exuding a Welcoming Feel</a>
+                        </li>
+                        <li>
+                            <a href="#">How Does A Designer Home Look Like</a>
+                        </li>
+                        <li>
+                            <a href="#">Luminous 3 Bedroom Apartment Flaunting Modern Style</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <ul class="footer-nav pb20">
+                <li>
+                    <div class="osLight footer-header">Contactanos</div>
+                    <ul class="footer-nav pb20">
+                        <li class="widget-phone">
+                            <span class="fa fa-phone"></span> (123) 456-7890
+                        </li>
+                        <li class="widget-address osLight">
+                            <p>196 Front St</p><p>San Francisco, CA 94111</p><p>United States</p>
+                        </li>
+                    </ul>
+                </li>
+                <li id="social_widget-2" class="widget-container social_sidebar">
+                    <div class="osLight footer-header">Siguenos</div>
+                    <ul class="footer-nav pb20">
+                        <li>
+                            <a href="#facebook" class="btn btn-sm btn-icon btn-round btn-o btn-white" target="_blank"><span class="fa fa-facebook"></span></a>
+                            <a href="#twitter" class="btn btn-sm btn-icon btn-round btn-o btn-white" target="_blank"><span class="fa fa-twitter"></span></a>
+                            <a href="#google" class="btn btn-sm btn-icon btn-round btn-o btn-white" target="_blank"><span class="fa fa-google-plus"></span></a>
+                            <a href="#linkedin" class="btn btn-sm btn-icon btn-round btn-o btn-white" target="_blank"><span class="fa fa-linkedin"></span></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+        <div class="copyright">© 2015 Lumston - O'Farrill RealState</div>
     </div>
 </div>
 
@@ -490,46 +513,34 @@
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="signinLabel">Sign In</h4>
+                <h4 class="modal-title" id="signinLabel">Ingresar</h4>
             </div>
             <div class="modal-body">
                 <form role="form">
                     <div class="form-group">
-                        <div class="btn-group-justified">
-                            <a href="explore.html" class="btn btn-lg btn-facebook"><span
-                                        class="fa fa-facebook pull-left"></span>Sign In with Facebook</a>
-                        </div>
+                        <input type="text" placeholder="Email" class="form-control">
                     </div>
                     <div class="form-group">
-                        <div class="btn-group-justified">
-                            <a href="explore.html" class="btn btn-lg btn-google"><span
-                                        class="fa fa-google-plus pull-left"></span>Sign In with Google</a>
-                        </div>
-                    </div>
-                    <div class="signOr">OR</div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Email Address" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" placeholder="Password" class="form-control">
+                        <input type="password" placeholder="Contraseña" class="form-control">
                     </div>
                     <div class="form-group">
                         <div class="row">
                             <div class="col-xs-6">
                                 <div class="checkbox custom-checkbox"><label><input type="checkbox"><span
-                                                class="fa fa-check"></span> Remember me</label></div>
+                                                class="fa fa-check"></span> Recordarme</label></div>
                             </div>
                             <div class="col-xs-6 align-right">
-                                <p class="help-block"><a href="#" class="text-green">Forgot password?</a></p>
+                                <p class="help-block"><a href="#" class="text-green">Olvidaste tu contraseña?</a></p>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="btn-group-justified">
-                            <a href="explore.html" class="btn btn-lg btn-green">Sign In</a>
+                            <a href="#" class="btn btn-lg btn-green">Ingresar</a>
                         </div>
                     </div>
-                    <p class="help-block">Don't have an account? <a href="#" class="modal-su text-green">Sign Up</a></p>
+                    <p class="help-block">Aun no eres miembro? <a href="#" class="modal-su text-green">Registrate</a>
+                    </p>
                 </form>
             </div>
         </div>
@@ -540,44 +551,31 @@
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="signupLabel">Sign Up</h4>
+                <h4 class="modal-title" id="signupLabel">Registrate</h4>
             </div>
             <div class="modal-body">
                 <form role="form">
                     <div class="form-group">
-                        <div class="btn-group-justified">
-                            <a href="explore.html" class="btn btn-lg btn-facebook"><span
-                                        class="fa fa-facebook pull-left"></span>Sign Up with Facebook</a>
-                        </div>
+                        <input type="text" placeholder="Nombre" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Apellido" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Contraseña" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Confirmar" class="form-control">
                     </div>
                     <div class="form-group">
                         <div class="btn-group-justified">
-                            <a href="explore.html" class="btn btn-lg btn-google"><span
-                                        class="fa fa-google-plus pull-left"></span>Sign Up with Google</a>
+                            <a href="#" class="btn btn-lg btn-green">Crear cuenta</a>
                         </div>
                     </div>
-                    <div class="signOr">OR</div>
-                    <div class="form-group">
-                        <input type="text" placeholder="First Name" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Last Name" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Email Address" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" placeholder="Password" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" placeholder="Confirm Password" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <div class="btn-group-justified">
-                            <a href="explore.html" class="btn btn-lg btn-green">Sign Up</a>
-                        </div>
-                    </div>
-                    <p class="help-block">Already a Reales member? <a href="#" class="modal-si text-green">Sign In</a>
+                    <p class="help-block">Ya eres miembro? <a href="#" class="modal-si text-green">Ingresar</a>
                     </p>
                 </form>
             </div>
