@@ -5,29 +5,23 @@
 @section('content')
     <div class="filter">
         <h1 class="osLight">Filtra tus resultados</h1>
-        <a href="#" class="handleFilter"><span class="icon-equalizer"></span></a>
         <div class="clearfix"></div>
+
         <form class="filterForm">
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 formItem">
-                    <div class="formField">
-                        <label>Tipo de propiedad</label>
-                        <a href="#" data-toggle="dropdown"
-                           class="btn btn-gray dropdown-btn dropdown-toggle propTypeSelect">
-                            <span class="dropdown-label">Todo</span>
-                            <span class="fa fa-angle-down dsArrow"></span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-select full" role="menu">
-                            <li class="active"><input type="radio" name="pType" checked="checked"><a href="#">Todo</a>
-                            </li>
-                            <li><input type="radio" name="pType"><a href="#">Renta</a></li>
-                            <li><input type="radio" name="pType"><a href="#">Venta</a></li>
-                        </ul>
+            </div>
+            <div class="row" id="filterCity" style="">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="form-group">
+                        <label>Ciudad</label>
+                        <input type="text" class="form-control auto" name="search_city" id="search_city"
+                               value="Guadalajara" placeholder="Ciudad" autocomplete="off">
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 formItem">
+
                     <div class="formField">
                         <label>Precio</label>
                         <div class="slider priceSlider">
@@ -37,44 +31,174 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 formItem">
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 formItem">
                     <div class="formField">
-                        <label>Area</label>
-                        <div class="slider areaSlider">
-                            <div class="sliderTooltip">
-                                <div class="stArrow"></div>
-                                <div class="stLabel"></div>
+                        <label>Inmuebles</label>
+                        <a href="#" data-toggle="dropdown"
+                           class="btn btn-gray dropdown-btn dropdown-toggle propTypeSelect">
+                            <span class="dropdown-label">Todos</span>
+                            <span class="fa fa-angle-down dsArrow"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-select full" role="menu">
+                            <li class="active"><input type="radio" name="pType" checked="checked"><a href="#">Todos</a>
+                            </li>
+                            <li><input type="radio" name="pType"><a href="#">Casas</a></li>
+                            <li><input type="radio" name="pType"><a href="#">Deptos.</a></li>
+                            <li><input type="radio" name="pType"><a href="#">Terrenos</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 formItem">
+                    <div class="formField">
+                        <label>Tipos</label>
+                        <a href="#" data-toggle="dropdown"
+                           class="btn btn-gray dropdown-btn dropdown-toggle propTypeSelect">
+                            <span class="dropdown-label">Todos</span>
+                            <span class="fa fa-angle-down dsArrow"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-select full" role="menu">
+                            <li class="active"><input type="radio" name="pType" checked="checked"><a href="#">Todos</a>
+                            </li>
+                            <li><input type="radio" name="pType"><a href="#">Venta</a></li>
+                            <li><input type="radio" name="pType"><a href="#">Renta</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="advancedFilter" style="display: none;">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 formItem">
+
+                        <div class="formField">
+                            <label>Habitaciones</label>
+                            <a href="#" data-toggle="dropdown"
+                               class="btn btn-gray dropdown-btn dropdown-toggle propTypeSelect">
+                                <span class="dropdown-label">Habitaciones</span>
+                                <span class="fa fa-angle-down dsArrow"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-select full" role="menu">
+                                <li class="active"><input type="radio" name="pType" checked="checked"><a href="#">Habitaciones</a>
+                                </li>
+                                <li><input type="radio" name="pType"><a href="#">1+</a></li>
+                                <li><input type="radio" name="pType"><a href="#">2+</a></li>
+                                <li><input type="radio" name="pType"><a href="#">3+</a></li>
+                                <li><input type="radio" name="pType"><a href="#">4+</a></li>
+                                <li><input type="radio" name="pType"><a href="#">5+</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 formItem">
+
+                        <div class="formField">
+                            <label>Baños</label>
+                            <a href="#" data-toggle="dropdown"
+                               class="btn btn-gray dropdown-btn dropdown-toggle propTypeSelect">
+                                <span class="dropdown-label">Baños</span>
+                                <span class="fa fa-angle-down dsArrow"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-select full" role="menu">
+                                <li class="active"><input type="radio" name="pType" checked="checked"><a
+                                            href="#">Baños</a></li>
+                                <li><input type="radio" name="pType"><a href="#">1+</a></li>
+                                <li><input type="radio" name="pType"><a href="#">2+</a></li>
+                                <li><input type="radio" name="pType"><a href="#">3+</a></li>
+                                <li><input type="radio" name="pType"><a href="#">4+</a></li>
+                                <li><input type="radio" name="pType"><a href="#">5+</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 formItem">
+
+                        <div class="formField">
+                            <label>Construcción</label>
+                            <div class="slider areaSlider">
+                                <div class="sliderTooltip">
+                                    <div class="stArrow"></div>
+                                    <div class="stLabel"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 formItem">
+                        <div class="form-group">
+                            <label for="search_neighborhood">Colonia / Delegacion</label>
+                            <input type="text" class="form-control" name="search_neighborhood" id="search_neighborhood"
+                                   value="" placeholder="Colonia / Delegacion" autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+                <div class="row"></div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 formItem">
+                        <div class="form-group"><label>Amenidades</label>
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                                    <div class="checkbox custom-checkbox">
+                                        <label><input type="checkbox" name="outdoor_pool" value="1">
+                                            <span class="fa fa-check"></span> Piscina</label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                                    <div class="checkbox custom-checkbox">
+                                        <label><input type="checkbox" name="internet" value="1">
+                                            <span class="fa fa-check"></span> Internet</label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                                    <div class="checkbox custom-checkbox">
+                                        <label><input type="checkbox" name="balcony" value="1">
+                                            <span class="fa fa-check"></span> Balcon</label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                                    <div class="checkbox custom-checkbox">
+                                        <label><input type="checkbox" name="air_conditioning" value="1">
+                                            <span class="fa fa-check"></span> Aire Acondicionado</label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                                    <div class="checkbox custom-checkbox">
+                                        <label><input type="checkbox" name="security_system" value="1">
+                                            <span class="fa fa-check"></span> Seguridad</label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                                    <div class="checkbox custom-checkbox">
+                                        <label><input type="checkbox" name="garage" value="1">
+                                            <span class="fa fa-check"></span> Cochera</label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 formItem">
-                    <div class="formField">
-                        <label>Habitaciones</label>
-                        <div class="volume">
-                            <a href="#" class="btn btn-gray btn-round-left"><span class="fa fa-angle-left"></span></a>
-                            <input type="text" class="form-control" readonly="readonly" value="1">
-                            <a href="#" class="btn btn-gray btn-round-right"><span class="fa fa-angle-right"></span></a>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 formItem">
-                    <div class="formField">
-                        <label>Baños</label>
-                        <div class="volume">
-                            <a href="#" class="btn btn-gray btn-round-left"><span class="fa fa-angle-left"></span></a>
-                            <input type="text" class="form-control" readonly="readonly" value="1">
-                            <a href="#" class="btn btn-gray btn-round-right"><span class="fa fa-angle-right"></span></a>
-                            <div class="clearfix"></div>
-                        </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="form-group">
+                        <a href="javascript:void(0);" class="btn btn-green mb-10" id="filterPropertySubmit">
+                            Aplicar Filtros
+                        </a>
+                        <a href="javascript:void(0);" class="btn btn-gray display mb-10" id="showAdvancedFilter">
+                            Mostrar Filtros Avanzados
+                        </a>
+                        <a href="javascript:void(0);" class="btn btn-gray mb-10" id="hideAdvancedFilter"
+                           style="display: none;">
+                            Ocultar Filtros Avanzados
+                        </a>
                     </div>
                 </div>
             </div>
         </form>
+
     </div>
     <div class="resultsList">
         <div class="row">

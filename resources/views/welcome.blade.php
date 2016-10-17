@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>O'Farrill RealState | @yield('title')</title>
 
+    <link href="{!! asset('css/jquery-ui.css') !!}" rel="stylesheet">
     <link href="{!! asset('css/font-awesome.css') !!}" rel="stylesheet">
     <link href="{!! asset('css/simple-line-icons.css') !!}" rel="stylesheet">
     <link href="{!! asset('css/fullscreen-slider.css') !!}" rel="stylesheet">
@@ -39,9 +40,9 @@
         <a href="#" class="home-navHandler visible-xs"><span class="fa fa-bars"></span></a>
         <div class="home-nav">
             <ul>
-                <li><a href="{!! route("properties.index") !!}">Propiedades</a></li>
-                <li><a href="#">Agentes</a></li>
-                <li><a href="#">Blog</a></li>
+                {{--<li><a href="{!! route("properties.index") !!}">Propiedades</a></li>--}}
+                <li><a href="#">Vender / Rentar</a></li>
+                {{--<li><a href="#">Blog</a></li>--}}
                 <li><a href="#">Contacto</a></li>
                 <li style="padding-top: 9px;"><a href="#" data-toggle="modal" data-target="#signin">Ingresar</a></li>
                 <li><a href="#" class="btn btn-green" data-toggle="modal" data-target="#signup">Registrate</a></li>
@@ -52,6 +53,119 @@
         <div class="home-title">Ahora es mas facil encontrar tu nueva casa</div>
         <div class="home-subtitle">---</div>
         <a href="#" class="btn btn-lg btn-black">Leer más</a>
+    </div>
+
+    {{--Buscador --}}
+    <div class="home-search">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="form-group">
+                    <label><b>Ciudad</b></label>
+                    <input type="text" class="form-control auto" name="city" id="city"
+                           value="Guadalajara" placeholder="Ciudad" autocomplete="off">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 formItem">
+                <div class="formField">
+                    <label><b>Precio</b></label>
+                    <div class="slider priceSlider">
+                        <div class="sliderTooltip">
+                            <div class="stArrow"></div>
+                            <div class="stLabel"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 formItem">
+                <div class="formField">
+                    <label><b>Inmuebles</b></label>
+                    <a href="#" data-toggle="dropdown"
+                       class="btn btn-gray dropdown-btn dropdown-toggle propTypeSelect">
+                        <span class="dropdown-label">Todos</span>
+                        <span class="fa fa-angle-down dsArrow"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-select full" role="menu">
+                        <li class="active"><input type="radio" name="pType" checked="checked"><a href="#">Todos</a>
+                        </li>
+                        <li><input type="radio" name="pType"><a href="#">Casas</a></li>
+                        <li><input type="radio" name="pType"><a href="#">Deptos.</a></li>
+                        <li><input type="radio" name="pType"><a href="#">Terrenos</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 formItem">
+                <div class="formField">
+                    <label><b>Tipos</b></label>
+                    <a href="#" data-toggle="dropdown"
+                       class="btn btn-gray dropdown-btn dropdown-toggle propTypeSelect">
+                        <span class="dropdown-label">Todos</span>
+                        <span class="fa fa-angle-down dsArrow"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-select full" role="menu">
+                        <li class="active"><input type="radio" name="pType" checked="checked"><a href="#">Todos</a>
+                        </li>
+                        <li><input type="radio" name="pType"><a href="#">Venta</a></li>
+                        <li><input type="radio" name="pType"><a href="#">Renta</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 formItem">
+
+                <div class="formField">
+                    <label><b>Habitaciones</b></label>
+                    <a href="#" data-toggle="dropdown"
+                       class="btn btn-gray dropdown-btn dropdown-toggle propTypeSelect">
+                        <span class="dropdown-label">Habitaciones</span>
+                        <span class="fa fa-angle-down dsArrow"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-select full" role="menu">
+                        <li class="active"><input type="radio" name="pType" checked="checked">
+                            <a href="#">Habitaciones</a>
+                        </li>
+                        <li><input type="radio" name="pType"><a href="#">1+</a></li>
+                        <li><input type="radio" name="pType"><a href="#">2+</a></li>
+                        <li><input type="radio" name="pType"><a href="#">3+</a></li>
+                        <li><input type="radio" name="pType"><a href="#">4+</a></li>
+                        <li><input type="radio" name="pType"><a href="#">5+</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 formItem">
+
+                <div class="formField">
+                    <label><b>Baños</b></label>
+                    <a href="#" data-toggle="dropdown"
+                       class="btn btn-gray dropdown-btn dropdown-toggle propTypeSelect">
+                        <span class="dropdown-label">Baños</span>
+                        <span class="fa fa-angle-down dsArrow"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-select full" role="menu">
+                        <li class="active"><input type="radio" name="pType" checked="checked"><a
+                                    href="#">Baños</a></li>
+                        <li><input type="radio" name="pType"><a href="#">1+</a></li>
+                        <li><input type="radio" name="pType"><a href="#">2+</a></li>
+                        <li><input type="radio" name="pType"><a href="#">3+</a></li>
+                        <li><input type="radio" name="pType"><a href="#">4+</a></li>
+                        <li><input type="radio" name="pType"><a href="#">5+</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                <div class="form-group">
+                    <a href="javascript:void(0);" class="btn btn-green mb-10" id="filterPropertySubmit">
+                        Buscar
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 
 </div>
@@ -373,138 +487,153 @@
     <div class="home-wrapper">
         <div class="row">
 
-        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-            <ul class="footer-nav pb20">
-                <li>
-                    <div class="osLight footer-header">Propiedades</div>
-                    <div>
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                <ul class="footer-nav pb20">
+                    <li>
+                        <div class="osLight footer-header">Propiedades</div>
+                        <div>
+                            <ul class="footer-nav pb20">
+                                <li><a href="#">Properties List</a></li>
+                                <li><a href="#">Single Property</a></li>
+                                <li><a href="#">Search by City: San Francisco</a></li>
+                                <li><a href="#">Search by Category: Apartment</a></li>
+                                <li><a href="#">Search by Type: For Rent</a></li>
+                                <li><a href="#">Search by Price: Less than $70,000</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="osLight footer-header">Agentes</div>
+                        <div>
+                            <ul class="footer-nav pb20">
+                                <li>
+                                    <a href="http://mariusn.com/themes/reales-wp/agents/jane-smith/">Agent Page</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                <ul class="footer-nav pb20">
+                    <li id="recent_properties_widget-4" class="widget-container recent_properties_sidebar">
+                        <div class="osLight footer-header">Lo mas nuevo</div>
+                        <div>
+                            <ul class="footer-nav pb20">
+                                <li>
+                                    <a href="http://mariusn.com/themes/reales-wp/properties/modern-residence/">
+                                        <div style="float: left; margin-right: 10px;">
+                                            <img src="http://mariusn.com/themes/reales-wp/wp-content/uploads/2014/12/bg-1-120x120.jpg"
+                                                 width="60" height="60">
+                                        </div>
+                                        <div>
+                                            <div>Modern Residence</div>
+                                            <div style="font-size: 11px; color: gray;">547 35th Ave, San Francisco,
+                                                94121, United States
+                                            </div>
+                                            <div>$1,200,000 <span class="badge">For Sale</span></div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://mariusn.com/themes/reales-wp/properties/sophisticated-residence/">
+                                        <div style="float: left; margin-right: 10px;">
+                                            <img src="http://mariusn.com/themes/reales-wp/wp-content/uploads/2015/02/img-prop-120x120.jpg"
+                                                 width="60" height="60">
+                                        </div>
+                                        <div>
+                                            <div>Sophisticated Residence</div>
+                                            <div style="font-size: 11px; color: gray;">600 40th Ave, San Francisco,
+                                                94121, United States
+                                            </div>
+                                            <div>$799,000 <span class="badge">For Sale</span></div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://mariusn.com/themes/reales-wp/properties/luxury-mansion/">
+                                        <div style="float: left; margin-right: 10px;">
+                                            <img src="http://mariusn.com/themes/reales-wp/wp-content/uploads/2014/12/bg-5-1024x576-120x120.jpg"
+                                                 width="60" height="60">
+                                        </div>
+                                        <div>
+                                            <div>Luxury Mansion</div>
+                                            <div style="font-size: 11px; color: gray;">10 Romain St, San Francisco,
+                                                123456, Romania
+                                            </div>
+                                            <div>$3,400 /mo <span class="badge">For Rent</span></div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                <ul class="footer-nav pb20">
+                    <li id="recent-posts-3" class="widget-container widget_recent_entries">
+                        <div class="osLight footer-header">Desde nuestro Blog</div>
                         <ul class="footer-nav pb20">
-                            <li><a href="#">Properties List</a></li>
-                            <li><a href="#">Single Property</a></li>
-                            <li><a href="#">Search by City: San Francisco</a></li>
-                            <li><a href="#">Search by Category: Apartment</a></li>
-                            <li><a href="#">Search by Type: For Rent</a></li>
-                            <li><a href="#">Search by Price: Less than $70,000</a></li>
+                            <li>
+                                <a href="#">Modern Two-Level Pool House in Los Angeles</a>
+                            </li>
+                            <li>
+                                <a href="#">Private Contemporary Home Balancing Openness</a>
+                            </li>
+                            <li>
+                                <a href="#">Stylish Modern Ranch Exuding a Welcoming Feel</a>
+                            </li>
+                            <li>
+                                <a href="#">How Does A Designer Home Look Like</a>
+                            </li>
+                            <li>
+                                <a href="#">Luminous 3 Bedroom Apartment Flaunting Modern Style</a>
+                            </li>
                         </ul>
-                    </div>
-                </li>
-                <li>
-                    <div class="osLight footer-header">Agentes</div>
-                    <div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                <ul class="footer-nav pb20">
+                    <li>
+                        <div class="osLight footer-header">Contactanos</div>
+                        <ul class="footer-nav pb20">
+                            <li class="widget-phone">
+                                <span class="fa fa-phone"></span> (123) 456-7890
+                            </li>
+                            <li class="widget-address osLight">
+                                <p>196 Front St</p>
+                                <p>San Francisco, CA 94111</p>
+                                <p>United States</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="social_widget-2" class="widget-container social_sidebar">
+                        <div class="osLight footer-header">Siguenos</div>
                         <ul class="footer-nav pb20">
                             <li>
-                                <a href="http://mariusn.com/themes/reales-wp/agents/jane-smith/">Agent Page</a>
+                                <a href="#facebook" class="btn btn-sm btn-icon btn-round btn-o btn-white"
+                                   target="_blank"><span class="fa fa-facebook"></span></a>
+                                <a href="#twitter" class="btn btn-sm btn-icon btn-round btn-o btn-white"
+                                   target="_blank"><span class="fa fa-twitter"></span></a>
+                                <a href="#google" class="btn btn-sm btn-icon btn-round btn-o btn-white" target="_blank"><span
+                                            class="fa fa-google-plus"></span></a>
+                                <a href="#linkedin" class="btn btn-sm btn-icon btn-round btn-o btn-white"
+                                   target="_blank"><span class="fa fa-linkedin"></span></a>
                             </li>
                         </ul>
-                    </div>
-                </li>
-            </ul>
-        </div>
+                    </li>
+                </ul>
+            </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-            <ul class="footer-nav pb20">
-                <li id="recent_properties_widget-4" class="widget-container recent_properties_sidebar">
-                    <div class="osLight footer-header">Lo mas nuevo</div>
-                    <div>
-                        <ul class="footer-nav pb20">
-                            <li>
-                                <a href="http://mariusn.com/themes/reales-wp/properties/modern-residence/">
-                                    <div style="float: left; margin-right: 10px;">
-                                        <img src="http://mariusn.com/themes/reales-wp/wp-content/uploads/2014/12/bg-1-120x120.jpg" width="60" height="60">
-                                    </div>
-                                    <div>
-                                        <div>Modern Residence</div>
-                                        <div style="font-size: 11px; color: gray;">547 35th Ave, San Francisco, 94121, United States</div>
-                                        <div>$1,200,000  <span class="badge">For Sale</span></div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://mariusn.com/themes/reales-wp/properties/sophisticated-residence/">
-                                    <div style="float: left; margin-right: 10px;">
-                                        <img src="http://mariusn.com/themes/reales-wp/wp-content/uploads/2015/02/img-prop-120x120.jpg" width="60" height="60">
-                                    </div>
-                                    <div>
-                                        <div>Sophisticated Residence</div>
-                                        <div style="font-size: 11px; color: gray;">600 40th Ave, San Francisco, 94121, United States</div>
-                                        <div>$799,000  <span class="badge">For Sale</span></div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://mariusn.com/themes/reales-wp/properties/luxury-mansion/">
-                                    <div  style="float: left; margin-right: 10px;">
-                                        <img src="http://mariusn.com/themes/reales-wp/wp-content/uploads/2014/12/bg-5-1024x576-120x120.jpg" width="60" height="60">
-                                    </div>
-                                    <div>
-                                        <div>Luxury Mansion</div>
-                                        <div style="font-size: 11px; color: gray;">10 Romain St, San Francisco, 123456, Romania</div>
-                                        <div>$3,400 /mo <span class="badge">For Rent</span></div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
         </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-            <ul class="footer-nav pb20">
-                <li id="recent-posts-3" class="widget-container widget_recent_entries">
-                    <div class="osLight footer-header">Desde nuestro Blog</div>
-                    <ul class="footer-nav pb20">
-                        <li>
-                            <a href="#">Modern Two-Level Pool House in Los Angeles</a>
-                        </li>
-                        <li>
-                            <a href="#">Private Contemporary Home Balancing Openness</a>
-                        </li>
-                        <li>
-                            <a href="#">Stylish Modern Ranch Exuding a Welcoming Feel</a>
-                        </li>
-                        <li>
-                            <a href="#">How Does A Designer Home Look Like</a>
-                        </li>
-                        <li>
-                            <a href="#">Luminous 3 Bedroom Apartment Flaunting Modern Style</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-            <ul class="footer-nav pb20">
-                <li>
-                    <div class="osLight footer-header">Contactanos</div>
-                    <ul class="footer-nav pb20">
-                        <li class="widget-phone">
-                            <span class="fa fa-phone"></span> (123) 456-7890
-                        </li>
-                        <li class="widget-address osLight">
-                            <p>196 Front St</p><p>San Francisco, CA 94111</p><p>United States</p>
-                        </li>
-                    </ul>
-                </li>
-                <li id="social_widget-2" class="widget-container social_sidebar">
-                    <div class="osLight footer-header">Siguenos</div>
-                    <ul class="footer-nav pb20">
-                        <li>
-                            <a href="#facebook" class="btn btn-sm btn-icon btn-round btn-o btn-white" target="_blank"><span class="fa fa-facebook"></span></a>
-                            <a href="#twitter" class="btn btn-sm btn-icon btn-round btn-o btn-white" target="_blank"><span class="fa fa-twitter"></span></a>
-                            <a href="#google" class="btn btn-sm btn-icon btn-round btn-o btn-white" target="_blank"><span class="fa fa-google-plus"></span></a>
-                            <a href="#linkedin" class="btn btn-sm btn-icon btn-round btn-o btn-white" target="_blank"><span class="fa fa-linkedin"></span></a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-
-    </div>
         <div class="copyright">© 2015 Lumston - O'Farrill RealState</div>
     </div>
 </div>

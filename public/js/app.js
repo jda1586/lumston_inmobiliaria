@@ -1,38 +1,38 @@
-(function($) {
+(function ($) {
     "use strict";
 
     // Custom options for map
     var options = {
-            zoom : 14,
-            mapTypeId : 'Styled',
-            disableDefaultUI: true,
-            mapTypeControlOptions : {
-                mapTypeIds : [ 'Styled' ]
-            }
-        };
+        zoom: 14,
+        mapTypeId: 'Styled',
+        disableDefaultUI: true,
+        mapTypeControlOptions: {
+            mapTypeIds: ['Styled']
+        }
+    };
     var styles = [{
-        stylers : [ {
-            hue : "#cccccc"
+        stylers: [{
+            hue: "#cccccc"
         }, {
-            saturation : -100
+            saturation: -100
         }]
     }, {
-        featureType : "road",
-        elementType : "geometry",
-        stylers : [ {
-            lightness : 100
+        featureType: "road",
+        elementType: "geometry",
+        stylers: [{
+            lightness: 100
         }, {
-            visibility : "simplified"
+            visibility: "simplified"
         }]
     }, {
-        featureType : "road",
-        elementType : "labels",
-        stylers : [ {
-            visibility : "on"
+        featureType: "road",
+        elementType: "labels",
+        stylers: [{
+            visibility: "on"
         }]
     }, {
         featureType: "poi",
-        stylers: [ {
+        stylers: [{
             visibility: "off"
         }]
     }];
@@ -42,145 +42,145 @@
 
     // json for properties markers on map
     var props = [{
-        title : 'Modern Residence in New York',
-        image : '1-1-thmb.png',
-        type : 'For Sale',
-        price : '$1,550,000',
-        address : '39 Remsen St, Brooklyn, NY 11201, USA',
-        bedrooms : '3',
-        bathrooms : '2',
-        area : '3430 Sq Ft',
-        position : {
-            lat : 40.696047,
-            lng : -73.997159
+        title: 'Modern Residence in New York',
+        image: '1-1-thmb.png',
+        type: 'VENTA',
+        price: '$1,550,000',
+        address: '39 Remsen St, Brooklyn, NY 11201, USA',
+        bedrooms: '3',
+        bathrooms: '2',
+        area: '3430 Sq Ft',
+        position: {
+            lat: 20.6690251,
+            lng: -103.3388489
         },
-        markerIcon : "marker-green.png"
+        markerIcon: "marker-green.png"
     }, {
-        title : 'Hauntingly Beautiful Estate',
-        image : '2-1-thmb.png',
-        type : 'For Rent',
-        price : '$1,750,000',
-        address : '169 Warren St, Brooklyn, NY 11201, USA',
-        bedrooms : '2',
-        bathrooms : '2',
-        area : '4430 Sq Ft',
-        position : {
-            lat : 40.688042,
-            lng : -73.996472
+        title: 'Hauntingly Beautiful Estate',
+        image: '2-1-thmb.png',
+        type: 'RENTA',
+        price: '$1,750,000',
+        address: '169 Warren St, Brooklyn, NY 11201, USA',
+        bedrooms: '2',
+        bathrooms: '2',
+        area: '4430 Sq Ft',
+        position: {
+            lat: 40.688042,
+            lng: -73.996472
         },
-        markerIcon : "marker-green.png"
+        markerIcon: "marker-green.png"
     }, {
-        title : 'Sophisticated Residence',
-        image : '3-1-thmb.png',
-        type : 'For Sale',
-        price : '$1,340,000',
-        address : '38-62 Water St, Brooklyn, NY 11201, USA',
-        bedrooms : '2',
-        bathrooms : '3',
-        area : '2640 Sq Ft',
-        position : {
-            lat : 40.702620,
-            lng : -73.989682
+        title: 'Sophisticated Residence',
+        image: '3-1-thmb.png',
+        type: 'VENTA',
+        price: '$1,340,000',
+        address: '38-62 Water St, Brooklyn, NY 11201, USA',
+        bedrooms: '2',
+        bathrooms: '3',
+        area: '2640 Sq Ft',
+        position: {
+            lat: 40.702620,
+            lng: -73.989682
         },
-        markerIcon : "marker-green.png"
+        markerIcon: "marker-green.png"
     }, {
-        title : 'House With a Lovely Glass-Roofed Pergola',
-        image : '4-1-thmb.png',
-        type : 'For Sale',
-        price : '$1,930,000',
-        address : 'Wunsch Bldg, Brooklyn, NY 11201, USA',
-        bedrooms : '3',
-        bathrooms : '2',
-        area : '2800 Sq Ft',
-        position : {
-            lat : 40.694355,
-            lng : -73.985229
+        title: 'House With a Lovely Glass-Roofed Pergola',
+        image: '4-1-thmb.png',
+        type: 'VENTA',
+        price: '$1,930,000',
+        address: 'Wunsch Bldg, Brooklyn, NY 11201, USA',
+        bedrooms: '3',
+        bathrooms: '2',
+        area: '2800 Sq Ft',
+        position: {
+            lat: 40.694355,
+            lng: -73.985229
         },
-        markerIcon : "marker-green.png"
+        markerIcon: "marker-green.png"
     }, {
-        title : 'Luxury Mansion',
-        image : '5-1-thmb.png',
-        type : 'For Rent',
-        price : '$2,350,000',
-        address : '95 Butler St, Brooklyn, NY 11231, USA',
-        bedrooms : '2',
-        bathrooms : '2',
-        area : '2750 Sq Ft',
-        position : {
-            lat : 40.686838,
-            lng : -73.990078
+        title: 'Luxury Mansion',
+        image: '5-1-thmb.png',
+        type: 'RENTA',
+        price: '$2,350,000',
+        address: '95 Butler St, Brooklyn, NY 11231, USA',
+        bedrooms: '2',
+        bathrooms: '2',
+        area: '2750 Sq Ft',
+        position: {
+            lat: 40.686838,
+            lng: -73.990078
         },
-        markerIcon : "marker-green.png"
+        markerIcon: "marker-green.png"
     }, {
-        title : 'Modern Residence in New York',
-        image : '1-1-thmb.png',
-        type : 'For Sale',
-        price : '$1,550,000',
-        address : '39 Remsen St, Brooklyn, NY 11201, USA',
-        bedrooms : '3',
-        bathrooms : '2',
-        area : '3430 Sq Ft',
-        position : {
-            lat : 40.703686,
-            lng : -73.982910
+        title: 'Modern Residence in New York',
+        image: '1-1-thmb.png',
+        type: 'VENTA',
+        price: '$1,550,000',
+        address: '39 Remsen St, Brooklyn, NY 11201, USA',
+        bedrooms: '3',
+        bathrooms: '2',
+        area: '3430 Sq Ft',
+        position: {
+            lat: 40.703686,
+            lng: -73.982910
         },
-        markerIcon : "marker-green.png"
+        markerIcon: "marker-green.png"
     }, {
-        title : 'Hauntingly Beautiful Estate',
-        image : '2-1-thmb.png',
-        type : 'For Rent',
-        price : '$1,750,000',
-        address : '169 Warren St, Brooklyn, NY 11201, USA',
-        bedrooms : '2',
-        bathrooms : '2',
-        area : '4430 Sq Ft',
-        position : {
-            lat : 40.702189,
-            lng : -73.995098
+        title: 'Hauntingly Beautiful Estate',
+        image: '2-1-thmb.png',
+        type: 'RENTA',
+        price: '$1,750,000',
+        address: '169 Warren St, Brooklyn, NY 11201, USA',
+        bedrooms: '2',
+        bathrooms: '2',
+        area: '4430 Sq Ft',
+        position: {
+            lat: 40.702189,
+            lng: -73.995098
         },
-        markerIcon : "marker-green.png"
+        markerIcon: "marker-green.png"
     }, {
-        title : 'Sophisticated Residence',
-        image : '3-1-thmb.png',
-        type : 'For Sale',
-        price : '$1,340,000',
-        address : '38-62 Water St, Brooklyn, NY 11201, USA',
-        bedrooms : '2',
-        bathrooms : '3',
-        area : '2640 Sq Ft',
-        position : {
-            lat : 40.687417,
-            lng : -73.982653
+        title: 'Sophisticated Residence',
+        image: '3-1-thmb.png',
+        type: 'VENTA',
+        price: '$1,340,000',
+        address: '38-62 Water St, Brooklyn, NY 11201, USA',
+        bedrooms: '2',
+        bathrooms: '3',
+        area: '2640 Sq Ft',
+        position: {
+            lat: 40.687417,
+            lng: -73.982653
         },
-        markerIcon : "marker-green.png"
+        markerIcon: "marker-green.png"
     }, {
-        title : 'House With a Lovely Glass-Roofed Pergola',
-        image : '4-1-thmb.png',
-        type : 'For Sale',
-        price : '$1,930,000',
-        address : 'Wunsch Bldg, Brooklyn, NY 11201, USA',
-        bedrooms : '3',
-        bathrooms : '2',
-        area : '2800 Sq Ft',
-        position : {
-            lat : 40.694120,
-            lng : -73.974413
+        title: 'House With a Lovely Glass-Roofed Pergola',
+        image: '4-1-thmb.png',
+        type: 'VENTA',
+        price: '$1,930,000',
+        address: 'Wunsch Bldg, Brooklyn, NY 11201, USA',
+        bedrooms: '3',
+        bathrooms: '2',
+        area: '2800 Sq Ft',
+        position: {
+            lat: 40.694120,
+            lng: -73.974413
         },
-        markerIcon : "marker-green.png"
+        markerIcon: "marker-green.png"
     }, {
-        title : 'Luxury Mansion',
-        image : '5-1-thmb.png',
-        type : 'For Rent',
-        price : '$2,350,000',
-        address : '95 Butler St, Brooklyn, NY 11231, USA',
-        bedrooms : '2',
-        bathrooms : '2',
-        area : '2750 Sq Ft',
-        position : {
-            lat : 40.682665,
-            lng : -74.000934
+        title: 'Luxury Mansion',
+        image: '5-1-thmb.png',
+        type: 'RENTA',
+        price: '$2,350,000',
+        address: '95 Butler St, Brooklyn, NY 11231, USA',
+        bedrooms: '2',
+        bathrooms: '2',
+        area: '2750 Sq Ft',
+        position: {
+            lat: 40.682665,
+            lng: -74.000934
         },
-        markerIcon : "marker-green.png"
+        markerIcon: "marker-green.png"
     }];
 
     // custom infowindow object
@@ -203,13 +203,13 @@
     });
 
     // function that adds the markers on map
-    var addMarkers = function(props, map) {
-        $.each(props, function(i,prop) {
-            var latlng = new google.maps.LatLng(prop.position.lat,prop.position.lng);
+    var addMarkers = function (props, map) {
+        $.each(props, function (i, prop) {
+            var latlng = new google.maps.LatLng(prop.position.lat, prop.position.lng);
             var marker = new google.maps.Marker({
                 position: latlng,
                 map: map,
-                icon: new google.maps.MarkerImage( 
+                icon: new google.maps.MarkerImage(
                     'images/' + prop.markerIcon,
                     null,
                     null,
@@ -220,45 +220,45 @@
                 animation: google.maps.Animation.DROP,
             });
             var infoboxContent = '<div class="infoW">' +
-                                    '<div class="propImg">' +
-                                        '<img src="images/prop/' + prop.image + '">' +
-                                        '<div class="propBg">' +
-                                            '<div class="propPrice">' + prop.price + '</div>' +
-                                            '<div class="propType">' + prop.type + '</div>' +
-                                        '</div>' +
-                                    '</div>' +
-                                    '<div class="paWrapper">' +
-                                        '<div class="propTitle">' + prop.title + '</div>' +
-                                        '<div class="propAddress">' + prop.address + '</div>' +
-                                    '</div>' +
-                                    '<div class="propRating">' +
-                                        '<span class="fa fa-star"></span>' +
-                                        '<span class="fa fa-star"></span>' +
-                                        '<span class="fa fa-star"></span>' +
-                                        '<span class="fa fa-star"></span>' +
-                                        '<span class="fa fa-star-o"></span>' +
-                                    '</div>' +
-                                    '<ul class="propFeat">' +
-                                        '<li><span class="fa fa-moon-o"></span> ' + prop.bedrooms + '</li>' +
-                                        '<li><span class="icon-drop"></span> ' + prop.bathrooms + '</li>' +
-                                        '<li><span class="icon-frame"></span> ' + prop.area + '</li>' +
-                                    '</ul>' +
-                                    '<div class="clearfix"></div>' +
-                                    '<div class="infoButtons">' +
-                                        '<a class="btn btn-sm btn-round btn-gray btn-o closeInfo">Close</a>' +
-                                        '<a href="single.html" class="btn btn-sm btn-round btn-green viewInfo">View</a>' +
-                                    '</div>' +
-                                 '</div>';
+                '<div class="propImg">' +
+                '<img src="images/prop/' + prop.image + '">' +
+                '<div class="propBg">' +
+                '<div class="propPrice">' + prop.price + '</div>' +
+                '<div class="propType">' + prop.type + '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="paWrapper">' +
+                '<div class="propTitle">' + prop.title + '</div>' +
+                '<div class="propAddress">' + prop.address + '</div>' +
+                '</div>' +
+                '<div class="propRating">' +
+                '<span class="fa fa-star"></span>' +
+                '<span class="fa fa-star"></span>' +
+                '<span class="fa fa-star"></span>' +
+                '<span class="fa fa-star"></span>' +
+                '<span class="fa fa-star-o"></span>' +
+                '</div>' +
+                '<ul class="propFeat">' +
+                '<li><span class="fa fa-moon-o"></span> ' + prop.bedrooms + '</li>' +
+                '<li><span class="icon-drop"></span> ' + prop.bathrooms + '</li>' +
+                '<li><span class="icon-frame"></span> ' + prop.area + '</li>' +
+                '</ul>' +
+                '<div class="clearfix"></div>' +
+                '<div class="infoButtons">' +
+                '<a class="btn btn-sm btn-round btn-gray btn-o closeInfo">Close</a>' +
+                '<a href="single.html" class="btn btn-sm btn-round btn-green viewInfo">View</a>' +
+                '</div>' +
+                '</div>';
 
-            google.maps.event.addListener(marker, 'click', (function(marker, i) {
-                return function() {
+            google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                return function () {
                     infobox.setContent(infoboxContent);
                     infobox.open(map, marker);
                 }
             })(marker, i));
 
-            $(document).on('click', '.closeInfo', function() {
-                infobox.open(null,null);
+            $(document).on('click', '.closeInfo', function () {
+                infobox.open(null, null);
             });
 
             markers.push(marker);
@@ -273,7 +273,7 @@
     var isDevice = true;
 
     // calculations for elements that changes size on window resize
-    var windowResizeHandler = function() {
+    var windowResizeHandler = function () {
         windowHeight = window.innerHeight;
         windowWidth = $(window).width();
         contentHeight = windowHeight - $('#header').height();
@@ -284,7 +284,7 @@
         $('#wrapper').height(contentHeight);
         $('#mapView').height(contentHeight);
         $('#content').height(contentHeight);
-        setTimeout(function() {
+        setTimeout(function () {
             $('.commentsFormWrapper').width(contentWidth);
         }, 300);
 
@@ -293,24 +293,24 @@
         }
 
         // Add custom scrollbar for left side navigation
-        if(windowWidth > 767) {
+        if (windowWidth > 767) {
             $('.bigNav').slimScroll({
-                height : contentHeight - $('.leftUserWraper').height()
+                height: contentHeight - $('.leftUserWraper').height()
             });
         } else {
             $('.bigNav').slimScroll({
-                height : contentHeight
+                height: contentHeight
             });
         }
-        if($('.bigNav').parent('.slimScrollDiv').size() > 0) {
+        if ($('.bigNav').parent('.slimScrollDiv').size() > 0) {
             $('.bigNav').parent().replaceWith($('.bigNav'));
-            if(windowWidth > 767) {
+            if (windowWidth > 767) {
                 $('.bigNav').slimScroll({
-                    height : contentHeight - $('.leftUserWraper').height()
+                    height: contentHeight - $('.leftUserWraper').height()
                 });
             } else {
                 $('.bigNav').slimScroll({
-                    height : contentHeight
+                    height: contentHeight
                 });
             }
         }
@@ -327,42 +327,42 @@
         $('.areaSlider .sliderTooltip').css('left', areaSliderLeft);
     }
 
-    var repositionTooltip = function( e, ui ){
+    var repositionTooltip = function (e, ui) {
         var div = $(ui.handle).data("bs.tooltip").$tip[0];
-        var pos = $.extend({}, $(ui.handle).offset(), { 
-                        width: $(ui.handle).get(0).offsetWidth,
-                        height: $(ui.handle).get(0).offsetHeight
-                    });
+        var pos = $.extend({}, $(ui.handle).offset(), {
+            width: $(ui.handle).get(0).offsetWidth,
+            height: $(ui.handle).get(0).offsetHeight
+        });
         var actualWidth = div.offsetWidth;
 
         var tp = {left: pos.left + pos.width / 2 - actualWidth / 2}
         $(div).offset(tp);
 
-        $(div).find(".tooltip-inner").text( ui.value );
+        $(div).find(".tooltip-inner").text(ui.value);
     }
 
     windowResizeHandler();
-    $(window).resize(function() {
+    $(window).resize(function () {
         windowResizeHandler();
     });
 
-    setTimeout(function() {
+    setTimeout(function () {
         $('body').removeClass('notransition');
 
         map = new google.maps.Map(document.getElementById('mapView'), options);
         var styledMapType = new google.maps.StyledMapType(styles, {
-            name : 'Styled'
+            name: 'Styled'
         });
 
         map.mapTypes.set('Styled', styledMapType);
-        map.setCenter(new google.maps.LatLng(40.6984237,-73.9890044));
-        map.setZoom(14);
+        map.setCenter(new google.maps.LatLng(20.6690251, -103.3388489));
+        map.setZoom(12);
 
         if ($('#address').length > 0) {
             newMarker = new google.maps.Marker({
-                position: new google.maps.LatLng(40.6984237,-73.9890044),
+                position: new google.maps.LatLng(20.6690251, -103.3388489),
                 map: map,
-                icon: new google.maps.MarkerImage( 
+                icon: new google.maps.MarkerImage(
                     'images/marker-new.png',
                     null,
                     null,
@@ -374,7 +374,7 @@
                 animation: google.maps.Animation.DROP,
             });
 
-            google.maps.event.addListener(newMarker, "mouseup", function(event) {
+            google.maps.event.addListener(newMarker, "mouseup", function (event) {
                 var latitude = this.position.lat();
                 var longitude = this.position.lng();
                 $('#latitude').text(this.position.lat());
@@ -385,41 +385,41 @@
         addMarkers(props, map);
     }, 300);
 
-    if(!(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch)) {
+    if (!(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch)) {
         $('body').addClass('no-touch');
         isDevice = false;
     }
 
     // Header search icon transition
-    $('.search input').focus(function() {
+    $('.search input').focus(function () {
         $('.searchIcon').addClass('active');
     });
-    $('.search input').blur(function() {
+    $('.search input').blur(function () {
         $('.searchIcon').removeClass('active');
     });
 
     // Notifications list items pulsate animation
     $('.notifyList a').hover(
-        function() {
+        function () {
             $(this).children('.pulse').addClass('pulsate');
         },
-        function() {
+        function () {
             $(this).children('.pulse').removeClass('pulsate');
         }
     );
 
     // Exapnd left side navigation
     var navExpanded = false;
-    $('.navHandler, .closeLeftSide').click(function() {
-        if(!navExpanded) {
+    $('.navHandler, .closeLeftSide').click(function () {
+        if (!navExpanded) {
             $('.logo').addClass('expanded');
             $('#leftSide').addClass('expanded');
-            if(windowWidth < 768) {
+            if (windowWidth < 768) {
                 $('.closeLeftSide').show();
             }
             $('.hasSub').addClass('hasSubActive');
             $('.leftNav').addClass('bigNav');
-            if(windowWidth > 767) {
+            if (windowWidth > 767) {
                 $('.full').addClass('m-full');
             }
             windowResizeHandler();
@@ -429,7 +429,7 @@
             $('#leftSide').removeClass('expanded');
             $('.closeLeftSide').hide();
             $('.hasSub').removeClass('hasSubActive');
-            $('.bigNav').slimScroll({ destroy: true });
+            $('.bigNav').slimScroll({destroy: true});
             $('.leftNav').removeClass('bigNav');
             $('.leftNav').css('overflow', 'visible');
             $('.full').removeClass('m-full');
@@ -438,19 +438,19 @@
     });
 
     // functionality for map manipulation icon on mobile devices
-    $('.mapHandler').click(function() {
-        if ($('#mapView').hasClass('mob-min') || 
-            $('#mapView').hasClass('mob-max') || 
-            $('#content').hasClass('mob-min') || 
+    $('.mapHandler').click(function () {
+        if ($('#mapView').hasClass('mob-min') ||
+            $('#mapView').hasClass('mob-max') ||
+            $('#content').hasClass('mob-min') ||
             $('#content').hasClass('mob-max')) {
-                $('#mapView').toggleClass('mob-max');
-                $('#content').toggleClass('mob-min');
+            $('#mapView').toggleClass('mob-max');
+            $('#content').toggleClass('mob-min');
         } else {
             $('#mapView').toggleClass('min');
             $('#content').toggleClass('max');
         }
 
-        setTimeout(function() {
+        setTimeout(function () {
             var priceSliderRangeLeft = parseInt($('.priceSlider .ui-slider-range').css('left'));
             var priceSliderRangeWidth = $('.priceSlider .ui-slider-range').width();
             var priceSliderLeft = priceSliderRangeLeft + ( priceSliderRangeWidth / 2 ) - ( $('.priceSlider .sliderTooltip').width() / 2 );
@@ -471,21 +471,21 @@
     });
 
     // Expand left side sub navigation menus
-    $(document).on("click", '.hasSubActive', function() {
+    $(document).on("click", '.hasSubActive', function () {
         $(this).toggleClass('active');
         $(this).children('ul').toggleClass('bigList');
         $(this).children('a').children('.arrowRight').toggleClass('fa-angle-down');
     });
 
-    if(isDevice) {
-        $('.hasSub').click(function() {
+    if (isDevice) {
+        $('.hasSub').click(function () {
             $('.leftNav ul li').not(this).removeClass('onTap');
             $(this).toggleClass('onTap');
         });
     }
 
     // functionality for custom dropdown select list
-    $('.dropdown-select li a').click(function() {
+    $('.dropdown-select li a').click(function () {
         if (!($(this).parent().hasClass('disabled'))) {
             $(this).prev().prop("checked", true);
             $(this).parent().siblings().removeClass('active');
@@ -498,11 +498,11 @@
         range: true,
         min: 0,
         max: 2000000,
-        values: [500000, 1500000],
+        values: [0, 2000000],
         step: 10000,
-        slide: function(event, ui) {
+        slide: function (event, ui) {
             $('.priceSlider .sliderTooltip .stLabel').html(
-                '$' + ui.values[0].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + 
+                '$' + ui.values[0].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") +
                 ' <span class="fa fa-arrows-h"></span> ' +
                 '$' + ui.values[1].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
             );
@@ -513,7 +513,7 @@
         }
     });
     $('.priceSlider .sliderTooltip .stLabel').html(
-        '$' + $('.priceSlider').slider('values', 0).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + 
+        '$' + $('.priceSlider').slider('values', 0).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") +
         ' <span class="fa fa-arrows-h"></span> ' +
         '$' + $('.priceSlider').slider('values', 1).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
     );
@@ -525,14 +525,14 @@
     $('.areaSlider').slider({
         range: true,
         min: 0,
-        max: 20000,
-        values: [5000, 10000],
+        max: 100000,
+        values: [0, 100000],
         step: 10,
-        slide: function(event, ui) {
+        slide: function (event, ui) {
             $('.areaSlider .sliderTooltip .stLabel').html(
-                ui.values[0].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + ' Sq Ft' +
+                ui.values[0].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + ' m<sup>2</sup>' +
                 ' <span class="fa fa-arrows-h"></span> ' +
-                ui.values[1].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + ' Sq Ft'
+                ui.values[1].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + ' m<sup>2</sup>'
             );
             var areaSliderRangeLeft = parseInt($('.areaSlider .ui-slider-range').css('left'));
             var areaSliderRangeWidth = $('.areaSlider .ui-slider-range').width();
@@ -541,47 +541,57 @@
         }
     });
     $('.areaSlider .sliderTooltip .stLabel').html(
-        $('.areaSlider').slider('values', 0).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + ' Sq Ft' +
+        $('.areaSlider').slider('values', 0).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + ' m<sup>2</sup>' +
         ' <span class="fa fa-arrows-h"></span> ' +
-        $('.areaSlider').slider('values', 1).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + ' Sq Ft'
+        $('.areaSlider').slider('values', 1).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + ' m<sup>2</sup>'
     );
     var areaSliderRangeLeft = parseInt($('.areaSlider .ui-slider-range').css('left'));
     var areaSliderRangeWidth = $('.areaSlider .ui-slider-range').width();
     var areaSliderLeft = areaSliderRangeLeft + ( areaSliderRangeWidth / 2 ) - ( $('.areaSlider .sliderTooltip').width() / 2 );
     $('.areaSlider .sliderTooltip').css('left', areaSliderLeft);
 
-    $('.volume .btn-round-right').click(function() {
+    $('.volume .btn-round-right').click(function () {
         var currentVal = parseInt($(this).siblings('input').val());
         if (currentVal < 10) {
             $(this).siblings('input').val(currentVal + 1);
         }
     });
-    $('.volume .btn-round-left').click(function() {
+    $('.volume .btn-round-left').click(function () {
         var currentVal = parseInt($(this).siblings('input').val());
         if (currentVal > 1) {
             $(this).siblings('input').val(currentVal - 1);
         }
     });
 
-    $('.handleFilter').click(function() {
-        $('.filterForm').slideToggle(200);
+    // Show & Hiden Advance Filters
+    $('#showAdvancedFilter').click(function () {
+        var $this = $(this);
+        $this.toggle();
+        $('#hideAdvancedFilter').toggle();
+        $('#advancedFilter').slideToggle(300);
+    });
+    $('#hideAdvancedFilter').click(function () {
+        var $this = $(this);
+        $this.toggle();
+        $('#showAdvancedFilter').toggle();
+        $('#advancedFilter').slideToggle(300);
     });
 
     //Enable swiping
-    $(".carousel-inner").swipe( {
-        swipeLeft:function(event, direction, distance, duration, fingerCount) {
-            $(this).parent().carousel('next'); 
+    $(".carousel-inner").swipe({
+        swipeLeft: function (event, direction, distance, duration, fingerCount) {
+            $(this).parent().carousel('next');
         },
-        swipeRight: function() {
+        swipeRight: function () {
             $(this).parent().carousel('prev');
         }
     });
 
-    $(".carousel-inner .card").click(function() {
+    $(".carousel-inner .card").click(function () {
         window.open($(this).attr('data-linkto'), '_self');
     });
 
-    $('#content').scroll(function() {
+    $('#content').scroll(function () {
         if ($('.comments').length > 0) {
             var visible = $('.comments').visible(true);
             if (visible) {
@@ -592,7 +602,7 @@
         }
     });
 
-    $('.btn').click(function() {
+    $('.btn').click(function () {
         if ($(this).is('[data-toggle-class]')) {
             $(this).toggleClass('active ' + $(this).attr('data-toggle-class'));
         }
@@ -624,7 +634,10 @@
         slide: repositionTooltip,
         stop: repositionTooltip
     });
-    $("#slider1 .ui-slider-handle:first").tooltip({ title: $("#slider1").slider("value"), trigger: "manual"}).tooltip("show");
+    $("#slider1 .ui-slider-handle:first").tooltip({
+        title: $("#slider1").slider("value"),
+        trigger: "manual"
+    }).tooltip("show");
 
     $("#slider2").slider({
         range: "max",
@@ -634,18 +647,27 @@
         slide: repositionTooltip,
         stop: repositionTooltip
     });
-    $("#slider2 .ui-slider-handle:first").tooltip({ title: $("#slider2").slider("value"), trigger: "manual"}).tooltip("show");
+    $("#slider2 .ui-slider-handle:first").tooltip({
+        title: $("#slider2").slider("value"),
+        trigger: "manual"
+    }).tooltip("show");
 
     $("#slider3").slider({
         range: true,
         min: 0,
         max: 500,
-        values: [ 190, 350 ],
+        values: [190, 350],
         slide: repositionTooltip,
         stop: repositionTooltip
     });
-    $("#slider3 .ui-slider-handle:first").tooltip({ title: $("#slider3").slider("values", 0), trigger: "manual"}).tooltip("show");
-    $("#slider3 .ui-slider-handle:last").tooltip({ title: $("#slider3").slider("values", 1), trigger: "manual"}).tooltip("show");
+    $("#slider3 .ui-slider-handle:first").tooltip({
+        title: $("#slider3").slider("values", 0),
+        trigger: "manual"
+    }).tooltip("show");
+    $("#slider3 .ui-slider-handle:last").tooltip({
+        title: $("#slider3").slider("values", 1),
+        trigger: "manual"
+    }).tooltip("show");
 
     $('#autocomplete').autocomplete({
         source: ["ActionScript", "AppleScript", "Asp", "BASIC", "C", "C++", "Clojure", "COBOL", "ColdFusion", "Erlang", "Fortran", "Groovy", "Haskell", "Java", "JavaScript", "Lisp", "Perl", "PHP", "Python", "Ruby", "Scala", "Scheme"],
@@ -653,7 +675,7 @@
             var label = ui.item.label;
             var value = ui.item.value;
             var me = $(this);
-            setTimeout(function() {
+            setTimeout(function () {
                 me.val(value);
             }, 1);
         }
@@ -672,7 +694,7 @@
         var address = document.getElementById('address');
         var addressAuto = new google.maps.places.Autocomplete(address);
 
-        google.maps.event.addListener(addressAuto, 'place_changed', function() {
+        google.maps.event.addListener(addressAuto, 'place_changed', function () {
             var place = addressAuto.getPlace();
 
             if (!place.geometry) {
