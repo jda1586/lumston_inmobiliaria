@@ -86,14 +86,14 @@
             <div class="clearfix"></div>
         </a>
     </div>
-    {{--<div class="headerUserWraper">
+    <div class="headerUserWraper">
         <a href="{!! route('properties.index') !!}" class="headerUser">
             <div class="userTop pull-left">
                 <span class="headerUserName">Propiedades</span>
             </div>
             <div class="clearfix"></div>
         </a>
-    </div>--}}
+    </div>
 
     <a href="#" class="mapHandler"><span class="icon-map"></span></a>
     <div class="clearfix"></div>

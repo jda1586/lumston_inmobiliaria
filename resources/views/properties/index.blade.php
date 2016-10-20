@@ -542,6 +542,10 @@
         var _latitude;
         var _longitude;
 
+        @if($city->id > 0)
+            _latitude = {!! $city->latitude !!};
+            _longitude = {!! $city->longitude !!};
+        @else
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
         }
@@ -556,9 +560,6 @@
             _latitude = 20.6690251;
             _longitude = -103.3388489;
         }
-        @if($city->id > 0)
-            _latitude = {!! $city->latitude !!};
-        _longitude = {!! $city->longitude !!};
         @endif
     </script>
     @parent
