@@ -40,7 +40,7 @@
         <a href="#" class="home-navHandler visible-xs"><span class="fa fa-bars"></span></a>
         <div class="home-nav">
             <ul>
-                {{--<li><a href="{!! route("properties.index") !!}">Propiedades</a></li>--}}
+                <li><a href="{!! route("properties.index") !!}">Propiedades</a></li>
                 <li><a href="#">Vender / Rentar</a></li>
                 {{--<li><a href="#">Blog</a></li>--}}
                 <li><a href="#">Contacto</a></li>
@@ -233,7 +233,7 @@
         <h2 class="osLight">Lo mas nuevo</h2>
         <div class="row pb40">
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <a href="single.html" class="propWidget-2">
+                <a href="#" class="propWidget-2">
                     <div class="fig">
                         <img src="images/prop/1-1.png" alt="Modern Residence in New York">
                         <img class="blur" src="images/prop/1-1.png" alt="Modern Residence in New York">
@@ -253,7 +253,7 @@
                 </a>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <a href="single.html" class="propWidget-2">
+                <a href="#" class="propWidget-2">
                     <div class="fig">
                         <img src="images/prop/2-1.png" alt="Hauntingly Beautiful Estate">
                         <img class="blur" src="images/prop/2-1.png" alt="Hauntingly Beautiful Estate">
@@ -273,7 +273,7 @@
                 </a>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <a href="single.html" class="propWidget-2">
+                <a href="#" class="propWidget-2">
                     <div class="fig">
                         <img src="images/prop/3-1.png" alt="Luxury Mansion">
                         <img class="blur" src="images/prop/3-1.png" alt="Luxury Mansion">
@@ -293,7 +293,7 @@
                 </a>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <a href="single.html" class="propWidget-2">
+                <a href="#" class="propWidget-2">
                     <div class="fig">
                         <img src="images/prop/4-1.png" alt="Sophisticated Residence">
                         <img class="blur" src="images/prop/4-1.png" alt="Sophisticated Residence">
@@ -313,7 +313,7 @@
                 </a>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <a href="single.html" class="propWidget-2">
+                <a href="#" class="propWidget-2">
                     <div class="fig">
                         <img src="images/prop/5-1.png" alt="House With a Lovely Glass">
                         <img class="blur" src="images/prop/5-1.png" alt="House With a Lovely Glass">
@@ -333,7 +333,7 @@
                 </a>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <a href="single.html" class="propWidget-2">
+                <a href="#" class="propWidget-2">
                     <div class="fig">
                         <img src="images/prop/1-1.png" alt="Modern Residence in New York">
                         <img class="blur" src="images/prop/1-1.png" alt="Modern Residence in New York">

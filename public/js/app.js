@@ -221,7 +221,7 @@
 
         if ($('#address').length > 0) {
             newMarker = new google.maps.Marker({
-                position: new google.maps.LatLng(_latitude, _longitude),
+                position: new google.maps.LatLng(20.6690251, -103.3388489),
                 map: map,
                 icon: new google.maps.MarkerImage(
                     'images/marker-new.png',

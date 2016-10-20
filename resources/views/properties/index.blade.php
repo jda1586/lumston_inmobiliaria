@@ -14,7 +14,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="form-group">
                         <label>Ciudad</label>
-                        <input type="text" class="form-control auto" name="search_city" id="search_city"
+                        <input type="text" class="form-control auto" name="city" id="search_city"
                                value="{{ $city->name }}" placeholder="Ciudad" autocomplete="off">
                     </div>
                 </div>
@@ -42,11 +42,12 @@
                             <span class="fa fa-angle-down dsArrow"></span>
                         </a>
                         <ul class="dropdown-menu dropdown-select full" role="menu">
-                            <li class="active"><input type="radio" name="pType" checked="checked"><a href="#">Todos</a>
+                            <li class="active"><input type="radio" name="p_inmob" checked="checked" value="all">
+                                <a href="#">Todos</a>
                             </li>
-                            <li><input type="radio" name="pType"><a href="#">Casas</a></li>
-                            <li><input type="radio" name="pType"><a href="#">Deptos.</a></li>
-                            <li><input type="radio" name="pType"><a href="#">Terrenos</a></li>
+                            <li><input type="radio" name="p_inmob" value="house"><a href="#">Casas</a></li>
+                            <li><input type="radio" name="p_inmob" value="depto"><a href="#">Deptos.</a></li>
+                            <li><input type="radio" name="p_inmob" value="ground"><a href="#">Terrenos</a></li>
                         </ul>
                     </div>
                 </div>
@@ -59,10 +60,11 @@
                             <span class="fa fa-angle-down dsArrow"></span>
                         </a>
                         <ul class="dropdown-menu dropdown-select full" role="menu">
-                            <li class="active"><input type="radio" name="pType" checked="checked"><a href="#">Todos</a>
+                            <li class="active"><input type="radio" name="p_type" checked="checked" value="all">
+                                <a href="#">Todos</a>
                             </li>
-                            <li><input type="radio" name="pType"><a href="#">Venta</a></li>
-                            <li><input type="radio" name="pType"><a href="#">Renta</a></li>
+                            <li><input type="radio" name="p_type" value="sale"><a href="#">Venta</a></li>
+                            <li><input type="radio" name="p_type" value="rent"><a href="#">Renta</a></li>
                         </ul>
                     </div>
                 </div>
@@ -79,13 +81,14 @@
                                 <span class="fa fa-angle-down dsArrow"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-select full" role="menu">
-                                <li class="active"><input type="radio" name="pType" checked="checked"><a href="#">Habitaciones</a>
+                                <li class="active"><input type="radio" name="p_bedrooms" checked="checked" value="0">
+                                    <a href="#">Habitaciones</a>
                                 </li>
-                                <li><input type="radio" name="pType"><a href="#">1+</a></li>
-                                <li><input type="radio" name="pType"><a href="#">2+</a></li>
-                                <li><input type="radio" name="pType"><a href="#">3+</a></li>
-                                <li><input type="radio" name="pType"><a href="#">4+</a></li>
-                                <li><input type="radio" name="pType"><a href="#">5+</a></li>
+                                <li><input type="radio" name="p_bedrooms" value="1"><a href="#">1+</a></li>
+                                <li><input type="radio" name="p_bedrooms" value="2"><a href="#">2+</a></li>
+                                <li><input type="radio" name="p_bedrooms" value="3"><a href="#">3+</a></li>
+                                <li><input type="radio" name="p_bedrooms" value="4"><a href="#">4+</a></li>
+                                <li><input type="radio" name="p_bedrooms" value="5"><a href="#">5+</a></li>
                             </ul>
                         </div>
 
@@ -536,8 +539,27 @@
 @endsection
 @section('_footer')
     <script>
-        var _latitude = {!! $city->latitude !!};
-        var _longitude = {!! $city->longitude !!};
+        var _latitude;
+        var _longitude;
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+        }
+        //Get the latitude and the longitude;
+        function successFunction(position) {
+            _latitude = position.coords.latitude;
+            _longitude = position.coords.longitude;
+            /*codeLatLng(lat, lng)*/
+        }
+
+        function errorFunction() {
+            _latitude = 20.6690251;
+            _longitude = -103.3388489;
+        }
+        @if($city->id > 0)
+            _latitude = {!! $city->latitude !!};
+        _longitude = {!! $city->longitude !!};
+        @endif
     </script>
     @parent
 @endsection

@@ -38,25 +38,34 @@ class PropertiesController extends Controller
     ];*/
 
         $validator = Validator::make(Input::all(), [
-            'city' => 'required|min:4|max:255'
+            /*'city' => 'required|min:4|max:255'*/
         ]);
         if ($validator->fails())
             return redirect()->back()->withErrors($validator)->withInput();
 
-        $city = City::where(function ($q) {
-            $words = explode(' ', Input::get('city'));
-            foreach ($words as $word) {
-                $charts = [',', '/', '[', ']', '(', ')', '.'];
-                $q->orWhere('name', 'like', '%' . str_replace($charts, '', $word) . '%');
-            }
-        })->first();
+        if (Input::has('city')) {
+            $city = City::where(function ($q) {
+                $words = explode(' ', Input::get('city'));
+                foreach ($words as $word) {
+                    $charts = [',', '/', '[', ']', '(', ')', '.'];
+                    $q->orWhere('name', 'like', '%' . str_replace($charts, '', $word) . '%');
+                }
+            })->first();
+        } else {
+            $city = new City();
+        }
+        /*return redirect()->back()->with('city', 'No encontramos la ciudad.')->withInput();*/
 
-        if (!$city)
-            return redirect()->back()->with('city', 'No encontramos la ciudad.');
 
-        $properties = Property::where('city_id', $city->id)
-            ->where('price', '>=', Input::get('price.0'))
-            ->where('price', '<=', Input::get('price.1'))
+        $properties = Property::where(function ($q) use ($city) {
+            if (Input::has('city') && $city->id > 0)
+                $q->where('city_id', $city->id);
+        })
+            ->where(function ($q) {
+                if (Input::has('price'))
+                    $q->where('price', '>=', Input::get('price.0'))
+                        ->where('price', '<=', Input::get('price.1'));
+            })
             ->where(function ($q) {
                 if (Input::has('inmobs') && Input::get('inmobs') != 'all')
                     $q->where('type', Input::get('inmobs'));
@@ -65,9 +74,20 @@ class PropertiesController extends Controller
                 if (Input::has('type') && Input::get('type') != 'all')
                     $q->where('status', 'for_' . Input::get('type'));
             })
+            ->where(function ($q) {
+                if (Input::has('bedrooms')) {
+                    // search
+                }
+            })
+            ->where(function ($q) {
+                if (Input::has('bathrooms')) {
+                    //search
+                }
+            })
             ->get();
+
         return view('properties.index', [
-            'city' => $city,
+            'city' => $city ? $city : new City(),
             'properties' => $properties,
         ]);
     }

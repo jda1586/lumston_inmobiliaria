@@ -547,8 +547,9 @@
     position: relative;*/
 
     padding: 10px;
+    margin-left: 5px;
     display: block;
-    width: 70px;
+    width: 60px;
     /*height: 60px;*/
     color: #fff;
     text-decoration: none;
