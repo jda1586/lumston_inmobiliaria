@@ -460,7 +460,9 @@
                 </div>
             </div>
         </div>
-        <h2 class="osLight">Testimonials</h2>
+
+        {{--AQUI VIDEO--}}
+        {{--<h2 class="osLight">Testimonials</h2>
         <div id="home-testimonials" class="carousel slide carousel-wb mb20" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#home-testimonials" data-slide-to="0" class="active"></li>
@@ -488,7 +490,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--}}
     </div>
 </div>
 
