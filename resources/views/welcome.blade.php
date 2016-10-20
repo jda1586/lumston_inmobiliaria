@@ -34,7 +34,7 @@
     <div class="home-header">
         <div class="home-logo osLight">
             <span class="fa">
-                <img src="{!! asset('images/web/logo_white.png') !!}">
+                <img src="{!! asset('images/web/logo_white.png') !!}" width="120px">
             </span>
         </div>
         <a href="#" class="home-navHandler visible-xs"><span class="fa fa-bars"></span></a>
@@ -62,7 +62,11 @@
                 <div class="form-group">
                     <label><b>Ciudad</b></label>
                     <input type="text" class="form-control auto" name="city" id="city"
-                           value="Guadalajara" placeholder="Ciudad" autocomplete="off">
+                           value="" placeholder="Ciudad" autocomplete="off">
+
+                    @foreach($errors->get('city') as $error)
+                        <span style="color: red; margin: 10px;">{{ $error }}</span>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -87,11 +91,13 @@
                         <span class="fa fa-angle-down dsArrow"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-select full" role="menu">
-                        <li class="active"><input type="radio" name="pType" checked="checked"><a href="#">Todos</a>
+                        <li class="active">
+                            <input type="radio" name="p_inmob" checked="checked" value="all">
+                            <a href="#">Todos</a>
                         </li>
-                        <li><input type="radio" name="pType"><a href="#">Casas</a></li>
-                        <li><input type="radio" name="pType"><a href="#">Deptos.</a></li>
-                        <li><input type="radio" name="pType"><a href="#">Terrenos</a></li>
+                        <li><input type="radio" name="p_inmob" value="house"><a href="#">Casas</a></li>
+                        <li><input type="radio" name="p_inmob" value="depto"><a href="#">Deptos.</a></li>
+                        <li><input type="radio" name="p_inmob" value="ground"><a href="#">Terrenos</a></li>
                     </ul>
                 </div>
             </div>
@@ -104,10 +110,12 @@
                         <span class="fa fa-angle-down dsArrow"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-select full" role="menu">
-                        <li class="active"><input type="radio" name="pType" checked="checked"><a href="#">Todos</a>
+                        <li class="active">
+                            <input type="radio" name="p_type" checked="checked" value="all">
+                            <a href="#">Todos</a>
                         </li>
-                        <li><input type="radio" name="pType"><a href="#">Venta</a></li>
-                        <li><input type="radio" name="pType"><a href="#">Renta</a></li>
+                        <li><input type="radio" name="p_type" value="sale"><a href="#">Venta</a></li>
+                        <li><input type="radio" name="p_type" value="rent"><a href="#">Renta</a></li>
                     </ul>
                 </div>
             </div>
@@ -123,14 +131,15 @@
                         <span class="fa fa-angle-down dsArrow"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-select full" role="menu">
-                        <li class="active"><input type="radio" name="pType" checked="checked">
+                        <li class="active">
+                            <input type="radio" name="p_bedrooms" checked="checked" value="0">
                             <a href="#">Habitaciones</a>
                         </li>
-                        <li><input type="radio" name="pType"><a href="#">1+</a></li>
-                        <li><input type="radio" name="pType"><a href="#">2+</a></li>
-                        <li><input type="radio" name="pType"><a href="#">3+</a></li>
-                        <li><input type="radio" name="pType"><a href="#">4+</a></li>
-                        <li><input type="radio" name="pType"><a href="#">5+</a></li>
+                        <li><input type="radio" name="p_bedrooms" value="1"><a href="#">1+</a></li>
+                        <li><input type="radio" name="p_bedrooms" value="2"><a href="#">2+</a></li>
+                        <li><input type="radio" name="p_bedrooms" value="3"><a href="#">3+</a></li>
+                        <li><input type="radio" name="p_bedrooms" value="4"><a href="#">4+</a></li>
+                        <li><input type="radio" name="p_bedrooms" value="5"><a href="#">5+</a></li>
                     </ul>
                 </div>
 
@@ -145,13 +154,15 @@
                         <span class="fa fa-angle-down dsArrow"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-select full" role="menu">
-                        <li class="active"><input type="radio" name="pType" checked="checked"><a
-                                    href="#">Baños</a></li>
-                        <li><input type="radio" name="pType"><a href="#">1+</a></li>
-                        <li><input type="radio" name="pType"><a href="#">2+</a></li>
-                        <li><input type="radio" name="pType"><a href="#">3+</a></li>
-                        <li><input type="radio" name="pType"><a href="#">4+</a></li>
-                        <li><input type="radio" name="pType"><a href="#">5+</a></li>
+                        <li class="active">
+                            <input type="radio" name="p_bathrooms" checked="checked" value="0">
+                            <a href="#">Baños</a>
+                        </li>
+                        <li><input type="radio" name="p_bathrooms" value="1"><a href="#">1+</a></li>
+                        <li><input type="radio" name="p_bathrooms" value="2"><a href="#">2+</a></li>
+                        <li><input type="radio" name="p_bathrooms" value="3"><a href="#">3+</a></li>
+                        <li><input type="radio" name="p_bathrooms" value="4"><a href="#">4+</a></li>
+                        <li><input type="radio" name="p_bathrooms" value="5"><a href="#">5+</a></li>
                     </ul>
                 </div>
 
@@ -160,7 +171,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
                 <div class="form-group">
-                    <a href="javascript:void(0);" class="btn btn-green mb-10" id="filterPropertySubmit">
+                    <a href="#" class="btn btn-green mb-10" id="search">
                         Buscar
                     </a>
                 </div>
@@ -711,7 +722,9 @@
         </div>
     </div>
 </div>
-
+<script>
+    var URL_PROPERTIES = "{!! route('properties.index') !!}";
+</script>
 <script src="js/jquery-2.1.1.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/jquery-ui-touch-punch.js"></script>

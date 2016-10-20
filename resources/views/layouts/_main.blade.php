@@ -27,7 +27,7 @@
 <div id="header">
     <div class="logo">
         <a href="{!! route('welcome') !!}">
-            <img src="{!! asset('images/web/isotipo_white.png') !!}" />
+            <img src="{!! asset('images/web/iso128x128_bco.png') !!}" />
         </a>
         {{--<a href="{!! route('welcome') !!}">
             <span class="fa fa-home marker"></span>

@@ -15,7 +15,7 @@
                     <div class="form-group">
                         <label>Ciudad</label>
                         <input type="text" class="form-control auto" name="search_city" id="search_city"
-                               value="Guadalajara" placeholder="Ciudad" autocomplete="off">
+                               value="{{ $city->name }}" placeholder="Ciudad" autocomplete="off">
                     </div>
                 </div>
             </div>
@@ -534,4 +534,10 @@
         </ul>
     </div>
 @endsection
-
+@section('_footer')
+    <script>
+        var _latitude = {!! $city->latitude !!};
+        var _longitude = {!! $city->longitude !!};
+    </script>
+    @parent
+@endsection
