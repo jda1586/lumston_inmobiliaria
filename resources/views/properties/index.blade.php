@@ -200,9 +200,9 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="form-group">
-                        <button type="submit" class="btn btn-green mb-10" id="filterPropertySubmit">
+                        <a href="#" class="btn btn-green mb-10" id="filterPropertySubmit">
                             Aplicar Filtros
-                        </button>
+                        </a>
                         <a href="javascript:void(0);" class="btn btn-gray display mb-10" id="showAdvancedFilter">
                             Mostrar Filtros Avanzados
                         </a>
@@ -218,6 +218,7 @@
     </div>
     <div class="resultsList">
         <div class="row">
+
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                 <a href="{!! route('properties.show',['id'=>1]) !!}" class="card">
                     <div class="figure">
@@ -282,6 +283,7 @@
                     <div class="clearfix"></div>
                 </a>
             </div>
+
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                 <a href="{!! route('properties.show',['id'=>1]) !!}" class="card">
                     <div class="figure">
@@ -575,6 +577,7 @@
             _longitude = -103.3388489;
         }
         @endif
+        var URL_PROPERTIES = "{!! route('properties.index') !!}";
     </script>
     @parent
 @endsection

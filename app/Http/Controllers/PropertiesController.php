@@ -101,4 +101,9 @@ class PropertiesController extends Controller
     {
         return response()->json(['test' => true]);
     }
+
+    public function create()
+    {
+
+    }
 }

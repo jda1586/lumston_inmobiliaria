@@ -148,24 +148,10 @@
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 formItem">
 
-                <div class="formField">
-                    <label><b>Baños</b></label>
-                    <a href="#" data-toggle="dropdown"
-                       class="btn btn-gray dropdown-btn dropdown-toggle propTypeSelect">
-                        <span class="dropdown-label">Baños</span>
-                        <span class="fa fa-angle-down dsArrow"></span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-select full" role="menu">
-                        <li class="active">
-                            <input type="radio" name="p_bathrooms" checked="checked" value="0">
-                            <a href="#">Baños</a>
-                        </li>
-                        <li><input type="radio" name="p_bathrooms" value="1"><a href="#">1+</a></li>
-                        <li><input type="radio" name="p_bathrooms" value="2"><a href="#">2+</a></li>
-                        <li><input type="radio" name="p_bathrooms" value="3"><a href="#">3+</a></li>
-                        <li><input type="radio" name="p_bathrooms" value="4"><a href="#">4+</a></li>
-                        <li><input type="radio" name="p_bathrooms" value="5"><a href="#">5+</a></li>
-                    </ul>
+                <div class="form-group">
+                    <label for="search_neighborhood">Colonia / Delegacion</label>
+                    <input type="text" class="form-control" name="neighborhood" id="search_neighborhood"
+                           value="" placeholder="Colonia / Delegacion" autocomplete="off">
                 </div>
 
             </div>

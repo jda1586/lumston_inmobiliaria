@@ -1,9 +1,11 @@
 var price_set = [0, 2000000];
+var ground_set = [0, 100000];
 function pSearch() {
     return URL_PROPERTIES + '?' + $.param(
             {
                 city: $('#city').val(),
                 price: price_set,
+                ground: ground_set,
                 inmobs: $('input[name=p_inmob]:checked').val(),
                 type: $('input[name=p_type]:checked').val(),
                 bedrooms: $('input[name=p_bedrooms]:checked').val(),
@@ -386,8 +388,8 @@ function pSearch() {
 
     $('.priceSlider').slider({
         range: true,
-        min: 0,
-        max: 2000000,
+        min: price_set[0],
+        max: price_set[1],
         values: [0, 2000000],
         step: 10000,
         slide: function (event, ui) {
@@ -400,6 +402,9 @@ function pSearch() {
             var priceSliderRangeWidth = $('.priceSlider .ui-slider-range').width();
             var priceSliderLeft = priceSliderRangeLeft + ( priceSliderRangeWidth / 2 ) - ( $('.priceSlider .sliderTooltip').width() / 2 );
             $('.priceSlider .sliderTooltip').css('left', priceSliderLeft);
+        },
+        change: function (event, ui) {
+            price_set = ui.values;
         }
     });
     $('.priceSlider .sliderTooltip .stLabel').html(
@@ -414,8 +419,8 @@ function pSearch() {
 
     $('.areaSlider').slider({
         range: true,
-        min: 0,
-        max: 100000,
+        min: ground_set[0],
+        max: ground_set[1],
         values: [0, 100000],
         step: 10,
         slide: function (event, ui) {
@@ -428,6 +433,9 @@ function pSearch() {
             var areaSliderRangeWidth = $('.areaSlider .ui-slider-range').width();
             var areaSliderLeft = areaSliderRangeLeft + ( areaSliderRangeWidth / 2 ) - ( $('.areaSlider .sliderTooltip').width() / 2 );
             $('.areaSlider .sliderTooltip').css('left', areaSliderLeft);
+        },
+        change: function (event, ui) {
+            ground_set = ui.values;
         }
     });
     $('.areaSlider .sliderTooltip .stLabel').html(
@@ -626,6 +634,9 @@ function pSearch() {
 
     });
 
+    $('#filterPropertySubmit').click(function () {
+        window.location = pSearch();
+    });
 
 })
 (jQuery);

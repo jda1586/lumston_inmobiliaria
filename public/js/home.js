@@ -7,7 +7,7 @@ function pSearch() {
                 inmobs: $('input[name=p_inmob]:checked').val(),
                 type: $('input[name=p_type]:checked').val(),
                 bedrooms: $('input[name=p_bedrooms]:checked').val(),
-                bathrooms: $('input[name=p_bathrooms]:checked').val(),
+                neighborhood: $('input[name=neighborhood]').val(),
             }
         );
 }
