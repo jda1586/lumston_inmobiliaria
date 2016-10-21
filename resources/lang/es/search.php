@@ -6,10 +6,8 @@
  * Time: 12:28 PM
  */
 return [
-    'no_found' => [
-        'he' => 'No encontramos ninguna :attribute',
-        'she' => 'No encontramos ningun :attribute',
-    ],
+    'for_sale' => 'VENTA',
+    'for_rent' => 'RENTA',
 
     /*
      * Custon attributes

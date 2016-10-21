@@ -11,8 +11,15 @@
 |
 */
 
+use App\Property;
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', [
+        'price_limit' => [
+            Property::min('price'),
+            Property::max('price')
+        ]
+    ]);
 })->name('welcome');
 
 Route::group(['prefix' => 'properties'], function () {

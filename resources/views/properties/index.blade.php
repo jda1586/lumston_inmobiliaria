@@ -4,6 +4,9 @@
 
 @section('content')
     <div class="filter">
+        <div style="padding: 5px; background-color: #0eaaa6; color: white;">
+            Se han encontrado: <b>{{ $properties->count() }}</b> propiedades
+        </div>
         <h1 class="osLight">Filtra tus resultados</h1>
         <div class="clearfix"></div>
 
@@ -14,8 +17,9 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="form-group">
                         <label>Ciudad</label>
-                        <input type="text" class="form-control auto" name="city" id="search_city"
-                               value="{{ $city->name }}" placeholder="Ciudad" autocomplete="off">
+                        <input type="text" class="form-control auto" name="city" id="city"
+                               value="{{ $city ? $city->name: $input['city'] }}" placeholder="Ciudad"
+                               autocomplete="off">
                     </div>
                 </div>
             </div>
@@ -171,7 +175,8 @@
                                 <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
                                     <div class="checkbox custom-checkbox">
                                         <label>
-                                            <input class="p_amenities" type="checkbox" name="air_conditioning" value="1">
+                                            <input class="p_amenities" type="checkbox" name="air_conditioning"
+                                                   value="1">
                                             <span class="fa fa-check"></span> Aire Acondicionado
                                         </label>
                                     </div>
@@ -555,12 +560,34 @@
 
 @section('_footer')
     <script>
+        var price_set = @if(isset($input['price'])) [{!! $input['price'][0] !!},{!! $input['price'][1] !!}]
+                @else [{!! $price_limit[0] !!},{!! $price_limit[1] !!}] @endif;
+        var price_limit = [{!! $price_limit[0] !!},{!! $price_limit[1] !!}];
+
         var _latitude;
         var _longitude;
+        var _props = [@foreach($properties as $property)
+        {
+            title: "{{ $property->title }}",
+            image: '1-1-thmb.png',
+            type: '{{ trans('search.'.$property->status) }}',
+            price: '${{ number_format($property->price, 2, '.',',') }}',
+            address: '{{ $property->address }}',
+            bedrooms: '{{ $property->bedrooms }}',
+            bathrooms: '2',
+            area: '3430 m<sup>2</sup>',
+            position: {
+                lat: {{ $property->latitude }},
+                lng: {{ $property->longitude }}
+            },
+            markerIcon: "marker-green.png"
+        },
+            @endforeach
+        ];
 
         @if($city->id > 0)
             _latitude = {!! $city->latitude !!};
-            _longitude = {!! $city->longitude !!};
+        _longitude = {!! $city->longitude !!};
         @else
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
@@ -576,7 +603,7 @@
             _latitude = 20.6690251;
             _longitude = -103.3388489;
         }
-        @endif
+                @endif
         var URL_PROPERTIES = "{!! route('properties.index') !!}";
     </script>
     @parent

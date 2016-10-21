@@ -1,4 +1,3 @@
-var price_set = [0, 2000000];
 function pSearch() {
     return URL_PROPERTIES + '?' + $.param(
             {
@@ -348,9 +347,9 @@ function pSearch() {
     // Price Slider
     $('.priceSlider').slider({
         range: true,
-        min: price_set[0],
-        max: price_set[1],
-        values: [0, 2000000],
+        min: price_limit[0],
+        max: price_limit[1],
+        values: price_limit,
         step: 10000,
         slide: function (event, ui) {
             $('.priceSlider .sliderTooltip .stLabel').html(
