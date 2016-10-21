@@ -7,7 +7,7 @@
         <h1 class="osLight">Filtra tus resultados</h1>
         <div class="clearfix"></div>
 
-        <form class="filterForm">
+        <form class="filterForm" method="get" action="{!! route('properties.index') !!}">
             <div class="row">
             </div>
             <div class="row" id="filterCity" style="">
@@ -74,14 +74,15 @@
                     <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 formItem">
 
                         <div class="formField">
-                            <label>Habitaciones</label>
+                            <label><b>Habitaciones</b></label>
                             <a href="#" data-toggle="dropdown"
                                class="btn btn-gray dropdown-btn dropdown-toggle propTypeSelect">
                                 <span class="dropdown-label">Habitaciones</span>
                                 <span class="fa fa-angle-down dsArrow"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-select full" role="menu">
-                                <li class="active"><input type="radio" name="p_bedrooms" checked="checked" value="0">
+                                <li class="active">
+                                    <input type="radio" name="p_bedrooms" checked="checked" value="0">
                                     <a href="#">Habitaciones</a>
                                 </li>
                                 <li><input type="radio" name="p_bedrooms" value="1"><a href="#">1+</a></li>
@@ -96,20 +97,22 @@
                     <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 formItem">
 
                         <div class="formField">
-                            <label>Baños</label>
+                            <label><b>Baños</b></label>
                             <a href="#" data-toggle="dropdown"
                                class="btn btn-gray dropdown-btn dropdown-toggle propTypeSelect">
                                 <span class="dropdown-label">Baños</span>
                                 <span class="fa fa-angle-down dsArrow"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-select full" role="menu">
-                                <li class="active"><input type="radio" name="pType" checked="checked"><a
-                                            href="#">Baños</a></li>
-                                <li><input type="radio" name="pType"><a href="#">1+</a></li>
-                                <li><input type="radio" name="pType"><a href="#">2+</a></li>
-                                <li><input type="radio" name="pType"><a href="#">3+</a></li>
-                                <li><input type="radio" name="pType"><a href="#">4+</a></li>
-                                <li><input type="radio" name="pType"><a href="#">5+</a></li>
+                                <li class="active">
+                                    <input type="radio" name="p_bathrooms" checked="checked" value="0">
+                                    <a href="#">Baños</a>
+                                </li>
+                                <li><input type="radio" name="p_bathrooms" value="1"><a href="#">1+</a></li>
+                                <li><input type="radio" name="p_bathrooms" value="2"><a href="#">2+</a></li>
+                                <li><input type="radio" name="p_bathrooms" value="3"><a href="#">3+</a></li>
+                                <li><input type="radio" name="p_bathrooms" value="4"><a href="#">4+</a></li>
+                                <li><input type="radio" name="p_bathrooms" value="5"><a href="#">5+</a></li>
                             </ul>
                         </div>
 
@@ -133,7 +136,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 formItem">
                         <div class="form-group">
                             <label for="search_neighborhood">Colonia / Delegacion</label>
-                            <input type="text" class="form-control" name="search_neighborhood" id="search_neighborhood"
+                            <input type="text" class="form-control" name="neighborhood" id="search_neighborhood"
                                    value="" placeholder="Colonia / Delegacion" autocomplete="off">
                         </div>
                     </div>
@@ -151,32 +154,42 @@
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
                                     <div class="checkbox custom-checkbox">
-                                        <label><input type="checkbox" name="internet" value="1">
-                                            <span class="fa fa-check"></span> Internet</label>
+                                        <label>
+                                            <input class="p_amenities" type="checkbox" name="internet" value="1">
+                                            <span class="fa fa-check"></span> Internet
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
                                     <div class="checkbox custom-checkbox">
-                                        <label><input type="checkbox" name="balcony" value="1">
-                                            <span class="fa fa-check"></span> Balcon</label>
+                                        <label>
+                                            <input class="p_amenities" type="checkbox" name="balcony" value="1">
+                                            <span class="fa fa-check"></span> Balcon
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
                                     <div class="checkbox custom-checkbox">
-                                        <label><input type="checkbox" name="air_conditioning" value="1">
-                                            <span class="fa fa-check"></span> Aire Acondicionado</label>
+                                        <label>
+                                            <input class="p_amenities" type="checkbox" name="air_conditioning" value="1">
+                                            <span class="fa fa-check"></span> Aire Acondicionado
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
                                     <div class="checkbox custom-checkbox">
-                                        <label><input type="checkbox" name="security_system" value="1">
-                                            <span class="fa fa-check"></span> Seguridad</label>
+                                        <label>
+                                            <input class="p_amenities" type="checkbox" name="security_system" value="1">
+                                            <span class="fa fa-check"></span> Seguridad
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
                                     <div class="checkbox custom-checkbox">
-                                        <label><input type="checkbox" name="garage" value="1">
-                                            <span class="fa fa-check"></span> Cochera</label>
+                                        <label>
+                                            <input class="p_amenities" type="checkbox" name="garage" value="1">
+                                            <span class="fa fa-check"></span> Cochera
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -187,9 +200,9 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="form-group">
-                        <a href="javascript:void(0);" class="btn btn-green mb-10" id="filterPropertySubmit">
+                        <button type="submit" class="btn btn-green mb-10" id="filterPropertySubmit">
                             Aplicar Filtros
-                        </a>
+                        </button>
                         <a href="javascript:void(0);" class="btn btn-gray display mb-10" id="showAdvancedFilter">
                             Mostrar Filtros Avanzados
                         </a>

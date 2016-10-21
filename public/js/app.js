@@ -1,3 +1,17 @@
+var price_set = [0, 2000000];
+function pSearch() {
+    return URL_PROPERTIES + '?' + $.param(
+            {
+                city: $('#city').val(),
+                price: price_set,
+                inmobs: $('input[name=p_inmob]:checked').val(),
+                type: $('input[name=p_type]:checked').val(),
+                bedrooms: $('input[name=p_bedrooms]:checked').val(),
+                bathrooms: $('input[name=p_bathrooms]:checked').val(),
+                neighborhood: $('input[name=neighborhood]').val(),
+            }
+        );
+}
 (function ($) {
     "use strict";
 
@@ -217,11 +231,11 @@
 
         map.mapTypes.set('Styled', styledMapType);
         map.setCenter(new google.maps.LatLng(_latitude, _longitude));
-        map.setZoom(12);
+        map.setZoom(13);
 
         if ($('#address').length > 0) {
             newMarker = new google.maps.Marker({
-                position: new google.maps.LatLng(20.6690251, -103.3388489),
+                position: new google.maps.LatLng(_latitude, _longitude),
                 map: map,
                 icon: new google.maps.MarkerImage(
                     'images/marker-new.png',
@@ -243,7 +257,22 @@
             });
         }
 
+        google.maps.event.addListener(map, 'dragend', function () {
+            $.post('/properties/ajax/search', {_token: _CsrfToken, data: map.getCenter().toUrlValue()})
+                .done(function (resp) {
+                    console.log(resp);
+                });
+        });
+        google.maps.event.addListener(map, 'zoom_changed', function () {
+            $.post('/properties/ajax/search', {_token: _CsrfToken, data: map.getCenter().toUrlValue()})
+                .done(function (resp) {
+                    console.log(resp);
+                });
+        });
+
         addMarkers(props, map);
+
+
     }, 300);
 
     if (!(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch)) {
@@ -251,7 +280,7 @@
         isDevice = false;
     }
 
-    // Header search icon transition
+// Header search icon transition
     $('.search input').focus(function () {
         $('.searchIcon').addClass('active');
     });
@@ -259,7 +288,7 @@
         $('.searchIcon').removeClass('active');
     });
 
-    // Notifications list items pulsate animation
+// Notifications list items pulsate animation
     $('.notifyList a').hover(
         function () {
             $(this).children('.pulse').addClass('pulsate');
@@ -269,7 +298,7 @@
         }
     );
 
-    // Exapnd left side navigation
+// Exapnd left side navigation
     var navExpanded = false;
     $('.navHandler, .closeLeftSide').click(function () {
         if (!navExpanded) {
@@ -298,7 +327,7 @@
         }
     });
 
-    // functionality for map manipulation icon on mobile devices
+// functionality for map manipulation icon on mobile devices
     $('.mapHandler').click(function () {
         if ($('#mapView').hasClass('mob-min') ||
             $('#mapView').hasClass('mob-max') ||
@@ -331,7 +360,7 @@
 
     });
 
-    // Expand left side sub navigation menus
+// Expand left side sub navigation menus
     $(document).on("click", '.hasSubActive', function () {
         $(this).toggleClass('active');
         $(this).children('ul').toggleClass('bigList');
@@ -345,7 +374,7 @@
         });
     }
 
-    // functionality for custom dropdown select list
+// functionality for custom dropdown select list
     $('.dropdown-select li a').click(function () {
         if (!($(this).parent().hasClass('disabled'))) {
             $(this).prev().prop("checked", true);
@@ -424,7 +453,7 @@
         }
     });
 
-    // Show & Hiden Advance Filters
+// Show & Hiden Advance Filters
     $('#showAdvancedFilter').click(function () {
         var $this = $(this);
         $this.toggle();
@@ -438,7 +467,7 @@
         $('#advancedFilter').slideToggle(300);
     });
 
-    //Enable swiping
+//Enable swiping
     $(".carousel-inner").swipe({
         swipeLeft: function (event, direction, distance, duration, fingerCount) {
             $(this).parent().carousel('next');
@@ -550,7 +579,7 @@
 
     $('#datepicker').datepicker();
 
-    // functionality for autocomplete address field
+// functionality for autocomplete address field
     if ($('#address').length > 0) {
         var address = document.getElementById('address');
         var addressAuto = new google.maps.places.Autocomplete(address);
@@ -577,4 +606,26 @@
 
     $('input, textarea').placeholder();
 
-})(jQuery);
+    /*Icon Contact*/
+    $('.icon_contact').click(function () {
+        var $this = $(this);
+        $this.hide();
+        var $modal = $('<div style="width: 300px; height: 150px; background-color: white; box-shadow: 0px 0px 10px gray;' +
+            'position: fixed; z-index: 99999999; right: 40px; bottom: 30px; border-radius: 15px; display: none;">' +
+            '<p align="center" style="border-radius: 15px 15px 0px 0px; padding-top: 5px; font-size: 20px; ' +
+            'color: white; background-color: #0eaaa6;"><b>Contactanos</b></p>' +
+            '</div>');
+        $this.parent().append($modal);
+        $modal.show('fast');
+        $modal.mouseleave(function () {
+            $modal.hide('fast', function () {
+                $this.show();
+                $modal.remove();
+            });
+        });
+
+    });
+
+
+})
+(jQuery);

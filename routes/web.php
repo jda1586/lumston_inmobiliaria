@@ -18,6 +18,9 @@ Route::get('/', function () {
 Route::group(['prefix' => 'properties'], function () {
     Route::get('/', 'PropertiesController@index')->name('properties.index');
     Route::get('/show/{id}', 'PropertiesController@show')->name('properties.show');
+    Route::group(['prefix' => 'ajax'], function () {
+        Route::post('/search', 'PropertiesController@searchAjax')->name('properties.searchAjax');
+    });
 });
 
 Route::group(['middleware' => ''], function () {

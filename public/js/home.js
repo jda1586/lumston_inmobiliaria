@@ -1,3 +1,17 @@
+var price_set = [0, 2000000];
+function pSearch() {
+    return URL_PROPERTIES + '?' + $.param(
+            {
+                city: $('#city').val(),
+                price: price_set,
+                inmobs: $('input[name=p_inmob]:checked').val(),
+                type: $('input[name=p_type]:checked').val(),
+                bedrooms: $('input[name=p_bedrooms]:checked').val(),
+                bathrooms: $('input[name=p_bathrooms]:checked').val(),
+            }
+        );
+}
+
 (function ($) {
     "use strict";
 
@@ -332,7 +346,6 @@
     $('input, textarea').placeholder();
 
     // Price Slider
-    var price_set = [0, 2000000];
     $('.priceSlider').slider({
         range: true,
         min: price_set[0],
@@ -366,17 +379,15 @@
 
     // Search
     $('#search').click(function () {
-        window.location = URL_PROPERTIES + '?' + $.param(
-                {
-                    city: $('#city').val(),
-                    price: price_set,
-                    inmobs: $('input[name=p_inmob]:checked').val(),
-                    type: $('input[name=p_type]:checked').val(),
-                    bedrooms: $('input[name=p_bedrooms]:checked').val(),
-                    bathrooms: $('input[name=p_bathrooms]:checked').val(),
-                }
-            );
+        window.location = pSearch();
     });
+    $('.autoSearch').keypress(function (e) {
+        var $this = $(this);
+        if ($this.val().length > 3 && e.which == 13) {
+            window.location = pSearch();
+        }
+    });
+
 
     /*Icon Contact*/
     $('.icon_contact').click(function () {

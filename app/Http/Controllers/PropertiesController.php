@@ -58,7 +58,7 @@ class PropertiesController extends Controller
 
 
         $properties = Property::where(function ($q) use ($city) {
-            if (Input::has('city') && $city->id > 0)
+            if (Input::has('city') && isset($city->id))
                 $q->where('city_id', $city->id);
         })
             ->where(function ($q) {
@@ -95,5 +95,10 @@ class PropertiesController extends Controller
     public function show($id)
     {
         return view('properties.show');
+    }
+
+    public function searchAjax()
+    {
+        return response()->json(['test' => true]);
     }
 }

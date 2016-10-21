@@ -113,7 +113,10 @@
     <div class="clearfix"></div>
 </div>
 
+<div class="icon_contact" style="background-image: url('{!! asset('images/web/contacto.png') !!}');"></div>
+{{ csrf_field() }}
 @section('_footer')
+    <script> var _CsrfToken = "{!! csrf_token() !!}";</script>
     <script src="{!! asset('js/jquery-2.1.1.min.js') !!}"></script>
     <script src="{!! asset('js/jquery-ui.min.js') !!}"></script>
     <script src="{!! asset('js/jquery-ui-touch-punch.js') !!}"></script>
@@ -121,7 +124,7 @@
     <script src="{!! asset('js/bootstrap.js') !!}"></script>
     <script src="{!! asset('js/jquery.touchSwipe.min.js') !!}"></script>
     <script src="{!! asset('js/jquery.slimscroll.min.js') !!}"></script>
-    <script src="http://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyA0pbui5wdR5fWMiaZ6CaGQ3p9Fv1R3nxs&sensor=true&amp;libraries=geometry&amp;libraries=places"
+    <script src="http://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyA0pbui5wdR5fWMiaZ6CaGQ3p9Fv1R3nxs&libraries=geometry&libraries=places"
             type="text/javascript"></script>
     <script src="{!! asset('js/infobox.js') !!}"></script>
     <script src="{!! asset('js/jquery.tagsinput.min.js') !!}"></script>

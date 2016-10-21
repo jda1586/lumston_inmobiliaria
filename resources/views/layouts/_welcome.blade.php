@@ -63,7 +63,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="form-group">
                     <label><b>Ciudad</b></label>
-                    <input type="text" class="form-control auto" name="city" id="city"
+                    <input type="text" class="form-control auto autoSearch" name="city" id="city"
                            value="" placeholder="Ciudad" autocomplete="off">
 
                     @foreach($errors->get('city') as $error)
