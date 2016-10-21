@@ -537,6 +537,7 @@
         </ul>
     </div>
 @endsection
+
 @section('_footer')
     <script>
         var _latitude;

@@ -378,4 +378,24 @@
             );
     });
 
+    /*Icon Contact*/
+    $('.icon_contact').click(function () {
+        var $this = $(this);
+        $this.hide();
+        var $modal = $('<div style="width: 300px; height: 150px; background-color: white; ' +
+            'position: fixed; z-index: 99999999; right: 20px; bottom: 10px; border-radius: 15px; display: none;">' +
+            '<p align="center" style="border-radius: 15px 15px 0px 0px; padding-top: 5px; font-size: 20px; ' +
+            'color: white; background-color: #0eaaa6;"><b>Contactanos</b></p>' +
+            '</div>');
+        $this.parent().append($modal);
+        $modal.show('fast');
+        $modal.mouseleave(function () {
+            $modal.hide('fast', function () {
+                $this.show();
+                $modal.remove();
+            });
+        });
+
+    });
+
 })(jQuery);

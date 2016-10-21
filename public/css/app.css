@@ -538,7 +538,7 @@
     width: 200px;
 }
 
-.logo a img{
+.logo a img {
     /*display: block;
     width: 70px;
     height: 60px;
@@ -5007,7 +5007,7 @@ body.black {
     left: 5%;
 }
 
-.home-search{
+.home-search {
     position: absolute;
     width: 40%;
     /*text-align: center;*/
@@ -6610,4 +6610,20 @@ blockquote {
     .featured.carousel .carousel-inner .item .carousel-caption .caption-subtitle {
         font-size: 11px;
     }
+}
+
+.icon_contact {
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    right: 20px;
+    bottom: 10px;
+    background-position: center center;
+    background-size: cover;
+    z-index: 9999;
+}
+.icon_contact:hover{
+    width: 85px;
+    height: 85px;
 }
