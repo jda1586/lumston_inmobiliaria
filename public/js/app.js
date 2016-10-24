@@ -239,7 +239,7 @@ function pSearch() {
                 position: new google.maps.LatLng(_latitude, _longitude),
                 map: map,
                 icon: new google.maps.MarkerImage(
-                    'images/marker-new.png',
+                    '/images/marker-new.png',
                     null,
                     null,
                     // new google.maps.Point(0,0),
@@ -626,8 +626,8 @@ function pSearch() {
         $modal.show('fast');
         $modal.mouseleave(function () {
             $modal.hide('fast', function () {
-                $this.show();
                 $modal.remove();
+                $this.show();
             });
         });
 

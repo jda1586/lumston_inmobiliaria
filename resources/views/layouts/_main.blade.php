@@ -26,7 +26,7 @@
 
 <div id="header">
     <div class="logo">
-        <a href="{!! route('welcome') !!}">
+        <a href="{!! route('welcome.index') !!}">
             <img src="{!! asset('images/web/iso128x128_bco.png') !!}" />
         </a>
         {{--<a href="{!! route('welcome') !!}">

@@ -11,25 +11,21 @@
 |
 */
 
-use App\Property;
+Route::group(['as' => 'welcome.'], function () {
+    Route::get('/', 'WelcomeController@index')->name('index');
+    Route::get('/sale', 'WelcomeController@sale')->name('sale');
+});
 
-Route::get('/', function () {
-    return view('welcome', [
-        'price_limit' => [
-            Property::min('price'),
-            Property::max('price')
-        ]
-    ]);
-})->name('welcome');
-
-Route::group(['prefix' => 'properties'], function () {
-    Route::get('/', 'PropertiesController@index')->name('properties.index');
-    Route::get('/show/{id}', 'PropertiesController@show')->name('properties.show');
+Route::group(['prefix' => 'properties', 'as' => 'properties.'], function () {
+    Route::get('/', 'PropertiesController@index')->name('index');
+    Route::get('/show/{id}', 'PropertiesController@show')->name('show');
     Route::group(['prefix' => 'ajax'], function () {
-        Route::post('/search', 'PropertiesController@searchAjax')->name('properties.searchAjax');
+        Route::post('/search', 'PropertiesController@searchAjax')->name('searchAjax');
     });
 });
 
-Route::group(['middleware' => ''], function () {
-
+Route::group([], function () {
+    Route::group(['prefix' => 'properties', 'as' => 'properties'], function () {
+        Route::get('/add', 'PropertiesController@create')->name('create');
+    });
 });

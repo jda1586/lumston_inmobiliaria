@@ -58,7 +58,7 @@ class PropertiesController extends Controller
             $origLon = -103.3388489;
         }
 
-        $dist = 10;
+        $dist = 10 * 0.621371192;
 
         $properties = Property::select(DB::raw('*, SQRT(POW(111.044736 * (latitude - ' . $origLat . '), 2) +
         POW(111.044736 * (' . $origLon . ' - longitude) * COS(latitude / 57.3), 2)) 
@@ -112,6 +112,6 @@ class PropertiesController extends Controller
 
     public function create()
     {
-
+        return view('properties.create');
     }
 }

@@ -43,11 +43,11 @@
         <div class="home-nav">
             <ul>
                 <li><a href="{!! route("properties.index") !!}">Propiedades</a></li>
-                <li><a href="#">Vender / Rentar</a></li>
+                <li><a href="{!! route("welcome.sale") !!}">Vender / Rentar</a></li>
                 {{--<li><a href="#">Blog</a></li>--}}
                 <li><a href="#">Contacto</a></li>
                 <li style="padding-top: 9px;"><a href="#" data-toggle="modal" data-target="#signin">Ingresar</a></li>
-                <li><a href="#" class="btn btn-green" data-toggle="modal" data-target="#signup">Registrate</a></li>
+                <li><a href="#" class="btn btn-gray" data-toggle="modal" data-target="#signup">Registrate</a></li>
             </ul>
         </div>
     </div>
@@ -159,7 +159,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
                 <div class="form-group">
-                    <a href="#" class="btn btn-green mb-10" id="search">
+                    <a href="#" class="btn btn-gray mb-10" id="search">
                         Buscar
                     </a>
                 </div>
