@@ -35,8 +35,8 @@
     </ul>
     <div class="home-header">
         <div class="home-logo osLight">
-            <span class="fa">
-                <img src="{!! asset('images/web/logo_white.png') !!}" width="120px">
+            <span class="fa" style="color: white;">
+                <img src="{!! asset('images/web/logo_bco.svg') !!}" width="120px">
             </span>
         </div>
         <a href="#" class="home-navHandler visible-xs"><span class="fa fa-bars"></span></a>
