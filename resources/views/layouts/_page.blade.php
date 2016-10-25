@@ -24,150 +24,28 @@
 
 <!-- Hero -->
 
-<div id="hero-container">
-    <ul class="cb-slideshow">
-        <li><span></span></li>
-        <li><span></span></li>
-        <li><span></span></li>
-        <li><span></span></li>
-        <li><span></span></li>
-        <li><span></span></li>
-    </ul>
-    <div class="home-header">
-        <div class="home-logo osLight">
+{{--<div id="hero-container">
+
+
+</div>--}}
+<div class="home-header">
+    <div class="home-logo osLight">
             <span class="fa" style="color: white;">
                 <img src="{!! asset('images/web/logo_bco.svg') !!}" width="120px">
             </span>
-        </div>
-        <a href="#" class="home-navHandler visible-xs"><span class="fa fa-bars"></span></a>
-        <div class="home-nav">
-            <ul>
-                <li><a href="{!! route("properties.index") !!}">Propiedades</a></li>
-                <li><a href="{!! route("welcome.sale") !!}">Vender / Rentar</a></li>
-                {{--<li><a href="#">Blog</a></li>--}}
-                <li><a href="{!! route("welcome.contact") !!}">Contacto</a></li>
-                <li style="padding-top: 9px;"><a href="#" data-toggle="modal" data-target="#signin">Ingresar</a>
-                </li>
-                <li><a href="#" class="btn btn-gray" data-toggle="modal" data-target="#signup">Registrate</a></li>
-            </ul>
-        </div>
     </div>
-    <div class="home-caption">
-        <div class="home-title">Te ayudamos a vender tu casa</div>
-        <div class="home-subtitle">---</div>
-        <a href="#" class="btn btn-lg btn-black">Aquí</a>
+    <a href="#" class="home-navHandler visible-xs"><span class="fa fa-bars"></span></a>
+    <div class="home-nav">
+        <ul>
+            <li><a href="{!! route("properties.index") !!}">Propiedades</a></li>
+            <li><a href="{!! route("welcome.sale") !!}">Vender / Rentar</a></li>
+            {{--<li><a href="#">Blog</a></li>--}}
+            <li><a href="{!! route("welcome.contact") !!}">Contacto</a></li>
+            <li style="padding-top: 9px;"><a href="#" data-toggle="modal" data-target="#signin">Ingresar</a>
+            </li>
+            <li><a href="#" class="btn btn-gray" data-toggle="modal" data-target="#signup">Registrate</a></li>
+        </ul>
     </div>
-
-    {{--Buscador --}}
-    <div class="home-search">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="form-group">
-                    <label><b>Ciudad</b></label>
-                    <input type="text" class="form-control auto autoSearch" name="city" id="city"
-                           value="" placeholder="Ciudad" autocomplete="off">
-
-                    @foreach($errors->get('city') as $error)
-                        <span style="color: red; margin: 10px;">{{ $error }}</span>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 formItem">
-                <div class="formField">
-                    <label><b>Precio</b></label>
-                    <div class="slider priceSlider">
-                        <div class="sliderTooltip">
-                            <div class="stArrow"></div>
-                            <div class="stLabel"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 formItem">
-                <div class="formField">
-                    <label><b>Inmuebles</b></label>
-                    <a href="#" data-toggle="dropdown"
-                       class="btn btn-gray dropdown-btn dropdown-toggle propTypeSelect">
-                        <span class="dropdown-label">Todos</span>
-                        <span class="fa fa-angle-down dsArrow"></span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-select full" role="menu">
-                        <li class="active">
-                            <input type="radio" name="p_inmob" checked="checked" value="all">
-                            <a href="#">Todos</a>
-                        </li>
-                        <li><input type="radio" name="p_inmob" value="house"><a href="#">Casas</a></li>
-                        <li><input type="radio" name="p_inmob" value="depto"><a href="#">Deptos.</a></li>
-                        <li><input type="radio" name="p_inmob" value="ground"><a href="#">Terrenos</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 formItem">
-                <div class="formField">
-                    <label><b>Tipos</b></label>
-                    <a href="#" data-toggle="dropdown"
-                       class="btn btn-gray dropdown-btn dropdown-toggle propTypeSelect">
-                        <span class="dropdown-label">Todos</span>
-                        <span class="fa fa-angle-down dsArrow"></span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-select full" role="menu">
-                        <li class="active">
-                            <input type="radio" name="p_type" checked="checked" value="all">
-                            <a href="#">Todos</a>
-                        </li>
-                        <li><input type="radio" name="p_type" value="sale"><a href="#">Venta</a></li>
-                        <li><input type="radio" name="p_type" value="rent"><a href="#">Renta</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 formItem">
-
-                <div class="formField">
-                    <label><b>Habitaciones</b></label>
-                    <a href="#" data-toggle="dropdown"
-                       class="btn btn-gray dropdown-btn dropdown-toggle propTypeSelect">
-                        <span class="dropdown-label">Habitaciones</span>
-                        <span class="fa fa-angle-down dsArrow"></span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-select full" role="menu">
-                        <li class="active">
-                            <input type="radio" name="p_bedrooms" checked="checked" value="0">
-                            <a href="#">Habitaciones</a>
-                        </li>
-                        <li><input type="radio" name="p_bedrooms" value="1"><a href="#">1+</a></li>
-                        <li><input type="radio" name="p_bedrooms" value="2"><a href="#">2+</a></li>
-                        <li><input type="radio" name="p_bedrooms" value="3"><a href="#">3+</a></li>
-                        <li><input type="radio" name="p_bedrooms" value="4"><a href="#">4+</a></li>
-                        <li><input type="radio" name="p_bedrooms" value="5"><a href="#">5+</a></li>
-                    </ul>
-                </div>
-
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 formItem">
-
-                <div class="form-group">
-                    <label for="search_neighborhood">Colonia / Delegacion</label>
-                    <input type="text" class="form-control" name="neighborhood" id="search_neighborhood"
-                           value="" placeholder="Colonia / Delegacion" autocomplete="off">
-                </div>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-                <div class="form-group">
-                    <a href="#" class="btn btn-gray mb-10" id="search">
-                        Buscar
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
 </div>
 
 <!-- Content -->

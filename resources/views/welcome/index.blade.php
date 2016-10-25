@@ -1,6 +1,13 @@
 @extends('layouts._welcome')
 
 @section('content')
+    <div class="highlight">
+        <div class="h-title osLight">Encuentra ese nuevo lugar con nosotros</div>
+        <div class="h-text osLight">Fusce risus metus, placerat in consectetur eu, porttitor a est sed sed dolor lorem
+            cras
+            adipiscing
+        </div>
+    </div>
     <div class="home-wrapper">
         <div class="home-content">
             <h2 class="osLight">Conocenos</h2>

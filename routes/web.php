@@ -14,6 +14,7 @@
 Route::group(['as' => 'welcome.'], function () {
     Route::get('/', 'WelcomeController@index')->name('index');
     Route::get('/sale', 'WelcomeController@sale')->name('sale');
+    Route::get('/contact', 'WelcomeController@contact')->name('contact');
 });
 
 Route::group(['prefix' => 'properties', 'as' => 'properties.'], function () {

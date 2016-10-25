@@ -11,7 +11,7 @@ class WelcomeController extends Controller
 {
     public function index()
     {
-        return view('welcome', [
+        return view('welcome.index', [
             'price_limit' => [
                 Property::min('price'),
                 Property::max('price')
@@ -21,6 +21,11 @@ class WelcomeController extends Controller
 
     public function sale()
     {
-        return view('sale');
+        return view('welcome.sale');
+    }
+
+    public function contact()
+    {
+        return view('welcome.contact');
     }
 }
