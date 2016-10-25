@@ -8,7 +8,6 @@
 $factory->define(App\Property::class, function (Faker\Generator $faker) {
     return [
         'user_id' => 0,
-        'title' => $faker->title,
         'type' => $faker->randomElement(['house', 'depto']),
         'address' => $faker->streetName,
         'outside_number' => $faker->buildingNumber,
@@ -17,12 +16,13 @@ $factory->define(App\Property::class, function (Faker\Generator $faker) {
         'state_id' => 0,
         'country_id' => 0,
         'postal_code' => $faker->postcode,
-        'suburb' => '',
+        'suburb' => $faker->randomElement(['Colinas de san javier', 'valle real', 'bugambilias', 'la sima', 'puerta de hierro', 'providencia']),
         'price' => $faker->randomNumber(7),
         'unit' => 'mxn',
         'bedrooms' => $faker->randomDigit,
-        'latitude' => $faker->latitude(20.5,20.8),
-        'longitude' => $faker->longitude(-103.5,-103.2),
+        'bathrooms' => $faker->randomDigit,
+        'latitude' => $faker->latitude(20.5, 20.8),
+        'longitude' => $faker->longitude(-103.5, -103.2),
         'status' => $faker->randomElement(['for_sale', 'for_rent'])
     ];
 });

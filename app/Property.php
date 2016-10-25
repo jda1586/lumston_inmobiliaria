@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property integer $id
  * @property integer $user_id
- * @property string $title
  * @property string $type
  * @property string $address
  * @property string $outside_number
@@ -22,14 +21,15 @@ use Illuminate\Database\Eloquent\Model;
  * @property integer $price
  * @property string $unit
  * @property integer $bedrooms
+ * @property integer $bathrooms
  * @property float $latitude
  * @property float $longitude
  * @property string $status
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
+ * @property-read \App\PropertyDetail $details
  * @method static \Illuminate\Database\Query\Builder|\App\Property whereId($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Property whereUserId($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Property whereTitle($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Property whereType($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Property whereAddress($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Property whereOutsideNumber($value)
@@ -42,6 +42,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\App\Property wherePrice($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Property whereUnit($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Property whereBedrooms($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Property whereBathrooms($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Property whereLatitude($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Property whereLongitude($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Property whereStatus($value)
@@ -52,22 +53,12 @@ use Illuminate\Database\Eloquent\Model;
 class Property extends Model
 {
     protected $fillable = [
-        'user_id',
-        'title',
-        'type',
-        'address',
-        'outside_number',
-        'inside_number',
-        'city_id',
-        'state_id',
-        'country_id',
-        'postal_code',
-        'suburb',
-        'price',
-        'unit',
-        'bedrooms',
-        'latitude',
-        'longitude',
-        'status',
+        'user_id', 'type', 'address', 'outside_number', 'inside_number', 'city_id', 'state_id', 'country_id',
+        'postal_code', 'suburb', 'price', 'unit', 'bedrooms', 'bathrooms', 'latitude', 'longitude', 'status',
     ];
+
+    public function details()
+    {
+        return $this->hasOne('App\PropertyDetail');
+    }
 }

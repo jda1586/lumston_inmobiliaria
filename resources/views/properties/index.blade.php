@@ -224,7 +224,7 @@
     <div class="resultsList">
         <div class="row">
 
-            @each('properties.partials.list_box',$properties,'property')
+            @each('properties.partials.box',$properties,'property')
             {{--<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                 <a href="{!! route('properties.show',['id'=>1]) !!}" class="card">
                     <div class="figure">
