@@ -16,7 +16,7 @@
         </div>
         <h2>{!! $property->details->title !!}</h2>
         <div class="cardAddress">
-            <i class="fa fa-map-marker" aria-hidden="true"></i> 39 Remsen St, Brooklyn, NY 11201, USA
+                <i class="fa fa-map-marker" aria-hidden="true"></i> 39 Remsen St, Brooklyn, NY 11201, USA
         </div>
         {{--<div class="cardRating">
             <span class="fa fa-star"></span>
