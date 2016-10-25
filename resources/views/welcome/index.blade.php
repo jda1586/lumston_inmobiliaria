@@ -2,10 +2,9 @@
 
 @section('content')
     <div class="highlight">
-        <div class="h-title osLight">Encuentra ese nuevo lugar con nosotros</div>
-        <div class="h-text osLight">Fusce risus metus, placerat in consectetur eu, porttitor a est sed sed dolor lorem
-            cras
-            adipiscing
+        <div class="h-title osLight">Te ayudamos a encontrar ese nuevo lugar ideal para ti</div>
+        <div class="h-text osLight">
+            Locales comerciales, casas, departamentos, terrenos y oficinas.
         </div>
     </div>
     <div class="home-wrapper">
@@ -17,7 +16,9 @@
                         <span class="icon-pointer s-icon"></span>
                         <div class="s-content">
                             <h2 class="s-main osLight">Encuentra lugares en todo el país</h2>
-                            <h3 class="s-sub osLight">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+                            <h3 class="s-sub osLight">
+                                Plataforma amigable y práctica para buscar en nuestro catálogo de propiedades.
+                            </h3>
                         </div>
                     </a>
                 </div>
@@ -51,204 +52,30 @@
             </div>
             <h2 class="osLight">Lo mas nuevo</h2>
             <div class="row pb40">
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                    <a href="#" class="propWidget-2">
-                        <div class="fig">
-                            <img src="images/prop/1-1.png" alt="Modern Residence in New York">
-                            <img class="blur" src="images/prop/1-1.png" alt="Modern Residence in New York">
-                            <div class="opac"></div>
-                            <div class="priceCap osLight"><span>$1,750,000</span></div>
-                            <div class="figType">VENTA</div>
-                            <h3 class="osLight">Modern Residence in New York</h3>
-                            <div class="address">39 Remsen St, Brooklyn, NY 11201, USA</div>
-                            <ul class="rating">
-                                <li><span class="fa fa-star star-1"></span></li>
-                                <li><span class="fa fa-star star-2"></span></li>
-                                <li><span class="fa fa-star star-3"></span></li>
-                                <li><span class="fa fa-star star-4"></span></li>
-                                <li><span class="fa fa-star-o star-5"></span></li>
-                            </ul>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                    <a href="#" class="propWidget-2">
-                        <div class="fig">
-                            <img src="images/prop/2-1.png" alt="Hauntingly Beautiful Estate">
-                            <img class="blur" src="images/prop/2-1.png" alt="Hauntingly Beautiful Estate">
-                            <div class="opac"></div>
-                            <div class="priceCap osLight"><span>$1,550,000</span></div>
-                            <div class="figType">RENTA</div>
-                            <h3 class="osLight">Hauntingly Beautiful Estate</h3>
-                            <div class="address">39 Remsen St, Brooklyn, NY 11201, USA</div>
-                            <ul class="rating">
-                                <li><span class="fa fa-star star-1"></span></li>
-                                <li><span class="fa fa-star star-2"></span></li>
-                                <li><span class="fa fa-star star-3"></span></li>
-                                <li><span class="fa fa-star star-4"></span></li>
-                                <li><span class="fa fa-star star-5"></span></li>
-                            </ul>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                    <a href="#" class="propWidget-2">
-                        <div class="fig">
-                            <img src="images/prop/3-1.png" alt="Luxury Mansion">
-                            <img class="blur" src="images/prop/3-1.png" alt="Luxury Mansion">
-                            <div class="opac"></div>
-                            <div class="priceCap osLight"><span>$2,350,000</span></div>
-                            <div class="figType">VENTA</div>
-                            <h3 class="osLight">Luxury Mansion</h3>
-                            <div class="address">39 Remsen St, Brooklyn, NY 11201, USA</div>
-                            <ul class="rating">
-                                <li><span class="fa fa-star star-1"></span></li>
-                                <li><span class="fa fa-star star-2"></span></li>
-                                <li><span class="fa fa-star star-3"></span></li>
-                                <li><span class="fa fa-star star-4"></span></li>
-                                <li><span class="fa fa-star star-5"></span></li>
-                            </ul>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                    <a href="#" class="propWidget-2">
-                        <div class="fig">
-                            <img src="images/prop/4-1.png" alt="Sophisticated Residence">
-                            <img class="blur" src="images/prop/4-1.png" alt="Sophisticated Residence">
-                            <div class="opac"></div>
-                            <div class="priceCap osLight"><span>$1,340,000</span></div>
-                            <div class="figType">RENTA</div>
-                            <h3 class="osLight">Sophisticated Residence</h3>
-                            <div class="address">39 Remsen St, Brooklyn, NY 11201, USA</div>
-                            <ul class="rating">
-                                <li><span class="fa fa-star star-1"></span></li>
-                                <li><span class="fa fa-star star-2"></span></li>
-                                <li><span class="fa fa-star star-3"></span></li>
-                                <li><span class="fa fa-star star-4"></span></li>
-                                <li><span class="fa fa-star star-5"></span></li>
-                            </ul>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                    <a href="#" class="propWidget-2">
-                        <div class="fig">
-                            <img src="images/prop/5-1.png" alt="House With a Lovely Glass">
-                            <img class="blur" src="images/prop/5-1.png" alt="House With a Lovely Glass">
-                            <div class="opac"></div>
-                            <div class="priceCap osLight"><span>$1,930,000</span></div>
-                            <div class="figType">VENTA</div>
-                            <h3 class="osLight">House With a Lovely Glass</h3>
-                            <div class="address">39 Remsen St, Brooklyn, NY 11201, USA</div>
-                            <ul class="rating">
-                                <li><span class="fa fa-star star-1"></span></li>
-                                <li><span class="fa fa-star star-2"></span></li>
-                                <li><span class="fa fa-star star-3"></span></li>
-                                <li><span class="fa fa-star star-4"></span></li>
-                                <li><span class="fa fa-star star-5"></span></li>
-                            </ul>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                    <a href="#" class="propWidget-2">
-                        <div class="fig">
-                            <img src="images/prop/1-1.png" alt="Modern Residence in New York">
-                            <img class="blur" src="images/prop/1-1.png" alt="Modern Residence in New York">
-                            <div class="opac"></div>
-                            <div class="priceCap osLight"><span>$1,750,000</span></div>
-                            <div class="figType">VENTA</div>
-                            <h3 class="osLight">Modern Residence in New York</h3>
-                            <div class="address">39 Remsen St, Brooklyn, NY 11201, USA</div>
-                            <ul class="rating">
-                                <li><span class="fa fa-star star-1"></span></li>
-                                <li><span class="fa fa-star star-2"></span></li>
-                                <li><span class="fa fa-star star-3"></span></li>
-                                <li><span class="fa fa-star star-4"></span></li>
-                                <li><span class="fa fa-star-o star-5"></span></li>
-                            </ul>
-                        </div>
-                    </a>
-                </div>
+                @each('welcome.partials.box',$properties,'property')
             </div>
-            <h2 class="osLight">Our Agents</h2>
+            <h2 class="osLight">Asesores</h2>
             <div class="row pb40">
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                     <div class="agent">
                         <a href="profile.html" class="agent-avatar">
-                            <img src="images/avatar-1.png" alt="John Smith">
+                            <img src="images/avatar-4.png" alt="Antony Iglesias">
                             <div class="ring"></div>
                         </a>
-                        <div class="agent-name osLight">John Smith</div>
-                        <div class="agent-rating">
-                            <span class="fa fa-star text-yellow"></span>
-                            <span class="fa fa-star text-yellow"></span>
-                            <span class="fa fa-star text-yellow"></span>
-                            <span class="fa fa-star text-yellow"></span>
-                            <span class="fa fa-star text-yellow"></span>
-                        </div>
+                        <div class="agent-name osLight">Área habitacional</div>
                         <div class="agent-contact">
-                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-green"><span
-                                        class="fa fa-envelope-o"></span></a> <a href="#"
-                                                                                class="btn btn-sm btn-icon btn-round btn-o btn-facebook"><span
-                                        class="fa fa-facebook"></span></a> <a href="#"
-                                                                              class="btn btn-sm btn-icon btn-round btn-o btn-twitter"><span
-                                        class="fa fa-twitter"></span></a> <a href="#"
-                                                                             class="btn btn-sm btn-icon btn-round btn-o btn-google"><span
-                                        class="fa fa-google-plus"></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                    <div class="agent">
-                        <a href="profile.html" class="agent-avatar">
-                            <img src="images/avatar-2.png" alt="Jane Smith">
-                            <div class="ring"></div>
-                        </a>
-                        <div class="agent-name osLight">Jane Smith</div>
-                        <div class="agent-rating">
-                            <span class="fa fa-star text-yellow"></span>
-                            <span class="fa fa-star text-yellow"></span>
-                            <span class="fa fa-star text-yellow"></span>
-                            <span class="fa fa-star text-yellow"></span>
-                            <span class="fa fa-star text-yellow"></span>
-                        </div>
-                        <div class="agent-contact">
-                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-green"><span
-                                        class="fa fa-envelope-o"></span></a> <a href="#"
-                                                                                class="btn btn-sm btn-icon btn-round btn-o btn-facebook"><span
-                                        class="fa fa-facebook"></span></a> <a href="#"
-                                                                              class="btn btn-sm btn-icon btn-round btn-o btn-twitter"><span
-                                        class="fa fa-twitter"></span></a> <a href="#"
-                                                                             class="btn btn-sm btn-icon btn-round btn-o btn-google"><span
-                                        class="fa fa-google-plus"></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                    <div class="agent">
-                        <a href="profile.html" class="agent-avatar">
-                            <img src="images/avatar-3.png" alt="Rust Cohle">
-                            <div class="ring"></div>
-                        </a>
-                        <div class="agent-name osLight">Rust Cohle</div>
-                        <div class="agent-rating">
-                            <span class="fa fa-star text-yellow"></span>
-                            <span class="fa fa-star text-yellow"></span>
-                            <span class="fa fa-star text-yellow"></span>
-                            <span class="fa fa-star text-yellow"></span>
-                            <span class="fa fa-star text-yellow"></span>
-                        </div>
-                        <div class="agent-contact">
-                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-green"><span
-                                        class="fa fa-envelope-o"></span></a> <a href="#"
-                                                                                class="btn btn-sm btn-icon btn-round btn-o btn-facebook"><span
-                                        class="fa fa-facebook"></span></a> <a href="#"
-                                                                              class="btn btn-sm btn-icon btn-round btn-o btn-twitter"><span
-                                        class="fa fa-twitter"></span></a> <a href="#"
-                                                                             class="btn btn-sm btn-icon btn-round btn-o btn-google"><span
-                                        class="fa fa-google-plus"></span></a>
+                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-green">
+                                <span class="fa fa-envelope-o"></span>
+                            </a>
+                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-facebook">
+                                <span class="fa fa-facebook"></span>
+                            </a>
+                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-twitter">
+                                <span class="fa fa-twitter"></span>
+                            </a>
+                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-google">
+                                <span class="fa fa-google-plus"></span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -258,23 +85,66 @@
                             <img src="images/avatar-4.png" alt="Antony Iglesias">
                             <div class="ring"></div>
                         </a>
-                        <div class="agent-name osLight">Antony Iglesias</div>
-                        <div class="agent-rating">
-                            <span class="fa fa-star text-yellow"></span>
-                            <span class="fa fa-star text-yellow"></span>
-                            <span class="fa fa-star text-yellow"></span>
-                            <span class="fa fa-star text-yellow"></span>
-                            <span class="fa fa-star text-yellow"></span>
-                        </div>
+                        <div class="agent-name osLight">Área comercial y bodegas</div>
                         <div class="agent-contact">
-                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-green"><span
-                                        class="fa fa-envelope-o"></span></a> <a href="#"
-                                                                                class="btn btn-sm btn-icon btn-round btn-o btn-facebook"><span
-                                        class="fa fa-facebook"></span></a> <a href="#"
-                                                                              class="btn btn-sm btn-icon btn-round btn-o btn-twitter"><span
-                                        class="fa fa-twitter"></span></a> <a href="#"
-                                                                             class="btn btn-sm btn-icon btn-round btn-o btn-google"><span
-                                        class="fa fa-google-plus"></span></a>
+                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-green">
+                                <span class="fa fa-envelope-o"></span>
+                            </a>
+                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-facebook">
+                                <span class="fa fa-facebook"></span>
+                            </a>
+                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-twitter">
+                                <span class="fa fa-twitter"></span>
+                            </a>
+                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-google">
+                                <span class="fa fa-google-plus"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                    <div class="agent">
+                        <a href="profile.html" class="agent-avatar">
+                            <img src="images/avatar-4.png" alt="Antony Iglesias">
+                            <div class="ring"></div>
+                        </a>
+                        <div class="agent-name osLight">Área corporativa</div>
+                        <div class="agent-contact">
+                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-green">
+                                <span class="fa fa-envelope-o"></span>
+                            </a>
+                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-facebook">
+                                <span class="fa fa-facebook"></span>
+                            </a>
+                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-twitter">
+                                <span class="fa fa-twitter"></span>
+                            </a>
+                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-google">
+                                <span class="fa fa-google-plus"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                    <div class="agent">
+                        <a href="profile.html" class="agent-avatar">
+                            <img src="images/avatar-4.png" alt="Antony Iglesias">
+                            <div class="ring"></div>
+                        </a>
+                        <div class="agent-name osLight">Área de terrenos</div>
+                        <div class="agent-contact">
+                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-green">
+                                <span class="fa fa-envelope-o"></span>
+                            </a>
+                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-facebook">
+                                <span class="fa fa-facebook"></span>
+                            </a>
+                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-twitter">
+                                <span class="fa fa-twitter"></span>
+                            </a>
+                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-google">
+                                <span class="fa fa-google-plus"></span>
+                            </a>
                         </div>
                     </div>
                 </div>

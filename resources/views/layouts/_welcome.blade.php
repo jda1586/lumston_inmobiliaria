@@ -43,8 +43,8 @@
         <div class="home-nav">
             <ul>
                 <li><a href="{!! route("properties.index") !!}">Propiedades</a></li>
-                <li><a href="{!! route("welcome.sale") !!}">Vender / Rentar</a></li>
-                {{--<li><a href="#">Blog</a></li>--}}
+                <li><a href="{!! route("welcome.sale") !!}">Opcionar tu propiedad</a></li>
+                <li><a href="{!! route("welcome.why") !!}">¿Por qué nosotros?</a></li>
                 <li><a href="{!! route("welcome.contact") !!}">Contacto</a></li>
                 <li style="padding-top: 9px;"><a href="#" data-toggle="modal" data-target="#signin">Ingresar</a>
                 </li>
@@ -53,9 +53,9 @@
         </div>
     </div>
     <div class="home-caption">
-        <div class="home-title">Te ayudamos a vender tu casa</div>
-        <div class="home-subtitle">---</div>
-        <a href="#" class="btn btn-lg btn-black">Aquí</a>
+        <div class="home-title">Nosotros te ayudamos a vender/rentar tu propiedad</div>
+        <div class="home-subtitle">{{-- AQUI TEXTO SECUNDARIO --}}</div>
+        <a href="#" class="btn btn-lg btn-black"> Más información </a>
     </div>
 
     {{--Buscador --}}
@@ -195,14 +195,14 @@
                         </div>
                     </li>
                     <li>
-                        <div class="osLight footer-header">Agentes</div>
+                        {{--<div class="osLight footer-header">Agentes</div>
                         <div>
                             <ul class="footer-nav pb20">
                                 <li>
-                                    <a href="http://mariusn.com/themes/reales-wp/agents/jane-smith/">Agent Page</a>
+                                    <a href="">Agent Page</a>
                                 </li>
                             </ul>
-                        </div>
+                        </div>--}}
                     </li>
                 </ul>
             </div>
@@ -214,7 +214,7 @@
                         <div>
                             <ul class="footer-nav pb20">
                                 <li>
-                                    <a href="http://mariusn.com/themes/reales-wp/properties/modern-residence/">
+                                    <a href="#">
                                         <div style="float: left; margin-right: 10px;">
                                             <img src="http://mariusn.com/themes/reales-wp/wp-content/uploads/2014/12/bg-1-120x120.jpg"
                                                  width="60" height="60">
@@ -230,7 +230,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="http://mariusn.com/themes/reales-wp/properties/sophisticated-residence/">
+                                    <a href="#">
                                         <div style="float: left; margin-right: 10px;">
                                             <img src="http://mariusn.com/themes/reales-wp/wp-content/uploads/2015/02/img-prop-120x120.jpg"
                                                  width="60" height="60">
@@ -246,7 +246,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="http://mariusn.com/themes/reales-wp/properties/luxury-mansion/">
+                                    <a href="#">
                                         <div style="float: left; margin-right: 10px;">
                                             <img src="http://mariusn.com/themes/reales-wp/wp-content/uploads/2014/12/bg-5-1024x576-120x120.jpg"
                                                  width="60" height="60">
@@ -269,7 +269,7 @@
 
             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                 <ul class="footer-nav pb20">
-                    <li id="recent-posts-3" class="widget-container widget_recent_entries">
+                    {{--<li id="recent-posts-3" class="widget-container widget_recent_entries">
                         <div class="osLight footer-header">Desde nuestro Blog</div>
                         <ul class="footer-nav pb20">
                             <li>
@@ -288,7 +288,7 @@
                                 <a href="#">Luminous 3 Bedroom Apartment Flaunting Modern Style</a>
                             </li>
                         </ul>
-                    </li>
+                    </li>--}}
                 </ul>
             </div>
 

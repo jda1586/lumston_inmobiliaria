@@ -14,6 +14,7 @@
 Route::group(['as' => 'welcome.'], function () {
     Route::get('/', 'WelcomeController@index')->name('index');
     Route::get('/sale', 'WelcomeController@sale')->name('sale');
+    Route::get('/why', 'WelcomeController@why')->name('why');
     Route::get('/contact', 'WelcomeController@contact')->name('contact');
 });
 

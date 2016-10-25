@@ -63,25 +63,25 @@
         </a>
     </div>
     <div class="headerUserWraper">
-        <a href="#" class="headerUser">
+        <a href="{!! route("welcome.contact") !!}" class="headerUser">
             <div class="userTop pull-left">
                 <span class="headerUserName">Contacto</span>
             </div>
             <div class="clearfix"></div>
         </a>
     </div>
-    {{--<div class="headerUserWraper">
-        <a href="#" class="headerUser">
+    <div class="headerUserWraper">
+        <a href="{!! route("welcome.why") !!}" class="headerUser">
             <div class="userTop pull-left">
-                <span class="headerUserName">Blog</span>
+                <span class="headerUserName">¿Por qué nosotros?</span>
             </div>
             <div class="clearfix"></div>
         </a>
-    </div>--}}
+    </div>
     <div class="headerUserWraper">
-        <a href="#" class="headerUser">
+        <a href="{!! route("welcome.sale") !!}" class="headerUser">
             <div class="userTop pull-left">
-                <span class="headerUserName">Vender / Rentar</span>
+                <span class="headerUserName">Opcionar tu propiedad </span>
             </div>
             <div class="clearfix"></div>
         </a>
