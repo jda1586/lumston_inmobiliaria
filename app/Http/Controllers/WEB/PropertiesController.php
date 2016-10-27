@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\WEB;
 
 use App\City;
 use App\Property;
@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Input;
 use Validator;
+
+use App\Http\Controllers\Controller;
 
 class PropertiesController extends Controller
 {
@@ -103,11 +105,6 @@ class PropertiesController extends Controller
     public function show($id)
     {
         return view('properties.show');
-    }
-
-    public function searchAjax()
-    {
-        return response()->json(['test' => true]);
     }
 
     public function create()

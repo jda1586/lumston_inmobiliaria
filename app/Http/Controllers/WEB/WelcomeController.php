@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\WEB;
 
 use App\Property;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Controllers\Controller;
 
 class WelcomeController extends Controller
 {

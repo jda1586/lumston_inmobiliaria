@@ -1,11 +1,7 @@
 @extends('layouts._page')
 
 @section('content')
-    <div class="home-wrapper" style="margin-top: 84px;">
-        <div class="home-content">
-            Contacto
-        </div>
-    </div>
+    Contacto
 @endsection
 
 @section('_footer')

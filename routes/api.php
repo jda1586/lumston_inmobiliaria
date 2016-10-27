@@ -13,6 +13,16 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::group(['namespace' => 'API'], function () {
+    Route::group(['as' => 'auth.api.'], function () {
+        Route::post('/login', 'AuthController@login')->name('login');
+    });
+
+    Route::group(['prefix' => 'properties', 'as' => 'properties.api.'], function () {
+        Route::post('/search', 'PropertiesController@search')->name('search');
+    });
+});
+
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');

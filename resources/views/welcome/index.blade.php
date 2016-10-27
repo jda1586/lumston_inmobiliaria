@@ -159,6 +159,16 @@
                 </div>
             </div>
 
+            <h2 class="osLight">Saber mas..</h2>
+            <div class="row pb40">
+                <div class="col-lg-12 col-md-12 hidden-sm hidden-xs">
+                    <div style="width: 560px; margin: auto;">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/l_tDOvKetqA" frameborder="0"
+                                allowfullscreen=""></iframe>
+                    </div>
+                </div>
+            </div>
+
             {{--AQUI VIDEO--}}
             {{--<h2 class="osLight">Testimonials</h2>
             <div id="home-testimonials" class="carousel slide carousel-wb mb20" data-ride="carousel">

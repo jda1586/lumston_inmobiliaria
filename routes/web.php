@@ -11,23 +11,25 @@
 |
 */
 
-Route::group(['as' => 'welcome.'], function () {
-    Route::get('/', 'WelcomeController@index')->name('index');
-    Route::get('/sale', 'WelcomeController@sale')->name('sale');
-    Route::get('/why', 'WelcomeController@why')->name('why');
-    Route::get('/contact', 'WelcomeController@contact')->name('contact');
-});
-
-Route::group(['prefix' => 'properties', 'as' => 'properties.'], function () {
-    Route::get('/', 'PropertiesController@index')->name('index');
-    Route::get('/show/{id}', 'PropertiesController@show')->name('show');
-    Route::group(['prefix' => 'ajax'], function () {
-        Route::post('/search', 'PropertiesController@searchAjax')->name('searchAjax');
+Route::group(['namespace' => 'WEB'], function () {
+    Route::group(['as' => 'auth.'], function () {
+        Route::get('/login', 'AuthController@index')->name('index');
     });
-});
 
-Route::group([], function () {
-    Route::group(['prefix' => 'properties', 'as' => 'properties'], function () {
-        Route::get('/add', 'PropertiesController@create')->name('create');
+    Route::group(['as' => 'welcome.'], function () {
+        Route::get('/', 'WelcomeController@index')->name('index');
+        Route::get('/sale', 'WelcomeController@sale')->name('sale');
+        Route::get('/why', 'WelcomeController@why')->name('why');
+        Route::get('/contact', 'WelcomeController@contact')->name('contact');
+    });
+
+    Route::group(['prefix' => 'properties', 'as' => 'properties.'], function () {
+        Route::get('/', 'PropertiesController@index')->name('index');
+        Route::get('/show/{id}', 'PropertiesController@show')->name('show');
+
+        /* Authenticated */
+        Route::group(['middleware' => 'auth'], function () {
+            Route::get('/create', 'PropertiesController@create')->name('create');
+        });
     });
 });
