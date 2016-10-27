@@ -301,6 +301,9 @@
             _latitude = {!! $city->latitude !!};
         _longitude = {!! $city->longitude !!};
         @else
+            _latitude = 20.6690251;
+        _longitude = -103.3388489;
+
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
         }

@@ -5019,20 +5019,22 @@ body.black {
 }
 
 .home-caption {
-    position: absolute;
-    width: 40%;
+    /*position: absolute;*/
+    width: 80%;
+    margin-top: 100px;
+    margin: 80px auto 0px auto;
     text-align: center;
-    top: 200px;
     left: 5%;
 }
 
 .home-search {
-    position: absolute;
-    width: 40%;
+    /*position: absolute;*/
+    width: 80%;
     /*text-align: center;*/
-    top: 150px;
-    left: 55%;
-    padding: 20px;
+    /*top: 150px;*/
+    left: 5%;
+    margin: 0px auto;
+    padding: 10px 20px;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
 }
@@ -5293,6 +5295,7 @@ h3.s-sub {
     -webkit-animation: smallToBig 900ms alternate ease;
     -moz-animation: smallToBig 900ms alternate ease;
     -ms-animation: smallToBig 900ms alternate ease;
+
 }
 
 .no-touch .s-menu-item:hover .s-main {

@@ -13,9 +13,9 @@
             <div class="row pb40">
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 s-menu-item">
                     <a href="#">
-                        <span class="icon-pointer s-icon"></span>
+                        <span class="fa fa-handshake-o s-icon" aria-hidden="true"></span>
                         <div class="s-content">
-                            <h2 class="s-main osLight">Encuentra lugares en todo el país</h2>
+                            <h2 class="s-main osLight">Amigable y práctica</h2>
                             <h3 class="s-sub osLight">
                                 Plataforma amigable y práctica para buscar en nuestro catálogo de propiedades.
                             </h3>
@@ -24,28 +24,37 @@
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 s-menu-item">
                     <a href="#">
-                        <span class="icon-users s-icon"></span>
+                        <span class="s-icon fa fa-users" aria-hidden="true"></span>
                         <div class="s-content">
-                            <h2 class="s-main osLight">Tenemos agentes con experiencia</h2>
-                            <h3 class="s-sub osLight">Nulla convallis egestas rhoncus consectetur adipiscing elit</h3>
+                            <h2 class="s-main osLight">Siempre contigo</h2>
+                            <h3 class="s-sub osLight">
+                                Te acompañamos desde la búsqueda de la propiedad hasta la escrituración o celebración de
+                                contrato de arrendamiento
+                            </h3>
                         </div>
                     </a>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 s-menu-item">
                     <a href="#">
-                        <span class="icon-home s-icon"></span>
+                        <span class="s-icon fa fa-street-view" aria-hidden="true"></span>
                         <div class="s-content">
-                            <h2 class="s-main osLight">Compra o renta hermosas propiedades</h2>
-                            <h3 class="s-sub osLight">Donec facilisis fermentum sem, ac viverra ante luctus vel</h3>
+                            <h2 class="s-main osLight">Especialistas</h2>
+                            <h3 class="s-sub osLight">
+                                Agentes preparados y especializados por áreas. Área habitacional; área comercial; y área
+                                empresarial
+                            </h3>
                         </div>
                     </a>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 s-menu-item">
                     <a href="#">
-                        <span class="icon-cloud-upload s-icon"></span>
+                        <span class="s-icon fa fa-gavel" aria-hidden="true"></span>
                         <div class="s-content">
-                            <h2 class="s-main osLight">---</h2>
-                            <h3 class="s-sub osLight">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+                            <h2 class="s-main osLight">Apoyo legal</h2>
+                            <h3 class="s-sub osLight">
+                                Apoyo legal y además anticipamos el cálculo de impuestos. Ofrecemos estrategias para
+                                optimizarlos
+                            </h3>
                         </div>
                     </a>
                 </div>
@@ -59,7 +68,7 @@
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                     <div class="agent">
                         <a href="profile.html" class="agent-avatar">
-                            <img src="images/avatar-4.png" alt="Antony Iglesias">
+                            <img src="images/avatar-1.png" alt="Antony Iglesias">
                             <div class="ring"></div>
                         </a>
                         <div class="agent-name osLight">Área habitacional</div>
@@ -82,7 +91,7 @@
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                     <div class="agent">
                         <a href="profile.html" class="agent-avatar">
-                            <img src="images/avatar-4.png" alt="Antony Iglesias">
+                            <img src="images/avatar-3.png" alt="Antony Iglesias">
                             <div class="ring"></div>
                         </a>
                         <div class="agent-name osLight">Área comercial y bodegas</div>
@@ -128,7 +137,7 @@
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                     <div class="agent">
                         <a href="profile.html" class="agent-avatar">
-                            <img src="images/avatar-4.png" alt="Antony Iglesias">
+                            <img src="images/avatar-2.png" alt="Antony Iglesias">
                             <div class="ring"></div>
                         </a>
                         <div class="agent-name osLight">Área de terrenos</div>
