@@ -517,7 +517,7 @@
 /* Header */
 
 #header {
-    background-color: #fff;
+    background-color: #2C467F;
     position: fixed;
     top: 0;
     left: 0;
@@ -982,6 +982,10 @@ a.notifySettings {
     animation: pulsate 0.5s ease-out;
 }
 
+.headerUser div span{
+    color: white;
+}
+
 .headerUserWraper {
     float: right;
     height: 60px;
@@ -995,7 +999,7 @@ a.headerUser {
 }
 
 .no-touch a.headerUser:hover, .headerUserWraper.open a.headerUser {
-    background-color: #f3f3f3;
+    background-color: #4c75d3;
 }
 
 .headerUserWraper .dropdown-menu {
@@ -6130,8 +6134,19 @@ blockquote {
     }
 
     #header {
-        background-color: #0eaaa6;
+        background-color: #2C467F;
         height: 50px;
+    }
+
+    .logo a img {
+        padding: 10px;
+        margin-left: 5px;
+        display: block;
+        width: 50px;
+        /*height: 60px;*/
+        color: #fff;
+        text-decoration: none;
+        position: relative;
     }
 
     .search {

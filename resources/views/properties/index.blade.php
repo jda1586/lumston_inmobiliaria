@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="filter">
-        <div style="padding: 5px; background-color: #2C467F; color: white;">
+        <div style="padding: 5px; background-color: #636263; color: white;">
             Se han encontrado: <b>{{ $properties->count() }}</b> propiedades
         </div>
         <h1 class="osLight">Filtra tus resultados</h1>

@@ -24,8 +24,9 @@
                                                         class="fa fa-check"></span> Recordarme</label></div>
                                     </div>
                                     <div class="col-xs-6 align-right">
-                                        <p class="help-block"><a href="#" class="text-green">Olvidaste tu
-                                                contraseña?</a></p>
+                                        <p class="help-block">
+                                            <a href="#" class="text-green">Olvidaste tu contraseña?</a>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -34,7 +35,8 @@
                                     <a href="#" class="btn btn-lg btn-green">Ingresar</a>
                                 </div>
                             </div>
-                            <p class="help-block">Aun no eres miembro? <a href="#" class="modal-su text-green">Registrate</a>
+                            <p class="help-block">Aun no eres miembro?
+                                <a href="#" class="modal-su text-green">Registrate</a>
                             </p>
                         </form>
                     </div>

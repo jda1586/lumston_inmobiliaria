@@ -637,5 +637,15 @@ function pSearch() {
         window.location = pSearch();
     });
 
+    $('.modal-su').click(function () {
+        $('#signin').modal('hide');
+        $('#signup').modal('show');
+    });
+
+    $('.modal-si').click(function () {
+        $('#signup').modal('hide');
+        $('#signin').modal('show');
+    });
+
 })
 (jQuery);
