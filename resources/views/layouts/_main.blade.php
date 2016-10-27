@@ -27,7 +27,7 @@
 <div id="header">
     <div class="logo">
         <a href="{!! route('welcome.index') !!}">
-            <img src="{!! asset('images/web/iso128x128_bco.png') !!}" />
+            <img src="{!! asset('images/web/iso128x128_bco.png') !!}"/>
         </a>
         {{--<a href="{!! route('welcome') !!}">
             <span class="fa fa-home marker"></span>
@@ -43,7 +43,8 @@
         <input type="text" placeholder="Busca casas o departamento">
     </div>--}}
     <div class="headerUserWraper">
-        <a href="#" class="" style="display: block; height: 60px; text-align: center; padding: 0 20px;">
+        <a href="#" class="" style="display: block; height: 60px; text-align: center; padding: 0 20px;"
+           data-toggle="modal" data-target="#signup">
             <div class="userTop pull-left" style="margin: 10px 0 0 0 !important;">
                 <span class="headerUserName btn btn-green">
                     Registrate
@@ -53,7 +54,7 @@
         </a>
     </div>
     <div class="headerUserWraper">
-        <a href="#" class="headerUser">
+        <a href="#" class="headerUser" data-toggle="modal" data-target="#signin" id="btn_signin">
             <div class="userTop pull-left">
                 <span class="headerUserName">
                     Ingresar
@@ -100,7 +101,6 @@
 </div>
 
 
-
 <!-- Content -->
 
 <div id="wrapper">
@@ -112,6 +112,10 @@
     </div>
     <div class="clearfix"></div>
 </div>
+
+@include('welcome.partials.modalLogin')
+
+@include('welcome.partials.modalRegister')
 
 <div class="icon_contact" style="background-image: url('{!! asset('images/web/contacto.png') !!}');"></div>
 {{ csrf_field() }}

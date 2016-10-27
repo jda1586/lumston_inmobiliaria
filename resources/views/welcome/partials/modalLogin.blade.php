@@ -24,7 +24,8 @@
                                                         class="fa fa-check"></span> Recordarme</label></div>
                                     </div>
                                     <div class="col-xs-6 align-right">
-                                        <p class="help-block"><a href="#" class="text-green">Olvidaste tu contraseña?</a></p>
+                                        <p class="help-block"><a href="#" class="text-green">Olvidaste tu
+                                                contraseña?</a></p>
                                     </div>
                                 </div>
                             </div>
