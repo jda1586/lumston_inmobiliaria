@@ -86,7 +86,7 @@ function pSearch() {
                 position: latlng,
                 map: map,
                 icon: new google.maps.MarkerImage(
-                    'images/' + prop.markerIcon,
+                    '/images/' + prop.markerIcon,
                     null,
                     null,
                     null,
@@ -97,7 +97,7 @@ function pSearch() {
             });
             var infoboxContent = '<div class="infoW">' +
                 '<div class="propImg">' +
-                '<img src="images/prop/' + prop.image + '">' +
+                '<img src="/images/prop/' + prop.image + '">' +
                 '<div class="propBg">' +
                 '<div class="propPrice">' + prop.price + '</div>' +
                 '<div class="propType">' + prop.type + '</div>' +
@@ -106,23 +106,16 @@ function pSearch() {
                 '<div class="paWrapper">' +
                 '<div class="propTitle">' + prop.title + '</div>' +
                 '<div class="propAddress">' + prop.address + '</div>' +
-                '</div>' +
-                '<div class="propRating">' +
-                '<span class="fa fa-star"></span>' +
-                '<span class="fa fa-star"></span>' +
-                '<span class="fa fa-star"></span>' +
-                '<span class="fa fa-star"></span>' +
-                '<span class="fa fa-star-o"></span>' +
-                '</div>' +
+                '</div><br>' +
                 '<ul class="propFeat">' +
-                '<li><span class="fa fa-moon-o"></span> ' + prop.bedrooms + '</li>' +
-                '<li><span class="icon-drop"></span> ' + prop.bathrooms + '</li>' +
+                '<li><span class="fa fa-bed" aria-hidden="true"></span> ' + prop.bedrooms + '</li>' +
+                '<li><span class="fa fa-bath" aria-hidden="true"></span> ' + prop.bathrooms + '</li>' +
                 '<li><span class="icon-frame"></span> ' + prop.area + '</li>' +
                 '</ul>' +
                 '<div class="clearfix"></div>' +
                 '<div class="infoButtons">' +
-                '<a class="btn btn-sm btn-round btn-gray btn-o closeInfo">Close</a>' +
-                '<a href="single.html" class="btn btn-sm btn-round btn-green viewInfo">View</a>' +
+                '<a class="btn btn-sm btn-round btn-gray btn-o closeInfo">Cerrar</a>' +
+                '<a href="#" class="btn btn-sm btn-round btn-green viewInfo">Ver</a>' +
                 '</div>' +
                 '</div>';
 

@@ -242,15 +242,8 @@ function pSearch() {
                 '<div class="propTitle">' + prop.title + '</div>' +
                 '<div class="propAddress">' + prop.address + '</div>' +
                 '</div>' +
-                '<div class="propRating">' +
-                '<span class="fa fa-star"></span>' +
-                '<span class="fa fa-star"></span>' +
-                '<span class="fa fa-star"></span>' +
-                '<span class="fa fa-star"></span>' +
-                '<span class="fa fa-star-o"></span>' +
-                '</div>' +
                 '<ul class="propFeat">' +
-                '<li><span class="fa fa-moon-o"></span> ' + prop.bedrooms + '</li>' +
+                '<li><i class="fa fa-bed" aria-hidden="true"></i> ' + prop.bedrooms + '</li>' +
                 '<li><span class="icon-drop"></span> ' + prop.bathrooms + '</li>' +
                 '<li><span class="icon-frame"></span> ' + prop.area + '</li>' +
                 '</ul>' +

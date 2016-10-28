@@ -280,7 +280,7 @@
         var _longitude;
         var _props = [@foreach($properties as $property)
         {
-            title: "{{ $property->title }}",
+            title: "{{ $property->details->title }}",
             image: '1-1-thmb.png',
             type: '{{ trans('search.'.$property->status) }}',
             price: '${{ number_format($property->price, 2, '.',',') }}',
@@ -292,7 +292,7 @@
                 lat: {{ $property->latitude }},
                 lng: {{ $property->longitude }}
             },
-            markerIcon: "marker-green.png"
+            markerIcon: "marker-blue.png"
         },
             @endforeach
         ];

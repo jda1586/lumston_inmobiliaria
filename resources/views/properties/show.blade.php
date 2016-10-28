@@ -54,32 +54,40 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                     <div class="summaryItem">
-                        <h1 class="pageTitle">Moderna Residencia en New York</h1>
-                        <div class="address"><span class="icon-pointer"></span> 39 Remsen St, Brooklyn, NY 11201, USA
+                        <h1 class="pageTitle">{{ $property->details->title }}</h1>
+                        <div class="address"><span class="icon-pointer"></span> {{ $property->address }}
                         </div>
-                        <ul class="rating">
+                        {{--<ul class="rating">
                             <li><a href="#"><span class="fa fa-star"></span></a></li>
                             <li><a href="#"><span class="fa fa-star"></span></a></li>
                             <li><a href="#"><span class="fa fa-star"></span></a></li>
                             <li><a href="#"><span class="fa fa-star"></span></a></li>
                             <li><a href="#"><span class="fa fa-star-o"></span></a></li>
                             <li>(146)</li>
-                        </ul>
-                        <div class="favLink"><a href="#"><span class="icon-heart"></span></a>54</div>
+                        </ul>--}}
+                        <div class="favLink">
+                            <a href="#">
+                                <span class="fa fa-heart-o" aria-hidden="true"></span>
+                            </a>54
+                        </div>
                         <ul class="stats">
-                            <li><span class="icon-eye"></span> 200</li>
-                            <li><span class="icon-bubble"></span> 13</li>
+                            <li>
+                                <span class="icon-eye"></span> 200
+                            </li>
                         </ul>
                         <div class="clearfix"></div>
                         <ul class="features">
-                            <li><span class="fa fa-moon-o"></span>
-                                <div>2 Habitaciones</div>
+                            <li>
+                                <span class="fa fa-bed" aria-hidden="true"></span>
+                                <div>{{ $property->bedrooms }} Habitaciones</div>
                             </li>
-                            <li><span class="icon-drop"></span>
-                                <div>2 Baños</div>
+                            <li>
+                                <span class="fa fa-bath" aria-hidden="true"></span>
+                                <div>{{ $property->bathrooms }} Baños</div>
                             </li>
-                            <li><span class="icon-frame"></span>
-                                <div>2750 Sq Ft</div>
+                            <li>
+                                <span class="icon-frame"></span>
+                                <div>2750 m<sup>2</sup></div>
                             </li>
                         </ul>
                         <div class="clearfix"></div>
@@ -90,8 +98,9 @@
                         <div class="clearfix"></div>
                         <img class="avatar agentAvatarImg" src="{!! asset('images/avatar-2.png') !!}" alt="avatar">
                         <div class="agentName">Jane Smith</div>
-                        <a data-toggle="modal" href="#contactAgent" class="btn btn-lg btn-round btn-green contactBtn">Contact
-                            Agent</a>
+                        <a data-toggle="modal" href="#contactAgent" class="btn btn-lg btn-round btn-green contactBtn">
+                            Contact Agent
+                        </a>
                     </div>
                 </div>
             </div>
@@ -100,9 +109,9 @@
     <div class="clearfix"></div>
     <div class="description">
         <h3>Decripción</h3>
-        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum
-            tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas
-            semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+        <p>
+            {{ $property->details->description }}
+        </p>
     </div>
     <div class="share">
         <h3>Comparte en rede sociales</h3>
@@ -126,24 +135,28 @@
         </div>
     </div>
     <div class="amenities">
-        <h3>Servicios</h3>
+        <h3>Amenidades</h3>
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"><span class="fa fa-car"></span> Cochera</div>
             <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"><span class="fa fa-tint"></span> Piscina</div>
             <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem inactive"><span class="fa fa-leaf"></span> Jardin
             </div>
-            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem inactive"><span class="fa fa-shield"></span> Seguridad
+            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem inactive"><span class="fa fa-shield"></span>
+                Seguridad
             </div>
             <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"><span class="fa fa-wifi"></span> Internet</div>
             <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem inactive"><span class="fa fa-phone"></span> Telefono
             </div>
-            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"><span class="fa fa-asterisk"></span> Aire Acondicionado
+            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"><span class="fa fa-asterisk"></span> Aire
+                Acondicionado
             </div>
-            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem inactive"><span class="fa fa-sun-o"></span> Calefacción
+            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem inactive"><span class="fa fa-sun-o"></span>
+                Calefacción
             </div>
             <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"><span class="fa fa-fire"></span> Chimenea</div>
             <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"><span class="fa fa-arrows-v"></span> Balcón</div>
-            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"><span class="fa fa-desktop"></span> TV por Cable</div>
+            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"><span class="fa fa-desktop"></span> TV por Cable
+            </div>
         </div>
     </div>
     <div class="similar">
@@ -689,96 +702,57 @@
                         class="fa fa-chevron-right"></span></a>
         </div>
     </div>
-    <div class="comments">
-        <h3><span>4</span> Comments</h3>
-        <div class="comment">
-            <div class="commentAvatar">
-                <img class="avatar" src="images/avatar-3.png" alt="avatar">
-                <div class="commentArrow"><span class="fa fa-caret-left"></span></div>
-            </div>
-            <div class="commentContent">
-                <div class="commentName">Rust Cohle</div>
-                <div class="commentBody">
-                    It is a long established fact that a reader will be distracted by the readable content
-                </div>
-                <div class="commentActions">
-                    <div class="commentTime"><span class="icon-clock"></span> 1 day ago</div>
-                    <ul>
-                        <li><a href="#"><span class="icon-action-undo"></span></a></li>
-                        <li><a href="#"><span class="icon-like"></span> 13</a></li>
-                    </ul>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-        <div class="comment reply">
-            <div class="commentAvatar">
-                <img class="avatar" src="images/avatar-1.png" alt="avatar">
-                <div class="commentArrow"><span class="fa fa-caret-left"></span></div>
-            </div>
-            <div class="commentContent">
-                <div class="commentName">John Smith</div>
-                <div class="commentBody">
-                    Comment posted by me. I have the power to remove it.
-                </div>
-                <div class="commentActions">
-                    <div class="commentTime"><span class="icon-clock"></span> 2 hours ago</div>
-                    <ul>
-                        <li><a href="#"><span class="fa fa-trash-o"></span></a></li>
-                    </ul>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-        <div class="comment">
-            <div class="commentAvatar">
-                <img class="avatar" src="images/avatar-5.png" alt="avatar">
-                <div class="commentArrow"><span class="fa fa-caret-left"></span></div>
-            </div>
-            <div class="commentContent">
-                <div class="commentName">Alex Rogers</div>
-                <div class="commentBody">
-                    Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit
-                </div>
-                <div class="commentActions">
-                    <div class="commentTime"><span class="icon-clock"></span> 20 minutes ago</div>
-                    <ul>
-                        <li><a href="#"><span class="icon-action-undo"></span></a></li>
-                        <li><a href="#"><span class="icon-like"></span> 13</a></li>
-                    </ul>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-        <div class="comment">
-            <div class="commentAvatar">
-                <img class="avatar" src="images/avatar-2.png" alt="avatar">
-                <div class="commentArrow"><span class="fa fa-caret-left"></span></div>
-            </div>
-            <div class="commentContent">
-                <div class="commentName">Jane Smith</div>
-                <div class="commentBody">
-                    Lorem ipsum dolor sit amet, consecteter adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-                    laoreet
-                </div>
-                <div class="commentActions">
-                    <div class="commentTime"><span class="icon-clock"></span> 5 minutes ago</div>
-                    <ul>
-                        <li><a href="#"><span class="icon-action-undo"></span></a></li>
-                        <li><a href="#"><span class="icon-like"></span> 13</a></li>
-                    </ul>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
 @endsection
 
 @section('_footer')
+    <script>
+        var price_set = [];
+        var price_limit = [];
+
+        var _latitude;
+        var _longitude;
+        var _props = [
+            {
+                title: "{{ $property->details->title }}",
+                image: '1-1-thmb.png',
+                type: '{{ trans('search.'.$property->status) }}',
+                price: '${{ number_format($property->price, 2, '.',',') }}',
+                address: '{{ $property->address }}',
+                bedrooms: '{{ $property->bedrooms }}',
+                bathrooms: '{{ $property->bathrooms }}',
+                area: '3430 m<sup>2</sup>',
+                position: {
+                    lat: {{ $property->latitude }},
+                    lng: {{ $property->longitude }}
+                },
+                markerIcon: "marker-blue.png"
+            },
+        ];
+
+        @if($property->latitude && $property->longitude)
+            _latitude = {!! $property->latitude !!};
+        _longitude = {!! $property->longitude !!};
+        @else
+            _latitude = 20.6690251;
+        _longitude = -103.3388489;
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+        }
+        //Get the latitude and the longitude;
+        function successFunction(position) {
+            _latitude = position.coords.latitude;
+            _longitude = position.coords.longitude;
+            /*codeLatLng(lat, lng)*/
+        }
+
+        function errorFunction() {
+            _latitude = 20.6690251;
+            _longitude = -103.3388489;
+        }
+                @endif
+        var URL_PROPERTIES = "{!! route('properties.index') !!}";
+    </script>
     @parent
     <script src="{!! asset('js/jquery.visible.js') !!}"></script>
 @endsection

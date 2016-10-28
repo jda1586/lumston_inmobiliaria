@@ -104,7 +104,13 @@ class PropertiesController extends Controller
 
     public function show($id)
     {
-        return view('properties.show');
+        $validator = Validator::make(['id' => $id], ['id' => 'required|exists:properties']);
+        if ($validator->fails())
+            return redirect()->back();
+
+        return view('properties.show', [
+            'property' => Property::find($id),
+        ]);
     }
 
     public function create()

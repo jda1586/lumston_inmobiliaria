@@ -1610,6 +1610,7 @@ a.userHandler .counter {
 }
 
 .infoW {
+    background-color: white;
     font-family: 'open_sansregular', sans-serif, Arial;
     color: #333;
     padding: 0 1px;
