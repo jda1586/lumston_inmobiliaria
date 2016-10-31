@@ -14,6 +14,9 @@
 Route::group(['namespace' => 'WEB'], function () {
     Route::group(['as' => 'auth.'], function () {
         Route::get('/login', 'AuthController@index')->name('index');
+        Route::get('/register', 'AuthController@register')->name('register');
+        Route::post('/login/request', 'AuthController@login')->name('login');
+        Route::any('logout', 'AuthController@logout')->name('logout');
     });
 
     Route::group(['as' => 'welcome.'], function () {
@@ -31,5 +34,9 @@ Route::group(['namespace' => 'WEB'], function () {
         Route::group(['middleware' => 'auth'], function () {
             Route::get('/create', 'PropertiesController@create')->name('create');
         });
+    });
+
+    Route::group(['middleware' => 'auth', 'as' => 'user.', 'prefix' => 'user'], function () {
+        Route::get('/profile', 'UsersController@index')->name('index');
     });
 });

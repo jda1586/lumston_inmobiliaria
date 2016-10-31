@@ -113,7 +113,8 @@ return [
     */
 
     'attributes' => [
-        'city' => 'ciudad'
+        'city' => 'ciudad',
+        'password' => 'contraseña'
     ],
 
 ];

@@ -10,18 +10,23 @@
                         <h4 class="modal-title" id="signinLabel">Ingresar</h4>
                     </div>
                     <div class="modal-body">
-                        <form role="form">
+                        <form role="form" action="{!! route('auth.login') !!}" method="post" id="form_login">
+                            {{ csrf_field() }}
                             <div class="form-group">
-                                <input type="text" placeholder="Email" class="form-control">
+                                <input name="email" type="text" placeholder="Email" class="form-control">
                             </div>
                             <div class="form-group">
-                                <input type="password" placeholder="Contraseña" class="form-control">
+                                <input name="password" type="password" placeholder="Contraseña" class="form-control">
                             </div>
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-xs-6">
-                                        <div class="checkbox custom-checkbox"><label><input type="checkbox"><span
-                                                        class="fa fa-check"></span> Recordarme</label></div>
+                                        <div class="checkbox custom-checkbox">
+                                            <label>
+                                                <input name="keep" type="checkbox" value="1">
+                                                <span class="fa fa-check"></span> Recordarme
+                                            </label>
+                                        </div>
                                     </div>
                                     <div class="col-xs-6 align-right">
                                         <p class="help-block">
@@ -32,7 +37,10 @@
                             </div>
                             <div class="form-group">
                                 <div class="btn-group-justified">
-                                    <a href="#" class="btn btn-lg btn-green">Ingresar</a>
+                                    <a href="#" class="btn btn-lg btn-green"
+                                       onclick="document.getElementById('form_login').submit(); return false;">
+                                        Ingresar
+                                    </a>
                                 </div>
                             </div>
                             <p class="help-block">Aun no eres miembro?

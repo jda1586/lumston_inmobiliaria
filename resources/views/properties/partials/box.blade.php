@@ -1,7 +1,7 @@
 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
     <a href="{!! route('properties.show',['id'=>$property->id]) !!}" class="card">
         <div class="figure">
-            <img src="images/prop/1-1.png" alt="image">
+            <img src="/images/prop/1-1.png" alt="image">
             <div class="propDetails">
                 ${{ number_format($property->price, 2,'.',','). ($property->status == 'for_rent'?' /mes':'') }}
             </div>

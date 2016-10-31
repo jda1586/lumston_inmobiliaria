@@ -64,6 +64,46 @@
                 <div class="clearfix"></div>
             </a>
         </div>
+    @else
+        <div class="headerUserWraper">
+            <a href="#" class="userHandler dropdown-toggle" data-toggle="dropdown">
+                <span class="icon-user"></span><span class="counter">5</span>
+            </a>
+            <a href="#" class="headerUser dropdown-toggle" data-toggle="dropdown">
+                <img class="avatar headerAvatar pull-left" src="/images/avatar-1.png" alt="avatar">
+                <div class="userTop pull-left">
+                    <span class="headerUserName">{{ auth()->user()->name }}</span>
+                    <span class="fa fa-angle-down"></span>
+                </div>
+                <div class="clearfix"></div>
+            </a>
+            <div class="dropdown-menu pull-right userMenu" role="menu">
+                <div class="mobAvatar">
+                    <img class="avatar mobAvatarImg" src="/images/avatar-1.png" alt="avatar">
+                    <div class="mobAvatarName">{{ auth()->user()->name }}</div>
+                </div>
+                <ul>
+                    <li>
+                        <a href="{!! route('user.index') !!}">
+                            <span class="fa fa-user"></span>Perfil
+                        </a>
+                    </li>
+                    <li><a href="#"><span class="fa fa-heart"></span>Favoritos</a></li>
+                    <li>
+                        <a href="#">
+                            <span class="fa fa-bell"></span>Notificaciones
+                            <span class="badge pull-right bg-red">5</span>
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="{!! route('auth.logout') !!}">
+                            <span class="fa fa-power-off"></span>Salir
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     @endif
     <div class="headerUserWraper">
         <a href="{!! route("welcome.contact") !!}" class="headerUser">
@@ -97,6 +137,17 @@
             <div class="clearfix"></div>
         </a>
     </div>
+    @if(auth()->check())
+        <div class="headerUserWraper">
+            <a href="{!! route('properties.create') !!}" class="headerUser">
+                <div class="userTop pull-left">
+                    <i class="fa fa-plus-circle text-green" aria-hidden="true"></i>
+                    <span class="headerUserName">Nueva Propiedad</span>
+                </div>
+                <div class="clearfix"></div>
+            </a>
+        </div>
+    @endif
 
     <a href="#" class="mapHandler"><span class="icon-map"></span></a>
     <div class="clearfix"></div>
