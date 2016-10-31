@@ -1,11 +1,24 @@
 @extends('layouts._page')
 
 @section('content')
+
     <div class="row">
         <div class="col-lg-7 col-md-7 hidden-sm hidden-xs">
 
         </div>
         <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+            @if(session('error'))
+            <div class="alert alert-warning alert-dismissible fade in" role="alert">
+                <div class="icon"><span class="fa fa-warning"></span></div>
+                <button type="button" class="close" data-dismiss="alert">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <strong>Ups!</strong> {{ session('error') }}
+            </div>
+            @endif
+
+
             <div class="modal-header">
                 <h4 class="modal-title" id="signinLabel">Ingresar</h4>
             </div>

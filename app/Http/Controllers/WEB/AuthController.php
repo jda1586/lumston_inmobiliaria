@@ -19,7 +19,7 @@ class AuthController extends Controller
     public function login()
     {
         $validator = \Validator::make(Input::all(), [
-            'email' => 'required|email',
+            'email' => 'required|email|exists:users',
             'password' => 'required',
             'keep' => 'boolean',
         ]);
@@ -29,10 +29,13 @@ class AuthController extends Controller
 
         if (auth()->attempt([
             'email' => Input::get('email'),
-            'password' => Input::get('password')
+            'password' => Input::get('password'),
+            'status' => 'active',
         ], Input::get('keep'))
         ) {
             return redirect()->back();
+        } else {
+            return redirect()->route('auth.index')->with('error', trans('auth.failed'));
         }
     }
 
