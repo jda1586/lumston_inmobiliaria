@@ -24,7 +24,7 @@
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 s-menu-item">
                     <a href="#">
-                        <span class="s-icon fa fa-users" aria-hidden="true"></span>
+                        <span class="s-icon fa fa-key" aria-hidden="true"></span>
                         <div class="s-content">
                             <h2 class="s-main osLight">Siempre contigo</h2>
                             <h3 class="s-sub osLight">
@@ -47,7 +47,7 @@
                     </a>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 s-menu-item">
-                    <a href="#">
+                    <a href="{!! route('welcome.why') !!}">
                         <span class="s-icon fa fa-gavel" aria-hidden="true"></span>
                         <div class="s-content">
                             <h2 class="s-main osLight">Apoyo legal</h2>
