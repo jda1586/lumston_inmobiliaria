@@ -70,7 +70,7 @@
                 <span class="icon-user"></span><span class="counter">5</span>
             </a>
             <a href="#" class="headerUser dropdown-toggle" data-toggle="dropdown">
-                <img class="avatar headerAvatar pull-left" src="/images/avatar-1.png" alt="avatar">
+                <img class="avatar headerAvatar pull-left" src="http://lorempixel.com/200/200/people/" alt="avatar">
                 <div class="userTop pull-left">
                     <span class="headerUserName">{{ auth()->user()->name }}</span>
                     <span class="fa fa-angle-down"></span>
@@ -79,7 +79,7 @@
             </a>
             <div class="dropdown-menu pull-right userMenu" role="menu">
                 <div class="mobAvatar">
-                    <img class="avatar mobAvatarImg" src="/images/avatar-1.png" alt="avatar">
+                    <img class="avatar mobAvatarImg" src="http://lorempixel.com/200/200/people/" alt="avatar">
                     <div class="mobAvatarName">{{ auth()->user()->name }}</div>
                 </div>
                 <ul>
