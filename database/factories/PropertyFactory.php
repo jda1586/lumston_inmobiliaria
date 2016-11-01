@@ -9,6 +9,7 @@ $factory->define(App\Property::class, function (Faker\Generator $faker) {
     return [
         'user_id' => 0,
         'type' => $faker->randomElement(['house', 'depto']),
+        'category' => $faker->randomElement(['habitacional', 'comercial', 'corporativa', 'terrenos']),
         'address' => $faker->streetName,
         'outside_number' => $faker->buildingNumber,
         'inside_number' => $faker->randomDigit,

@@ -982,7 +982,7 @@ a.notifySettings {
     animation: pulsate 0.5s ease-out;
 }
 
-.headerUser div span{
+.headerUser div span {
     color: white;
 }
 
@@ -2164,6 +2164,18 @@ a.card, div.card {
     z-index: 3;
 }
 
+.figFav {
+    color: #b60000;
+    position: absolute;
+    z-index: 3;
+    top: 10px;
+    right: 10px;
+    font-size: medium;
+}
+.figFav:hover {
+    font-size: large;
+}
+
 .carousel-col .figType {
     top: auto;
     left: auto;
@@ -2407,13 +2419,13 @@ h1.pageTitle {
 .singleTop ul.stats li {
     float: left;
     margin-left: 7px;
-    color: #333;
+    /*color: #333;*/
     font-size: 11px;
 }
 
 .singleTop ul.stats li span {
     font-size: 11px;
-    color: #999;
+    /*color: #999;*/
 }
 
 .singleTop ul.features {

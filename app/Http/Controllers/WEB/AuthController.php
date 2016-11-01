@@ -34,7 +34,7 @@ class AuthController extends Controller
             'status' => 'active',
         ], Input::get('keep'))
         ) {
-            return redirect()->back();
+            return redirect()->route('properties.index');
         } else {
             return redirect()->route('auth.index')->with('error', trans('auth.failed'));
         }
@@ -58,13 +58,14 @@ class AuthController extends Controller
             return redirect()->route('auth.register')->withInput(Input::all())->withErrors($validator);
 
         $new_user = new User([
-            'name' => Input::get('firstName'),
-            'email' => Input::get('lastName'),
+            'first_name' => Input::get('firstName'),
+            'last_name' => Input::get('lastName'),
+            'email' => Input::get('email'),
             'password' => bcrypt(Input::get('password')),
             'rol_id' => 1,
             'city_id' => 0,
             'state_id' => 0,
-            'country_id' => 'MX',
+            'country_id' => 'MEX',
             'status' => 'active'
         ]);
         if ($new_user->save()) {

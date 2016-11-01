@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>O'Farrill RealState | @yield('title')</title>
+    <title>O'Farrill RealEState | @yield('title')</title>
 
     @section('_header')
         <link href="{!! asset('css/jquery-ui.css') !!}" rel="stylesheet">
@@ -39,16 +39,14 @@
     <a href="#" class="home-navHandler visible-xs"><span class="fa fa-bars"></span></a>
     <div class="home-nav">
         <ul>
-            <li><a href="{!! route("properties.index") !!}">Propiedades</a></li>
-            <li><a href="{!! route("welcome.sale") !!}">Opcionar tu propiedad</a></li>
-            <li><a href="{!! route("welcome.why") !!}">¿Por qué nosotros?</a></li>
-            <li><a href="{!! route("welcome.contact") !!}">Contacto</a></li>
+            <li><a href="{!! route("properties.index") !!}">PROPIEDADES</a></li>
+            <li><a href="{!! route("welcome.sale") !!}">OPCIONAR TU PROPIEDAD</a></li>
+            <li><a href="{!! route("welcome.why") !!}">¿POR QUÉ NOSOTROS?</a></li>
+            <li><a href="{!! route("welcome.contact") !!}">CONTACTO</a></li>
             <li style="padding-top: 9px;">
-                <a href="#" data-toggle="modal" data-target="#signin">Ingresar</a>
+                <a href="#" data-toggle="modal" data-target="#signin">INGRESAR</a>
             </li>
-            <li>
-                <a href="#" class="btn btn-gray" data-toggle="modal" data-target="#signup">Registrate</a>
-            </li>
+            <li><a href="#" class="btn btn-gray" data-toggle="modal" data-target="#signup">REGISTRATE</a></li>
         </ul>
     </div>
 </div>
@@ -213,7 +211,7 @@
             </div>
 
         </div>
-        <div class="copyright">© 2015 Lumston - O'Farrill RealState</div>
+        <div class="copyright">© 2016 Lumston - O'Farrill RealEstate</div>
     </div>
 </div>
 

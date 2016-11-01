@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>O'Farrill RealState | @yield('title')</title>
+    <title>O'Farrill RealEState | @yield('title')</title>
 
     @section('_header')
         <link href="{!! asset('css/font-awesome.css') !!}" rel="stylesheet">
@@ -72,7 +72,7 @@
             <a href="#" class="headerUser dropdown-toggle" data-toggle="dropdown">
                 <img class="avatar headerAvatar pull-left" src="http://lorempixel.com/200/200/people/" alt="avatar">
                 <div class="userTop pull-left">
-                    <span class="headerUserName">{{ auth()->user()->name }}</span>
+                    <span class="headerUserName">{{ auth()->user()->first_name }}</span>
                     <span class="fa fa-angle-down"></span>
                 </div>
                 <div class="clearfix"></div>
@@ -80,7 +80,7 @@
             <div class="dropdown-menu pull-right userMenu" role="menu">
                 <div class="mobAvatar">
                     <img class="avatar mobAvatarImg" src="http://lorempixel.com/200/200/people/" alt="avatar">
-                    <div class="mobAvatarName">{{ auth()->user()->name }}</div>
+                    <div class="mobAvatarName">{{ auth()->user()->first_name }}</div>
                 </div>
                 <ul>
                     <li>
@@ -108,7 +108,7 @@
     <div class="headerUserWraper">
         <a href="{!! route("welcome.contact") !!}" class="headerUser">
             <div class="userTop pull-left">
-                <span class="headerUserName">Contacto</span>
+                <span class="headerUserName">CONTACTO</span>
             </div>
             <div class="clearfix"></div>
         </a>
@@ -116,7 +116,7 @@
     <div class="headerUserWraper">
         <a href="{!! route("welcome.why") !!}" class="headerUser">
             <div class="userTop pull-left">
-                <span class="headerUserName">¿Por qué nosotros?</span>
+                <span class="headerUserName">¿POR QUÉ NOSOTROS?</span>
             </div>
             <div class="clearfix"></div>
         </a>
@@ -124,7 +124,7 @@
     <div class="headerUserWraper">
         <a href="{!! route("welcome.sale") !!}" class="headerUser">
             <div class="userTop pull-left">
-                <span class="headerUserName">Opcionar tu propiedad </span>
+                <span class="headerUserName">OPCIONAR TU PROPIEDAD</span>
             </div>
             <div class="clearfix"></div>
         </a>
@@ -132,7 +132,7 @@
     <div class="headerUserWraper">
         <a href="{!! route('properties.index') !!}" class="headerUser">
             <div class="userTop pull-left">
-                <span class="headerUserName">Propiedades</span>
+                <span class="headerUserName">PROPIEDADES</span>
             </div>
             <div class="clearfix"></div>
         </a>
@@ -142,7 +142,7 @@
             <a href="{!! route('properties.create') !!}" class="headerUser">
                 <div class="userTop pull-left">
                     <i class="fa fa-plus-circle text-green" aria-hidden="true"></i>
-                    <span class="headerUserName">Nueva Propiedad</span>
+                    <span class="headerUserName">NUEVA PROPIEDAD</span>
                 </div>
                 <div class="clearfix"></div>
             </a>

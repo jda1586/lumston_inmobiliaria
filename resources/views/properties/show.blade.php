@@ -65,14 +65,20 @@
                             <li><a href="#"><span class="fa fa-star-o"></span></a></li>
                             <li>(146)</li>
                         </ul>--}}
-                        <div class="favLink">
-                            <a href="#">
-                                <span class="fa fa-heart-o" aria-hidden="true"></span>
-                            </a>54
+                        <div style="font-size: x-large; float: left;">
+                            <b>$ {{ number_format($property->price,2,'.',',') }}</b> MXN
                         </div>
+                        {{--<div class="favLink">
+
+                        </div>--}}
                         <ul class="stats">
-                            <li>
-                                <span class="icon-eye"></span> 200
+                            <li style="font-size: large !important;">
+                                <a href="#">
+                                    <span class="fa fa-heart-o" style="color: red; font-size: large;" aria-hidden="true"></span>
+                                </a>54
+                            </li>
+                            <li style="font-size: large !important;">
+                                <span class="icon-eye" style="font-size: large !important;"></span> 200
                             </li>
                         </ul>
                         <div class="clearfix"></div>
@@ -97,9 +103,9 @@
                     <div class="agentAvatar summaryItem">
                         <div class="clearfix"></div>
                         <img class="avatar agentAvatarImg" src="{!! asset('images/avatar-2.png') !!}" alt="avatar">
-                        <div class="agentName">Jane Smith</div>
+                        <div class="agentName">{{ ucwords($property->category) }}</div>
                         <a data-toggle="modal" href="#contactAgent" class="btn btn-lg btn-round btn-green contactBtn">
-                            Contact Agent
+                            Contactar Agente
                         </a>
                     </div>
                 </div>
@@ -120,18 +126,18 @@
                 <a href="#" class="btn btn-sm btn-round btn-o btn-facebook"><span class="fa fa-facebook"></span>
                     Facebook</a>
             </div>
-            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 shareItem">
+            {{--<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 shareItem">
                 <a href="#" class="btn btn-sm btn-round btn-o btn-twitter"><span class="fa fa-twitter"></span>
                     Twitter</a>
-            </div>
+            </div>--}}
             <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 shareItem">
                 <a href="#" class="btn btn-sm btn-round btn-o btn-google"><span class="fa fa-google-plus"></span>
                     Google+</a>
             </div>
-            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 shareItem">
+            {{--<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 shareItem">
                 <a href="#" class="btn btn-sm btn-round btn-o btn-pinterest"><span class="fa fa-pinterest"></span>
                     Pinterest</a>
-            </div>
+            </div>--}}
         </div>
     </div>
     <div class="amenities">

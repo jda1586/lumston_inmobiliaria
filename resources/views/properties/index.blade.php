@@ -139,9 +139,9 @@
 
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 formItem">
                         <div class="form-group">
-                            <label for="search_neighborhood">Colonia / Delegacion</label>
+                            <label for="search_neighborhood">Colonia / Sector</label>
                             <input type="text" class="form-control" name="neighborhood" id="search_neighborhood"
-                                   value="" placeholder="Colonia / Delegacion" autocomplete="off">
+                                   value="" placeholder="Colonia / Sector" autocomplete="off">
                         </div>
                     </div>
                 </div>
@@ -153,7 +153,7 @@
                                 <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
                                     <div class="checkbox custom-checkbox">
                                         <label><input type="checkbox" name="outdoor_pool" value="1">
-                                            <span class="fa fa-check"></span> Piscina</label>
+                                            <span class="fa fa-check"></span> Alberca</label>
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
@@ -164,14 +164,14 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                                {{--<div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
                                     <div class="checkbox custom-checkbox">
                                         <label>
                                             <input class="p_amenities" type="checkbox" name="balcony" value="1">
                                             <span class="fa fa-check"></span> Balcon
                                         </label>
                                     </div>
-                                </div>
+                                </div>--}}
                                 <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
                                     <div class="checkbox custom-checkbox">
                                         <label>
@@ -206,7 +206,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="form-group">
                         <a href="#" class="btn btn-green mb-10" id="filterPropertySubmit">
-                            Aplicar Filtros
+                            Buscar
                         </a>
                         <a href="javascript:void(0);" class="btn btn-gray display mb-10" id="showAdvancedFilter">
                             Mostrar Filtros Avanzados
