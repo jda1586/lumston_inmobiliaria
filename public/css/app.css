@@ -4972,11 +4972,13 @@ body.black {
     position: fixed;
     width: 100%;
     padding: 20px;
-    color: #fff;
+    /*color: #fff;*/
+    color: #000;
     top: 0;
     left: 0;
     z-index: 1000;
-    background: #2C467F;
+    /*background: #2C467F;*/
+    background: white;
     /*background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%); !* FF3.6+ *!
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.5)), color-stop(100%, rgba(0, 0, 0, 0))); !* Chrome,Safari4+ *!
     background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%); !* Chrome10+,Safari5.1+ *!
@@ -5028,11 +5030,12 @@ body.black {
 }
 
 .home-nav ul li a {
-    color: #fff;
+    /*color: #fff;*/
+    color: #000;
 }
 
 .no-touch .home-nav ul li a:hover {
-    color: #fff;
+    color: blue;
 }
 
 .home-caption {
