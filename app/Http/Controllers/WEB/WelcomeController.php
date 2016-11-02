@@ -12,8 +12,9 @@ class WelcomeController extends Controller
 {
     public function index()
     {
+//        dd(Property::whereStatus('for_sale')->orWhere('status', 'for_rent')->orderBy('created_at', 'desc')->limit(6)->get());
         return view('welcome.index', [
-            'properties' => Property::whereStatus('for_sale')->orderBy('created_at', 'desc')->limit(6)->get(),
+            'properties' => Property::whereStatus('for_sale')->orWhere('status', 'for_rent')->orderBy('created_at', 'desc')->limit(6)->get(),
             'price_limit' => [
                 Property::min('price'),
                 Property::max('price')
@@ -23,16 +24,22 @@ class WelcomeController extends Controller
 
     public function sale()
     {
-        return view('welcome.sale');
+        return view('welcome.sale', [
+            'properties' => Property::whereStatus('for_sale')->orWhere('status', 'for_rent')->orderBy('created_at', 'desc')->limit(3)->get(),
+        ]);
     }
 
     public function contact()
     {
-        return view('welcome.contact');
+        return view('welcome.contact', [
+            'properties' => Property::whereStatus('for_sale')->orWhere('status', 'for_rent')->orderBy('created_at', 'desc')->limit(3)->get(),
+        ]);
     }
 
     public function why()
     {
-        return view('welcome.why');
+        return view('welcome.why', [
+            'properties' => Property::whereStatus('for_sale')->orWhere('status', 'for_rent')->orderBy('created_at', 'desc')->limit(3)->get(),
+        ]);
     }
 }

@@ -38,19 +38,6 @@ class PropertiesController extends Controller
         } else {
             $city = new City();
         }
-        /*return redirect()->back()->with('city', 'No encontramos la ciudad.')->withInput();*/
-
-        /*$query = "SELECT name, latitude, longitude, 3956 * 2 *
-          ASIN(SQRT( POWER(SIN(($origLat - latitude)*pi()/180/2),2)
-          +COS($origLat*pi()/180 )*COS(latitude*pi()/180)
-          *POWER(SIN(($origLon-longitude)*pi()/180/2),2))) 
-          as distance FROM $tableName WHERE 
-          longitude between ($origLon-$dist/cos(radians($origLat))*111.044736)
-          and ($origLon+$dist/cos(radians($origLat))*111.044736)
-          and latitude between ($origLat-($dist/111.044736))
-          and ($origLat+($dist/111.044736))
-          having distance < $dist ORDER BY distance limit 100";*/
-
 
         if (Input::has('city') && isset($city->id)) {
             $origLat = $city->latitude;
@@ -106,7 +93,7 @@ class PropertiesController extends Controller
     {
         $validator = Validator::make(['id' => $id], ['id' => 'required|exists:properties']);
         if ($validator->fails())
-            return redirect()->back();
+            return redirect()->route('properties.index');
 
         return view('properties.show', [
             'property' => Property::find($id),

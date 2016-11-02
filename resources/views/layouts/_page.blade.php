@@ -46,7 +46,8 @@
             <li style="padding-top: 9px;">
                 <a href="#" data-toggle="modal" data-target="#signin">INGRESAR</a>
             </li>
-            <li><a href="#" class="btn btn-blue" style="color: white !important;" data-toggle="modal" data-target="#signup">REGISTRATE</a></li>
+            <li><a href="#" class="btn btn-blue" style="color: white !important;" data-toggle="modal"
+                   data-target="#signup">REGISTRATE</a></li>
         </ul>
     </div>
 </div>
@@ -70,12 +71,11 @@
                         <div class="osLight footer-header">Propiedades</div>
                         <div>
                             <ul class="footer-nav pb20">
-                                <li><a href="#">Properties List</a></li>
-                                <li><a href="#">Single Property</a></li>
-                                <li><a href="#">Search by City: San Francisco</a></li>
-                                <li><a href="#">Search by Category: Apartment</a></li>
-                                <li><a href="#">Search by Type: For Rent</a></li>
-                                <li><a href="#">Search by Price: Less than $70,000</a></li>
+                                <li><a href="{!! route('properties.index') !!}">Propiedades</a></li>
+                                <li><a href="#">Buscar por ciudad: Guadalajara</a></li>
+                                <li><a href="#">Buscar por inmueble: Casa</a></li>
+                                <li><a href="#">Buscar por tipo: VENTA</a></li>
+                                <li><a href="#">Buscar por precio: menos de $1,000,000</a></li>
                             </ul>
                         </div>
                     </li>
@@ -98,54 +98,7 @@
                         <div class="osLight footer-header">Lo mas nuevo</div>
                         <div>
                             <ul class="footer-nav pb20">
-                                <li>
-                                    <a href="#">
-                                        <div style="float: left; margin-right: 10px;">
-                                            <img src="http://mariusn.com/themes/reales-wp/wp-content/uploads/2014/12/bg-1-120x120.jpg"
-                                                 width="60" height="60">
-                                        </div>
-                                        <div>
-                                            <div>Modern Residence</div>
-                                            <div style="font-size: 11px; color: gray;">547 35th Ave, San Francisco,
-                                                94121, United States
-                                            </div>
-                                            <div>$1,200,000 <span class="badge">For Sale</span></div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div style="float: left; margin-right: 10px;">
-                                            <img src="http://mariusn.com/themes/reales-wp/wp-content/uploads/2015/02/img-prop-120x120.jpg"
-                                                 width="60" height="60">
-                                        </div>
-                                        <div>
-                                            <div>Sophisticated Residence</div>
-                                            <div style="font-size: 11px; color: gray;">600 40th Ave, San Francisco,
-                                                94121, United States
-                                            </div>
-                                            <div>$799,000 <span class="badge">For Sale</span></div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div style="float: left; margin-right: 10px;">
-                                            <img src="http://mariusn.com/themes/reales-wp/wp-content/uploads/2014/12/bg-5-1024x576-120x120.jpg"
-                                                 width="60" height="60">
-                                        </div>
-                                        <div>
-                                            <div>Luxury Mansion</div>
-                                            <div style="font-size: 11px; color: gray;">10 Romain St, San Francisco,
-                                                123456, Romania
-                                            </div>
-                                            <div>$3,400 /mo <span class="badge">For Rent</span></div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </a>
-                                </li>
+                                @each('welcome.partials.miniBox',$properties,'property')
                             </ul>
                         </div>
                     </li>
