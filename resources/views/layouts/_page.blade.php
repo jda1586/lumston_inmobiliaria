@@ -32,7 +32,7 @@
     <div class="home-logo osLight">
         <a href="{!! route('welcome.index') !!}">
             <span class="fa" style="color: white;">
-                <img src="{!! asset('images/web/logo_bco.svg') !!}" width="120px">
+                <img src="{!! asset('images/web/logo.svg') !!}" width="120px">
             </span>
         </a>
     </div>
@@ -46,7 +46,7 @@
             <li style="padding-top: 9px;">
                 <a href="#" data-toggle="modal" data-target="#signin">INGRESAR</a>
             </li>
-            <li><a href="#" class="btn btn-gray" data-toggle="modal" data-target="#signup">REGISTRATE</a></li>
+            <li><a href="#" class="btn btn-blue" style="color: white !important;" data-toggle="modal" data-target="#signup">REGISTRATE</a></li>
         </ul>
     </div>
 </div>
