@@ -20,6 +20,7 @@ Route::group(['namespace' => 'API'], function () {
 
     Route::group(['prefix' => 'properties', 'as' => 'properties.api.'], function () {
         Route::post('/search', 'PropertiesController@search')->name('search');
+        Route::post('/fav/add', 'PropertiesController@fav_add')->name('fav.add');
     });
 });
 

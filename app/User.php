@@ -35,6 +35,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @method static \Illuminate\Database\Query\Builder|\App\User whereCountryId($value)
  * @method static \Illuminate\Database\Query\Builder|\App\User whereStatus($value)
  * @mixin \Eloquent
+ * @property string $first_name
+ * @property string $last_name
+ * @property-read \App\Role $role
+ * @method static \Illuminate\Database\Query\Builder|\App\User whereFirstName($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\User whereLastName($value)
  */
 class User extends Authenticatable
 {
@@ -63,5 +68,9 @@ class User extends Authenticatable
         return $this->belongsTo('App\Role', 'rol_id');
     }
 
+    public function favorites()
+    {
+        return $this->hasMany('App\UserFavorite');
+    }
 
 }

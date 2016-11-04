@@ -1,9 +1,9 @@
 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
     <div class="card">
-        <div class="figFav" data-value="{!! $property->id !!}" data-status=""
-             onmouseover="$(this).find('i').removeClass('fa-heart-o').addClass('fa-heart')"
-             onmouseleave="$(this).find('i').removeClass('fa-heart').addClass('fa-heart-o')">
-            <i class="fa fa-heart-o" aria-hidden="true"></i>
+        <div class="figFav figFavS" data-value="{!! $property->id !!}"
+             data-status="{!! $property->favCheck(auth()->check() ? auth()->user()->id : 0) ?'selectec':'toggle' !!}">
+            <i class="fa {!! $property->favCheck(auth()->check() ? auth()->user()->id : 0) ?'fa-heart':'fa-heart-o' !!}"
+               aria-hidden="true"></i>
         </div>
         <div class="figure" onclick="window.location = '{!! route('properties.show',['id'=>$property->id]) !!}'">
             <img src="/images/prop/1-1.png" alt="image">

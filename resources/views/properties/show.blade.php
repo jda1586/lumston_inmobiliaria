@@ -73,13 +73,18 @@
                         </div>--}}
                         <ul class="stats">
                             <li style="font-size: large !important;">
-                                <a href="#">
-                                    <span class="fa fa-heart-o" style="color: red; font-size: large;" aria-hidden="true"></span>
-                                </a>54
+                                <div class="figFavS" data-value="{!! $property->id !!}"
+                                     data-status="{!! $property->favCheck(auth()->check() ? auth()->user()->id : 0) ?'selectec':'toggle' !!}">
+                                    <i class="fa {!! $property->favCheck(auth()->check() ? auth()->user()->id : 0) ?'fa-heart':'fa-heart-o' !!}"
+                                       style="color: red; font-size: large; cursor: pointer;" aria-hidden="true"></i>
+                                    <span class="figFavN">{{ $property->users_fav()->count() }}</span>
+                                </div>
                             </li>
-                            <li style="font-size: large !important;">
-                                <span class="icon-eye" style="font-size: large !important;"></span> 200
-                            </li>
+                            @if(auth()->check() && Guardian::check('admin_property_views'))
+                                <li style="font-size: large !important;">
+                                    <span class="icon-eye" style="font-size: large !important;"></span> 200
+                                </li>
+                            @endif
                         </ul>
                         <div class="clearfix"></div>
                         <ul class="features">

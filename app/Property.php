@@ -49,6 +49,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\App\Property whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Property whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string $category
+ * @method static \Illuminate\Database\Query\Builder|\App\Property whereCategory($value)
  */
 class Property extends Model
 {
@@ -60,5 +62,15 @@ class Property extends Model
     public function details()
     {
         return $this->hasOne('App\PropertyDetail');
+    }
+
+    public function users_fav()
+    {
+        return $this->hasMany('App\UserFavorite');
+    }
+
+    public function favCheck($user_id = 0)
+    {
+        return $this->hasMany('App\UserFavorite')->whereUserId($user_id)->count() > 0 ? true : false;
     }
 }

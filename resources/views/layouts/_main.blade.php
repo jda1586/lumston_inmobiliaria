@@ -173,7 +173,10 @@
 <div class="icon_contact" style="background-image: url('{!! asset('images/web/contacto.png') !!}');"></div>
 {{ csrf_field() }}
 @section('_footer')
-    <script> var _CsrfToken = "{!! csrf_token() !!}";</script>
+    <script>
+        var _CsrfToken = "{!! csrf_token() !!}";
+        var uid = {!! auth()->check() ? auth()->user()->id : 0 !!};
+    </script>
     <script src="{!! asset('js/jquery-2.1.1.min.js') !!}"></script>
     <script src="{!! asset('js/jquery-ui.min.js') !!}"></script>
     <script src="{!! asset('js/jquery-ui-touch-punch.js') !!}"></script>

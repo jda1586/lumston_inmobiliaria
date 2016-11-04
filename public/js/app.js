@@ -652,5 +652,41 @@ function pSearch() {
         $('#signin').modal('show');
     });
 
+    $('.figFavS').mouseenter(function () {
+        if ($(this).attr('data-status') == 'toggle') {
+            $(this).find('i').toggleClass('fa-heart-o');
+            $(this).find('i').toggleClass('fa-heart');
+        }
+    });
+
+    $('.figFavS').mouseleave(function () {
+        if ($(this).attr('data-status') == 'toggle') {
+            $(this).find('i').toggleClass('fa-heart-o');
+            $(this).find('i').toggleClass('fa-heart');
+        }
+    });
+
+    $('.figFavS').click(function () {
+        var $this = $(this);
+        $.post('/api/properties/fav/add', {'id': $this.attr('data-value'), 'user': uid})
+            .done(function (data) {
+                console.log(data);
+                if (data.ok) {
+                    $this.attr('data-status', data.status);
+                    $this.find('i').toggleClass('fa-heart-o');
+                    $this.find('i').toggleClass('fa-heart');
+                    if (data.status == 'selected') {
+                        $this.find('.figFavN').html(parseInt($this.find('.figFavN').html()) + 1);
+                    } else {
+                        $this.find('.figFavN').html(parseInt($this.find('.figFavN').html()) - 1);
+                    }
+                } else if (data.error.user) {
+                    $('#signin').modal('show');
+                }
+            })
+            .fail(function (data) {
+                console.log(data);
+            });
+    });
 })
 (jQuery);
