@@ -37,7 +37,7 @@
                                 @endforeach
                             </div>
                             <div class="form-group">
-                                <input type="password" placeholder="Confirmar" class="form-control">
+                                <input name="password_confirmation" type="password" placeholder="Confirmar" class="form-control">
                             </div>
                             <div class="form-group">
                                 <div class="btn-group-justified">
