@@ -387,6 +387,9 @@ function pSearch() {
         $this.hide();
         var $modal = $('<div style="width: 300px; height: 150px; background-color: white; box-shadow: 0px 0px 10px gray;' +
             'position: fixed; z-index: 99999999; right: 40px; bottom: 30px; border-radius: 15px; display: none;">' +
+            '<div id="modClose" style="cursor: pointer; position: absolute; top: -5px; right: 3px; font-size: 25px; color: white;">' +
+            '<i class="fa fa-times-circle" aria-hidden="true"></i>' +
+            '</div>' +
             '<p align="center" style="border-radius: 15px 15px 0px 0px; padding-top: 5px; font-size: 20px; ' +
             'color: white; background-color: #2C467F;"><b>Contactanos</b></p>' +
             '<div style="padding: 0px 10px; font-size: medium;">' +
@@ -400,11 +403,14 @@ function pSearch() {
         $modal.show('fast');
         $modal.mouseleave(function () {
             $modal.hide('fast', function () {
-                $this.show();
                 $modal.remove();
+                $this.show();
             });
         });
-
+        var $close = $modal.find('#modClose');
+        $close.click(function () {
+            $modal.trigger('mouseleave');
+        });
     });
 
 })(jQuery);
