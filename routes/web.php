@@ -36,12 +36,12 @@ Route::group(['namespace' => 'WEB'], function () {
         Route::get('/show/{id}', 'PropertiesController@show')->name('show');
 
         /* Authenticated */
-        Route::group(['middleware' => 'auth'], function () {
+        Route::group(['middleware' => ['auth', 'guardian']], function () {
             Route::get('/create', 'PropertiesController@create')->name('create');
         });
     });
 
-    Route::group(['middleware' => 'auth', 'as' => 'user.', 'prefix' => 'user'], function () {
+    Route::group(['middleware' => ['auth', 'guardian'], 'as' => 'user.', 'prefix' => 'user'], function () {
         Route::get('/profile', 'UsersController@index')->name('index');
     });
 

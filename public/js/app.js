@@ -614,6 +614,12 @@ function pSearch() {
             'position: fixed; z-index: 99999999; right: 40px; bottom: 30px; border-radius: 15px; display: none;">' +
             '<p align="center" style="border-radius: 15px 15px 0px 0px; padding-top: 5px; font-size: 20px; ' +
             'color: white; background-color: #2C467F;"><b>Contactanos</b></p>' +
+            '<div style="padding: 0px 10px; font-size: medium;">' +
+            'Francisco Zarco #2392<br>' +
+            'Col. Ladron de Guevara<br>' +
+            'Guadalajara, Jal.<br>' +
+            'Cel: 33 3166 5792<br>' +
+            '</div>' +
             '</div>');
         $this.parent().append($modal);
         $modal.show('fast');

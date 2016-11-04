@@ -195,12 +195,11 @@
                         <div class="osLight footer-header">Propiedades</div>
                         <div>
                             <ul class="footer-nav pb20">
-                                <li><a href="#">Properties List</a></li>
-                                <li><a href="#">Single Property</a></li>
-                                <li><a href="#">Search by City: San Francisco</a></li>
-                                <li><a href="#">Search by Category: Apartment</a></li>
-                                <li><a href="#">Search by Type: For Rent</a></li>
-                                <li><a href="#">Search by Price: Less than $70,000</a></li>
+                                <li><a href="{!! route('properties.index') !!}">Propiedades</a></li>
+                                <li><a href="#">Buscar por ciudad: Guadalajara</a></li>
+                                <li><a href="#">Buscar por inmueble: Casa</a></li>
+                                <li><a href="#">Buscar por tipo: VENTA</a></li>
+                                <li><a href="#">Buscar por precio: menos de $1,000,000</a></li>
                             </ul>
                         </div>
                     </li>

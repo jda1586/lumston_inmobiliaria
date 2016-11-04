@@ -67,8 +67,8 @@
             <div class="row pb40">
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                     <div class="agent">
-                        <a href="profile.html" class="agent-avatar">
-                            <img src="images/avatar-1.png" alt="Antony Iglesias">
+                        <a href="#" class="agent-avatar">
+                            <img src="{!! asset('images/web/of_1.png') !!}" alt="#">
                             <div class="ring"></div>
                         </a>
                         <div class="agent-name osLight">Área habitacional</div>
@@ -90,8 +90,8 @@
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                     <div class="agent">
-                        <a href="profile.html" class="agent-avatar">
-                            <img src="images/avatar-3.png" alt="Antony Iglesias">
+                        <a href="#" class="agent-avatar">
+                            <img src="{!! asset('images/web/of_2.png') !!}" alt="#">
                             <div class="ring"></div>
                         </a>
                         <div class="agent-name osLight">Área comercial y bodegas</div>
@@ -113,8 +113,8 @@
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                     <div class="agent">
-                        <a href="profile.html" class="agent-avatar">
-                            <img src="images/avatar-4.png" alt="Antony Iglesias">
+                        <a href=#" class="agent-avatar">
+                            <img src="{!! asset('images/web/of_3.png') !!}" alt="">
                             <div class="ring"></div>
                         </a>
                         <div class="agent-name osLight">Área corporativa</div>
@@ -136,8 +136,8 @@
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                     <div class="agent">
-                        <a href="profile.html" class="agent-avatar">
-                            <img src="images/avatar-2.png" alt="Antony Iglesias">
+                        <a href="#" class="agent-avatar">
+                            <img src="{!! asset('images/web/of_4.png') !!}" alt="Antony Iglesias">
                             <div class="ring"></div>
                         </a>
                         <div class="agent-name osLight">Área de terrenos</div>

@@ -137,7 +137,7 @@
             <div class="clearfix"></div>
         </a>
     </div>
-    @if(auth()->check())
+    @if(auth()->check() && Guardian::check('properties.create'))
         <div class="headerUserWraper">
             <a href="{!! route('properties.create') !!}" class="headerUser">
                 <div class="userTop pull-left">
