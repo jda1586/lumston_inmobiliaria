@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Input;
+use Session;
 use Validator;
 
 use App\Http\Controllers\Controller;
@@ -22,7 +23,6 @@ class PropertiesController extends Controller
      */
     public function index()
     {
-
         $validator = Validator::make(Input::all(), [
             /*'city' => 'required|min:4|max:255'*/
         ]);

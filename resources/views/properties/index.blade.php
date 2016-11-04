@@ -323,10 +323,11 @@
     </script>
     @parent
     <script>
-        @if(!auth()->check())
+        @if(!auth()->check() && session('properties_login', true))
         $(document).ready(function () {
             $('#signin').modal('show');
         });
+        <?php session(['properties_login' => false]) ?>
         @endif
     </script>
 @endsection
