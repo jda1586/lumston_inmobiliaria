@@ -2169,7 +2169,7 @@ a.card, div.card {
     position: absolute;
     z-index: 3;
     top: 10px;
-    right: 10px;
+    right: 20px;
     font-size: medium;
 }
 .figFav:hover {
