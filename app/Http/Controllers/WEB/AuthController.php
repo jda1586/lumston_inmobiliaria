@@ -15,7 +15,7 @@ class AuthController extends Controller
     public function index()
     {
         return view('auth.index', [
-            'properties' => Property::whereStatus('for_sale')->orWhere('status', 'for_rent')->orderBy('created_at', 'desc')->limit(6)->get(),
+            'properties' => Property::whereStatus('for_sale')->orWhere('status', 'for_rent')->orderBy('created_at', 'desc')->limit(3)->get(),
         ]);
     }
 
@@ -45,7 +45,7 @@ class AuthController extends Controller
     public function register()
     {
         return view('auth.register', [
-            'properties' => Property::whereStatus('for_sale')->orWhere('status', 'for_rent')->orderBy('created_at', 'desc')->limit(6)->get(),
+            'properties' => Property::whereStatus('for_sale')->orWhere('status', 'for_rent')->orderBy('created_at', 'desc')->limit(3)->get(),
         ]);
     }
 
