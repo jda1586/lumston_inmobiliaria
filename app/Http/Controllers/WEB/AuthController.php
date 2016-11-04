@@ -75,7 +75,10 @@ class AuthController extends Controller
         ]);
         if ($new_user->save()) {
             auth()->login($new_user);
-            return redirect()->route('properties.index');
+            return redirect()->route('properties.index')->with('alert',[
+                'type' => 'success',
+                'msg' => "Bienvenido a O'Farrill RealEstate"
+            ]);
         }
     }
 

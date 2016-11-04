@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>O'Farrill RealEState | @yield('title')</title>
+    <title>O'Farrill RealEstate | @yield('title')</title>
 
     @section('_header')
         <link href="{!! asset('css/font-awesome.css') !!}" rel="stylesheet">
@@ -155,8 +155,12 @@
 
 
 <!-- Content -->
-
 <div id="wrapper">
+    @if(Session::has('alert'))
+        <div style="background-color: {!! session('alert')['type'] == 'success'?'#5cb85c':'red' !!}; color: white; text-align: center; font-size: medium;">
+            {{ session('alert')['msg'] }}
+        </div>
+    @endif
     <div id="mapView">
         <div class="mapPlaceholder"><span class="fa fa-spin fa-spinner"></span> Loading map...</div>
     </div>
