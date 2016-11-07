@@ -113,10 +113,23 @@ return [
     */
 
     'attributes'    => [
-        'city'          => 'ciudad',
-        'password'      => 'contraseña',
-        'firstName'     => 'nombre',
-        'lastName'      => 'apellidos'
+        'state'         => 'Estado',
+        'city'          => 'Ciudad',
+        'password'      => 'Contraseña',
+        'firstName'     => 'Nombre',
+        'lastName'      => 'Apellidos',
+        'title'         => 'Titulo',
+        'description'   => 'Descripcion',
+        'address'       => 'Direccion',
+        'outside'       => 'No. Exterior',
+        'inside'        => 'No. Interior',
+        'bedrooms'      => 'Habitaciones',
+        'bathrooms'     => 'Baños',
+        'ground'        => 'Area',
+        'suburb'        => 'Colonia',
+        'postalCode'    => 'Codigo Postal',
+        'images'        => 'Imagenes',
+
     ],
 
 ];

@@ -13,6 +13,7 @@ function pSearch() {
             }
         );
 }
+
 (function ($) {
     "use strict";
 
@@ -246,8 +247,10 @@ function pSearch() {
             google.maps.event.addListener(newMarker, "mouseup", function (event) {
                 var latitude = this.position.lat();
                 var longitude = this.position.lng();
-                $('#latitude').text(this.position.lat());
-                $('#longitude').text(this.position.lng());
+                /*$('#latitude').text(this.position.lat());
+                 $('#longitude').text(this.position.lng());*/
+                $('#latitude').val(newMarker.getPosition().lat());
+                $('#longitude').val(newMarker.getPosition().lng());
             });
         }
 
@@ -597,8 +600,8 @@ function pSearch() {
             }
             newMarker.setPosition(place.geometry.location);
             newMarker.setVisible(true);
-            $('#latitude').text(newMarker.getPosition().lat());
-            $('#longitude').text(newMarker.getPosition().lng());
+            $('#latitude').val(newMarker.getPosition().lat());
+            $('#longitude').val(newMarker.getPosition().lng());
 
             return false;
         });

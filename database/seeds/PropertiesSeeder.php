@@ -1,5 +1,8 @@
 <?php
 
+use App\Property;
+use App\PropertyDetail;
+use App\PropertyImage;
 use Illuminate\Database\Seeder;
 
 class PropertiesSeeder extends Seeder
@@ -11,9 +14,14 @@ class PropertiesSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Property::class, 1000)->create()
-            ->each(function ($property) {
-                $property->details()->save(factory(App\PropertyDetail::class)->make());
+        factory(Property::class, 1000)->create()
+            ->each(function (Property $property) {
+                $property->details()->save(factory(PropertyDetail::class)->make());
+
+                $property->images()->save(factory(PropertyImage::class)->make());
+                $property->images()->save(factory(PropertyImage::class)->make());
+                $property->images()->save(factory(PropertyImage::class)->make());
+                $property->images()->save(factory(PropertyImage::class)->make());
             });
     }
 }

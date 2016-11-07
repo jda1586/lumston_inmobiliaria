@@ -22,8 +22,14 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\App\PropertyImage whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\App\PropertyImage whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read \App\Property $property
  */
 class PropertyImage extends Model
 {
-    //
+    protected $fillable = ['property_id', 'name', 'path', 'system'];
+
+    public function property()
+    {
+        return $this->belongsTo('App\Property');
+    }
 }

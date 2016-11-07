@@ -22,6 +22,10 @@ Route::group(['namespace' => 'API'], function () {
         Route::post('/search', 'PropertiesController@search')->name('search');
         Route::post('/fav/add', 'PropertiesController@fav_add')->name('fav.add');
     });
+
+    Route::group(['prefix' => 'state', 'as' => 'location.api.'], function () {
+        Route::post('/getCities', 'LocationController@getCities')->name('getCities');
+    });
 });
 
 Route::get('/user', function (Request $request) {

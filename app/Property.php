@@ -51,6 +51,8 @@ use Illuminate\Database\Eloquent\Model;
  * @mixin \Eloquent
  * @property string $category
  * @method static \Illuminate\Database\Query\Builder|\App\Property whereCategory($value)
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\PropertyImage[] $images
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\UserFavorite[] $users_fav
  */
 class Property extends Model
 {
@@ -62,6 +64,11 @@ class Property extends Model
     public function details()
     {
         return $this->hasOne('App\PropertyDetail');
+    }
+
+    public function images()
+    {
+        return $this->hasMany('App\PropertyImage');
     }
 
     public function users_fav()

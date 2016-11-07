@@ -6,7 +6,7 @@
                aria-hidden="true"></i>
         </div>
         <div class="figure" onclick="window.location = '{!! route('properties.show',['id'=>$property->id]) !!}'">
-            <img src="/images/prop/1-1.png" alt="image">
+            <img src="{!! asset($property->images->first()->path) !!}" alt="image">
             <div class="propDetails">
                 $ {{ number_format($property->price, 2,'.',','). ($property->status == 'for_rent'?' /mes':'') }}
             </div>

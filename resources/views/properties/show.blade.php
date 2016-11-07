@@ -6,44 +6,22 @@
     <div class="singleTop">
         <div id="carouselFull" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
-                <li data-target="#carouselFull" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselFull" data-slide-to="1"></li>
-                <li data-target="#carouselFull" data-slide-to="2"></li>
-                <li data-target="#carouselFull" data-slide-to="3"></li>
+                @foreach($images as $image)
+                    <li data-target="#carouselFull" data-slide-to="{!! $loop->iteration - 1 !!}"
+                        class="{!! $loop->first ? 'active':'' !!}"></li>
+                @endforeach
             </ol>
             <div class="carousel-inner">
-                <div class="item active">
-                    <img src="{!! asset('images/prop/4-1.png') !!}" alt="First slide">
-                    <div class="container">
-                        <div class="carousel-caption">
+                @foreach($images as $image)
+                    <div class="item {!! $loop->first ? 'active':'' !!}" style="height: 480px;">
+                        <img src="{!! Storage::disk('public')->url($image->path) !!}" alt="">
+                        <div class="container">
+                            <div class="carousel-caption">
 
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="item">
-                    <img src="{!! asset('images/prop/4-2.png') !!}" alt="Second slide">
-                    <div class="container">
-                        <div class="carousel-caption">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="{!! asset('images/prop/4-3.png') !!}" alt="Third slide">
-                    <div class="container">
-                        <div class="carousel-caption">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="{!! asset('images/prop/4-4.png') !!}" alt="Fourth slide">
-                    <div class="container">
-                        <div class="carousel-caption">
-
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <a class="left carousel-control" href="#carouselFull" role="button" data-slide="prev"><span
                         class="fa fa-chevron-left"></span></a>
@@ -107,7 +85,8 @@
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                     <div class="agentAvatar summaryItem">
                         <div class="clearfix"></div>
-                        <img class="avatar agentAvatarImg" src="{!! asset('images/avatar-2.png') !!}" alt="avatar">
+                        <img class="avatar agentAvatarImg"
+                             src="{!! asset('images/web/'.$property->category.'.png') !!}" alt="avatar">
                         <div class="agentName">{{ ucwords($property->category) }}</div>
                         <a data-toggle="modal" href="#contactAgent" class="btn btn-lg btn-round btn-green contactBtn">
                             Contactar Agente
@@ -722,23 +701,7 @@
 
         var _latitude;
         var _longitude;
-        var _props = [
-            {
-                title: "{{ $property->details->title }}",
-                image: '1-1-thmb.png',
-                type: '{{ trans('search.'.$property->status) }}',
-                price: '${{ number_format($property->price, 2, '.',',') }}',
-                address: '{{ $property->address }}',
-                bedrooms: '{{ $property->bedrooms }}',
-                bathrooms: '{{ $property->bathrooms }}',
-                area: '3430 m<sup>2</sup>',
-                position: {
-                    lat: {{ $property->latitude }},
-                    lng: {{ $property->longitude }}
-                },
-                markerIcon: "marker-blue.png"
-            },
-        ];
+        var _props = [];
 
         @if($property->latitude && $property->longitude)
             _latitude = {!! $property->latitude !!};
@@ -747,6 +710,8 @@
             _latitude = 20.6690251;
         _longitude = -103.3388489;
 
+        _latitude = 20.6690251;
+        _longitude = -103.3388489;
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
         }

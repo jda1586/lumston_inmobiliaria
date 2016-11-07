@@ -5,6 +5,7 @@ namespace App\Http\Controllers\WEB;
 use App\City;
 use App\Property;
 use App\PropertyDetail;
+use App\PropertyImage;
 use DB;
 use Illuminate\Http\Request;
 
@@ -101,8 +102,10 @@ class PropertiesController extends Controller
         if ($validator->fails())
             return redirect()->route('properties.index');
 
+        $property = Property::find($id);
         return view('properties.show', [
-            'property' => Property::find($id),
+            'property' => $property,
+            'images' => $property->images,
         ]);
     }
 
@@ -116,11 +119,16 @@ class PropertiesController extends Controller
 
     public function store()
     {
+        /*foreach (request()->images as $k => $image) {
+            $file = request()->file('images.' . $k);
+            dd($file->getFilename());
+        }*/
+//        dd(request()->file('images.0'));
         $validator = Validator::make(Input::all(), [
             /* Property */
-            'type' => 'required|string',
+            'p_type' => 'required|string',
             'address' => 'required',
-            'outside' => 'required',
+            'category' => 'required',
             'inside' => 'required',
             'city' => 'required',
             'state' => 'required',
@@ -136,7 +144,11 @@ class PropertiesController extends Controller
             'title' => 'required',
             'description' => 'required',
             'ground' => 'required',
-            'construction' => 'required'
+            /*'construction' => 'required'*/
+
+            /* PropertyImages */
+            'images' => 'required',
+            'images.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
         if ($validator->fails())
             return redirect()->route('properties.create')->withErrors($validator)->withInput(Input::all());
@@ -144,8 +156,9 @@ class PropertiesController extends Controller
         $user = auth()->user();
         $property = new Property([
             'user_id' => $user->id,
-            'type' => Input::get('type'),
-            'address' => Input::get('addres'),
+            'type' => Input::get('p_type'),
+            'category' => Input::get('category'),
+            'address' => Input::get('address'),
             'outside_number' => Input::get('outside'),
             'inside_number' => Input::get('inside'),
             'city_id' => Input::get('city'),
@@ -166,11 +179,22 @@ class PropertiesController extends Controller
                 'title' => Input::get('title'),
                 'description' => Input::get('description'),
                 'ground' => Input::get('ground'),
-                'construction' => Input::get('construction'),
-                'amenities' => ''
+                'construction' => '0',
+                'amenities' => implode(';', Input::get('amenities'))
             ]));
+
+            foreach (request()->images as $k => $image) {
+                $file = request()->file('images.' . $k);
+                $name = $property->id . $file->getClientOriginalName();
+                $path = $file->storeAs('properties', $name, 'public');
+                $property->images()->save(new PropertyImage([
+                    'name' => $name,
+                    'path' => $path,
+                    'system' => 'public'
+                ]));
+            }
         } else {
-            return redirect()->route('properties.index')->with('error', 'No ha sido posible guardar la propiedad');
+            return redirect()->route('properties.create')->with('error', 'No ha sido posible guardar la propiedad');
         }
 
         return redirect()->route('properties.show', ['id' => $property->id]);

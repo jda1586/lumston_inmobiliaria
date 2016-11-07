@@ -68,7 +68,7 @@
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                     <div class="agent">
                         <a href="#" class="agent-avatar">
-                            <img src="{!! asset('images/web/of_1.png') !!}" alt="#">
+                            <img src="{!! asset('images/web/habitacional.png') !!}" alt="#">
                             <div class="ring"></div>
                         </a>
                         <div class="agent-name osLight">Área habitacional</div>
@@ -91,7 +91,7 @@
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                     <div class="agent">
                         <a href="#" class="agent-avatar">
-                            <img src="{!! asset('images/web/of_2.png') !!}" alt="#">
+                            <img src="{!! asset('images/web/comercial.png') !!}" alt="#">
                             <div class="ring"></div>
                         </a>
                         <div class="agent-name osLight">Área comercial y bodegas</div>
@@ -114,7 +114,7 @@
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                     <div class="agent">
                         <a href=#" class="agent-avatar">
-                            <img src="{!! asset('images/web/of_3.png') !!}" alt="">
+                            <img src="{!! asset('images/web/corporativa.png') !!}" alt="">
                             <div class="ring"></div>
                         </a>
                         <div class="agent-name osLight">Área corporativa</div>
@@ -137,7 +137,7 @@
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                     <div class="agent">
                         <a href="#" class="agent-avatar">
-                            <img src="{!! asset('images/web/of_4.png') !!}" alt="Antony Iglesias">
+                            <img src="{!! asset('images/web/terrenos.png') !!}" alt="Antony Iglesias">
                             <div class="ring"></div>
                         </a>
                         <div class="agent-name osLight">Área de terrenos</div>

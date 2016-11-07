@@ -40,6 +40,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @property-read \App\Role $role
  * @method static \Illuminate\Database\Query\Builder|\App\User whereFirstName($value)
  * @method static \Illuminate\Database\Query\Builder|\App\User whereLastName($value)
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\UserFavorite[] $favorites
  */
 class User extends Authenticatable
 {
