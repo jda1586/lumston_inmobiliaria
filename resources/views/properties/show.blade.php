@@ -13,7 +13,7 @@
             </ol>
             <div class="carousel-inner">
                 @foreach($images as $image)
-                    <div class="item {!! $loop->first ? 'active':'' !!}" style="height: 480px;">
+                    <div class="item {!! $loop->first ? 'active':'' !!}" style="max-height: 480px;">
                         <img src="{!! $image->system == 'URL' ? asset($image->path):Storage::disk('public')->url($image->path) !!}">
                         <div class="container">
                             <div class="carousel-caption">
