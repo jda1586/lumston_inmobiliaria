@@ -7,6 +7,7 @@ use App\Property;
 use App\PropertyDetail;
 use App\PropertyImage;
 use DB;
+use Guardian;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -66,7 +67,7 @@ class PropertiesController extends Controller
             })
             ->where(function ($q) {
                 if (Input::has('type') && Input::get('type') != 'all')
-                    $q->where('status', 'for_' . Input::get('type'));
+                    $q->where('operation', 'for_' . Input::get('type'));
             })
             ->where(function ($q) {
                 if (Input::has('bedrooms')) {
@@ -77,6 +78,12 @@ class PropertiesController extends Controller
                 if (Input::has('bathrooms')) {
                     //search
                 }
+            })
+            ->where(function ($q) {
+                $q->where('status', 'active')->orWhere(function ($q) {
+                    if (auth()->check() && Guardian::check('properties.create'))
+                        $q->where('status', 'pending');
+                });
             })
             ->having('distance', '<', $dist)
             ->orderBy('distance')->get();
@@ -126,7 +133,8 @@ class PropertiesController extends Controller
 //        dd(request()->file('images.0'));
         $validator = Validator::make(Input::all(), [
             /* Property */
-            'p_type' => 'required|string',
+            'type' => 'required|string',
+            'operation' => 'required',
             'address' => 'required',
             'category' => 'required',
             'inside' => 'required',
@@ -148,7 +156,7 @@ class PropertiesController extends Controller
 
             /* PropertyImages */
             'images' => 'required',
-            'images.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'images.*' => 'image|mimes:jpeg,png,jpg|max:2048'
         ]);
         if ($validator->fails())
             return redirect()->route('properties.create')->withErrors($validator)->withInput(Input::all());
@@ -156,7 +164,8 @@ class PropertiesController extends Controller
         $user = auth()->user();
         $property = new Property([
             'user_id' => $user->id,
-            'type' => Input::get('p_type'),
+            'type' => Input::get('type'),
+            'operation' => Input::get('operation'),
             'category' => Input::get('category'),
             'address' => Input::get('address'),
             'outside_number' => Input::get('outside'),
@@ -180,11 +189,11 @@ class PropertiesController extends Controller
                 'description' => Input::get('description'),
                 'ground' => Input::get('ground'),
                 'construction' => '0',
-                'amenities' => implode(';', Input::get('amenities'))
+                'amenities' => implode(';', (Input::has('amenities') ? Input::get('amenities') : [])),
             ]));
 
-            foreach (request()->images as $k => $image) {
-                $file = request()->file('images.' . $k);
+            foreach (request()->file('images') as $file) {
+//                $file = request()->file('images . ' . $k);
                 $name = $property->id . $file->getClientOriginalName();
                 $path = $file->storeAs('properties', $name, 'public');
                 $property->images()->save(new PropertyImage([

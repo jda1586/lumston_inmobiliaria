@@ -699,19 +699,31 @@
         var price_set = [];
         var price_limit = [];
 
-        var _latitude;
-        var _longitude;
-        var _props = [];
+        var _latitude =  {{ $property->latitude }};
+        var _longitude = {{ $property->longitude }};
+        var _props = [
+            {
+                title: "{{ $property->details->title }}",
+                image: "{!! asset($property->images->first()->path) !!}",
+                type: '{{ trans('search.'.$property->operation) }}',
+                price: '${{ number_format($property->price, 2, '.',',') }}',
+                address: '{{ $property->address }}',
+                bedrooms: '{{ $property->bedrooms }}',
+                bathrooms: '{{ $property->bathrooms }}',
+                area: '{{ $property->details->ground }} m<sup>2</sup>',
+                position: {
+                    lat: {{ $property->latitude }},
+                    lng: {{ $property->longitude }}
+                },
+                markerIcon: "{{ $property->status == 'active'?"marker-blue.png":"marker-yellow.png" }}",
+            },
+        ];
 
-        @if($property->latitude && $property->longitude)
+        {{--@if($property->latitude && $property->longitude)
             _latitude = {!! $property->latitude !!};
         _longitude = {!! $property->longitude !!};
         @else
-            _latitude = 20.6690251;
-        _longitude = -103.3388489;
 
-        _latitude = 20.6690251;
-        _longitude = -103.3388489;
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
         }
@@ -726,7 +738,7 @@
             _latitude = 20.6690251;
             _longitude = -103.3388489;
         }
-                @endif
+                @endif--}}
         var URL_PROPERTIES = "{!! route('properties.index') !!}";
     </script>
     @parent

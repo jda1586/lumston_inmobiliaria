@@ -129,7 +129,7 @@
             </div>
 
             <div class="row">
-                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
                     <div class="form-group">
                         <label>Latitude</label>
                         <input type="text" name="latitude" id="latitude" class="form-control" readonly
@@ -138,9 +138,8 @@
                             <span style="color: red; margin: 10px;">{{ $error }}</span>
                         @endforeach
                     </div>
-                    <p class="help-block">Debes arrastrar el marcador a la posición de la propiedad.</p>
                 </div>
-                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
                     <label>Longitude</label>
                     <input type="text" name="longitude" id="longitude" class="form-control" readonly
                            value="{{ old('longitude') }}">
@@ -148,7 +147,7 @@
                         <span style="color: red; margin: 10px;">{{ $error }}</span>
                     @endforeach
                 </div>
-                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
                     <div class="formField">
                         <label>Categoria</label>
                         <select name="category" class="btn btn-default dropdown-btn"
@@ -163,7 +162,22 @@
                         @endforeach
                     </div>
                 </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                    <div class="formField">
+                        <label>Tipo</label>
+                        <select name="type" class="btn btn-default dropdown-btn"
+                                style="padding: 8px 5px; background-color: white;">
+                            <option value="house">Casa</option>
+                            <option value="depto">Depto.</option>
+                            <option value="ground">Terrno</option>
+                        </select>
+                        @foreach($errors->get('type') as $error)
+                            <span style="color: red; margin: 10px;">{{ $error }}</span>
+                        @endforeach
+                    </div>
+                </div>
             </div>
+            <p class="help-block">Debes arrastrar el marcador a la posición de la propiedad.</p>
 
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
@@ -198,7 +212,7 @@
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                     <div class="btn-group">
-                        <label>Tipo</label>
+                        <label>Operacion</label>
                         <div class="clearfix"></div>
                         <a href="#" data-toggle="dropdown" class="btn btn-default dropdown-toggle">
                             <span class="dropdown-label">VENTA</span>&nbsp;&nbsp;&nbsp;
@@ -206,15 +220,15 @@
                         </a>
                         <ul class="dropdown-menu dropdown-select">
                             <li class="active">
-                                <input type="radio" name="p_type" checked="checked" value="for_sale">
+                                <input type="radio" name="operation" checked="checked" value="for_sale">
                                 <a href="#">VENTA</a>
                             </li>
                             <li>
-                                <input type="radio" name="p_type" value="for_rent">
+                                <input type="radio" name="operation" value="for_rent">
                                 <a href="#">RENTA</a>
                             </li>
                         </ul>
-                        @foreach($errors->get('p_type') as $error)
+                        @foreach($errors->get('operation') as $error)
                             <span style="color: red; margin: 10px;">{{ $error }}</span>
                         @endforeach
                     </div>
@@ -229,8 +243,10 @@
                                data-show-remove="false" accept="image/jpeg,image/png"
                                data-browse-class="btn btn-o btn-default" data-browse-label="Seleccionar Imagenes">
                         <p class="help-block">Pudes seleccionar miltiples imagenes a la vez</p>
-                        @foreach($errors->get('images') as $error)
-                            <span style="color: red; margin: 10px;">{{ $error }}</span>
+                        @foreach($errors->get('images.*') as $error)
+                            @foreach($error as $msg)
+                                <span style="color: red; margin: 10px;">{{ $msg }}</span>
+                            @endforeach
                         @endforeach
                     </div>
                 </div>

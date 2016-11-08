@@ -57,8 +57,9 @@ use Illuminate\Database\Eloquent\Model;
 class Property extends Model
 {
     protected $fillable = [
-        'user_id', 'type', 'address', 'outside_number', 'inside_number', 'city_id', 'state_id', 'country_id',
-        'postal_code', 'suburb', 'price', 'unit', 'bedrooms', 'bathrooms', 'latitude', 'longitude', 'status',
+        'user_id', 'type', 'operation', 'category', 'address', 'outside_number', 'inside_number', 'city_id',
+        'state_id', 'country_id', 'postal_code', 'suburb', 'price', 'unit', 'bedrooms', 'bathrooms',
+        'latitude', 'longitude', 'status',
     ];
 
     public function details()

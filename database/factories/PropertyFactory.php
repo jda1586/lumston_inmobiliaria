@@ -9,6 +9,7 @@ $factory->define(App\Property::class, function (Faker\Generator $faker) {
     return [
         'user_id' => 0,
         'type' => $faker->randomElement(['house', 'depto']),
+        'operation' => $faker->randomElement(['for_sale', 'for_rent']),
         'category' => $faker->randomElement(['habitacional', 'comercial', 'corporativa', 'terrenos']),
         'address' => $faker->streetName,
         'outside_number' => $faker->buildingNumber,
@@ -24,6 +25,6 @@ $factory->define(App\Property::class, function (Faker\Generator $faker) {
         'bathrooms' => $faker->randomDigit,
         'latitude' => $faker->latitude(20.5, 20.8),
         'longitude' => $faker->longitude(-103.5, -103.2),
-        'status' => $faker->randomElement(['for_sale', 'for_rent'])
+        'status' => 'active',
     ];
 });

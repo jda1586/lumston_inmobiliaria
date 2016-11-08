@@ -17,7 +17,7 @@
                 <span class="icon-bubble"> 13</span>
             </div>--}}
             <div class="figView"><span class="icon-eye"></span></div>
-            <div class="figType">{{ trans('search.'.$property->status) }}</div>
+            <div class="figType">{{ trans('search.'.$property->operation) }}</div>
 
         </div>
         <h2 onclick="window.location = '{!! route('properties.show',['id'=>$property->id]) !!}'">
