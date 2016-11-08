@@ -280,19 +280,20 @@
         var _longitude;
         var _props = [@foreach($properties as $property)
         {
+            id: {{ $property->id }},
             title: "{{ $property->details->title }}",
-            image: '1-1-thmb.png',
-            type: '{{ trans('search.'.$property->status) }}',
+            image: '{!! $property->images->first()->system == 'URL' ? asset($property->images->first()->path):Storage::disk('public')->url($property->images->first()->path) !!}',
+            type: '{{ trans('search.'.$property->operation) }}',
             price: '${{ number_format($property->price, 2, '.',',') }}',
             address: '{{ $property->address }}',
             bedrooms: '{{ $property->bedrooms }}',
-            bathrooms: '2',
-            area: '3430 m<sup>2</sup>',
+            bathrooms: '{{ $property->bathrooms }}',
+            area: '{{ $property->details->ground }} m<sup>2</sup>',
             position: {
                 lat: {{ $property->latitude }},
                 lng: {{ $property->longitude }}
             },
-            markerIcon: "marker-blue.png"
+            markerIcon: "{{ $property->status == 'active'?"marker-blue.png":"marker-yellow.png" }}",
         },
             @endforeach
         ];

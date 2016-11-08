@@ -703,8 +703,9 @@
         var _longitude = {{ $property->longitude }};
         var _props = [
             {
+                id: {{ $property->id }},
                 title: "{{ $property->details->title }}",
-                image: "{!! asset($property->images->first()->path) !!}",
+                image: '{!! $property->images->first()->system == 'URL' ? asset($property->images->first()->path):Storage::disk('public')->url($property->images->first()->path) !!}',
                 type: '{{ trans('search.'.$property->operation) }}',
                 price: '${{ number_format($property->price, 2, '.',',') }}',
                 address: '{{ $property->address }}',
@@ -719,26 +720,26 @@
             },
         ];
 
-        {{--@if($property->latitude && $property->longitude)
-            _latitude = {!! $property->latitude !!};
-        _longitude = {!! $property->longitude !!};
-        @else
+                {{--@if($property->latitude && $property->longitude)
+                    _latitude = {!! $property->latitude !!};
+                _longitude = {!! $property->longitude !!};
+                @else
 
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
-        }
-        //Get the latitude and the longitude;
-        function successFunction(position) {
-            _latitude = position.coords.latitude;
-            _longitude = position.coords.longitude;
-            /*codeLatLng(lat, lng)*/
-        }
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+                }
+                //Get the latitude and the longitude;
+                function successFunction(position) {
+                    _latitude = position.coords.latitude;
+                    _longitude = position.coords.longitude;
+                    /*codeLatLng(lat, lng)*/
+                }
 
-        function errorFunction() {
-            _latitude = 20.6690251;
-            _longitude = -103.3388489;
-        }
-                @endif--}}
+                function errorFunction() {
+                    _latitude = 20.6690251;
+                    _longitude = -103.3388489;
+                }
+                        @endif--}}
         var URL_PROPERTIES = "{!! route('properties.index') !!}";
     </script>
     @parent

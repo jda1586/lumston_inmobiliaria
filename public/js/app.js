@@ -98,7 +98,7 @@ function pSearch() {
             });
             var infoboxContent = '<div class="infoW">' +
                 '<div class="propImg">' +
-                '<img src="/images/prop/' + prop.image + '">' +
+                '<img src="' + prop.image + '">' +
                 '<div class="propBg">' +
                 '<div class="propPrice">' + prop.price + '</div>' +
                 '<div class="propType">' + prop.type + '</div>' +
@@ -116,7 +116,7 @@ function pSearch() {
                 '<div class="clearfix"></div>' +
                 '<div class="infoButtons">' +
                 '<a class="btn btn-sm btn-round btn-gray btn-o closeInfo">Cerrar</a>' +
-                '<a href="#" class="btn btn-sm btn-round btn-green viewInfo">Ver</a>' +
+                '<a href="/properties/show/' + prop.id + '" class="btn btn-sm btn-round btn-green viewInfo">Ver</a>' +
                 '</div>' +
                 '</div>';
 
