@@ -42,7 +42,7 @@
     <div class="row" style="margin-top: 50px;">
         <div class="col-md-6 col-lg-6 hidden-sm hidden-xs">
             {{--MAPA--}}
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4442.419268378335!2d-103.44349714544941!3d20.562950623292668!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8c0e9bbc36e036!2sPerfect+Choice+Campus!5e0!3m2!1ses-419!2smx!4v1478717532228"
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.5720634738927!2d-103.37858588550199!3d20.686982086184496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ae3e017f3441%3A0x3db2f727f79eb019!2sCalle+Francisco+Zarco+2392%2C+Ladr%C3%B3n+de+Guevara%2C+Ladron+De+Guevara%2C+44600+Guadalajara%2C+Jal.!5e0!3m2!1ses-419!2smx!4v1478721469860"
                     width="540" height="426" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
         <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
