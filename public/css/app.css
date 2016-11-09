@@ -2172,6 +2172,7 @@ a.card, div.card {
     right: 20px;
     font-size: medium;
 }
+
 .figFav:hover {
     font-size: large;
 }
@@ -6681,4 +6682,38 @@ blockquote {
 .icon_contact:hover {
     width: 85px;
     height: 85px;
+}
+
+#modalImgContent {
+    width: 100%;
+    padding: 5px;
+}
+
+#modalOperation {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    background-color: #eab134;
+    color: white;
+    font-weight: bold;
+    font-size: 10px;
+    padding: 2px 4px;
+}
+
+#modalTitle {
+    font-weight: bold;
+}
+
+#modalDownContent #modalTitle {
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#modalDownContent #modalPrice {
+    font-weight: bold;
+}
+
+#modalDownContent #modalAddress {
+
 }

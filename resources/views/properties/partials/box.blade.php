@@ -6,7 +6,8 @@
                aria-hidden="true"></i>
         </div>
         <div class="figure" onclick="window.location = '{!! route('properties.show',['id'=>$property->id]) !!}'">
-            <img src="{!! asset($property->images->first()->path) !!}" alt="image">
+            <img src="{!! $property->images->first()->system == 'URL' ? asset($property->images->first()->path):Storage::disk('public')->url($property->images->first()->path) !!}"
+                 alt="image">
             <div class="propDetails">
                 $ {{ number_format($property->price, 2,'.',','). ($property->status == 'for_rent'?' /mes':'') }}
             </div>
@@ -24,7 +25,7 @@
             {!! $property->details->title !!}
         </h2>
         <div class="cardAddress" onclick="window.location = '{!! route('properties.show',['id'=>$property->id]) !!}'">
-            <i class="fa fa-map-marker" aria-hidden="true"></i> 39 Remsen St, Brooklyn, NY 11201, USA
+            <i class="fa fa-map-marker" aria-hidden="true"></i> {{ $property->address }}
         </div>
         <ul class="cardFeat">
             <li>
@@ -40,7 +41,12 @@
             </li>
             <li style="float: right; font-size: large;">
                 <i class="fa fa-download downPDF" aria-hidden="true" style="cursor: pointer;"
-                   data-value="{{ $property->id }}"></i>
+                   data-value="{{ $property->id }}"
+                   data-img="{!! $property->images->first()->system == 'URL' ? asset($property->images->first()->path):Storage::disk('public')->url($property->images->first()->path) !!}"
+                   data-title="{!! $property->details->title !!}"
+                   data-price="{{ number_format($property->price, 2,'.',','). ($property->status == 'for_rent'?' /mes':'') }}"
+                   data-address="{{ $property->address }}">
+                </i>
             </li>
         </ul>
         <div class="clearfix"></div>
