@@ -208,7 +208,7 @@ class PropertiesController extends Controller
 
     public function edit($id)
     {
-        if (Validator::make(['id' => $id], ['id' => 'required|exists:properties'])->fails())
+        if (Validator::make(['id' => $id], ['id' => 'required|exists:properties,id'])->fails())
             return redirect()->route('properties.index');
 
         $property = Property::find($id);
