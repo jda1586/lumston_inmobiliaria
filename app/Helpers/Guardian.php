@@ -8,17 +8,19 @@
 
 namespace App\Helpers;
 
+use App\User;
 use \Illuminate\Http\Request;
 
 class Guardian
 {
     /**
-     * @param string $route
+     * @param $route
+     * @param $uid
      * @return bool
      */
-    static public function check($route)
+    static public function check($route, $uid = 0)
     {
-        $user = auth()->user();
+        $user = $uid > 0 ? User::find($uid) : auth()->user();
         $permissions = json_decode($user->role->permissions, true);
         /*$route = Request::route()->getName();*/
 

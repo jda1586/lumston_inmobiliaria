@@ -6,6 +6,7 @@ use App\Property;
 use App\User;
 use App\UserFavorite;
 use DB;
+use Guardian;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -56,7 +57,7 @@ class PropertiesController extends Controller
             })
             ->where(function ($q) {
                 $q->where('status', 'active')->orWhere(function ($q) {
-                    if (auth()->check() && Guardian::check('admin_property_status'))
+                    if (Guardian::check('admin_property_status', Input::get('uid')))
                         $q->where('status', 'pending');
                 });
             })

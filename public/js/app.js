@@ -281,7 +281,6 @@ function pSearch() {
                     bathrooms: $('input[name=p_bathrooms]:checked').val(),
                     neighborhood: $('input[name=neighborhood]').val(),
                 }).done(function (resp) {
-                    console.log(resp)
                     clearMarkers();
                     addMarkers(resp, map);
                     $('#resultListElements').empty();
