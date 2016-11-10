@@ -70,7 +70,7 @@
                         <label>Ciudad</label>
                         <select name="city" class="btn btn-default dropdown-btn"
                                 style="padding: 8px 5px; background-color: white;">
-                            @foreach($property->state_id >0?$property->state->cities:[] as $city)
+                            @foreach($property->state_id >0?$property->state->cities:[]  as $city)
                                 <option value="{!! $city->id !!}" {!! $city->id == $property->city_id?'selected':'' !!}>{{ $city->name }}</option>
                             @endforeach
                         </select>
