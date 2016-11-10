@@ -289,6 +289,7 @@
         }
                 @endif
         var URL_PROPERTIES = "{!! route('properties.index') !!}";
+        var event = true;
     </script>
     @parent
     <script src="/js/download_pdf.js" type="text/javascript"></script>

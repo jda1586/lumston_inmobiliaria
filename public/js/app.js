@@ -267,33 +267,36 @@ function pSearch() {
             });
         }
 
-        google.maps.event.addListener(map, 'dragend', function () {
-            $.post('/api/properties/search', {
-                uid: uid,
-                map: map.getCenter().toUrlValue(),
-                price: price_set,
-                ground: ground_set,
-                inmobs: $('input[name=p_inmob]:checked').val(),
-                type: $('input[name=p_type]:checked').val(),
-                bedrooms: $('input[name=p_bedrooms]:checked').val(),
-                bathrooms: $('input[name=p_bathrooms]:checked').val(),
-                neighborhood: $('input[name=neighborhood]').val(),
-            }).done(function (resp) {
-                console.log(resp)
-                clearMarkers();
-                addMarkers(resp, map);
-                $('#resultListElements').empty();
-                $.each(resp, function (i, prop) {
-                    $('#resultListElements').append(putBox(prop));
+
+        if (event) {
+            google.maps.event.addListener(map, 'dragend', function () {
+                $.post('/api/properties/search', {
+                    uid: uid,
+                    map: map.getCenter().toUrlValue(),
+                    price: price_set,
+                    ground: ground_set,
+                    inmobs: $('input[name=p_inmob]:checked').val(),
+                    type: $('input[name=p_type]:checked').val(),
+                    bedrooms: $('input[name=p_bedrooms]:checked').val(),
+                    bathrooms: $('input[name=p_bathrooms]:checked').val(),
+                    neighborhood: $('input[name=neighborhood]').val(),
+                }).done(function (resp) {
+                    console.log(resp)
+                    clearMarkers();
+                    addMarkers(resp, map);
+                    $('#resultListElements').empty();
+                    $.each(resp, function (i, prop) {
+                        $('#resultListElements').append(putBox(prop));
+                    });
                 });
             });
-        });
-        /*google.maps.event.addListener(map, 'zoom_changed', function () {
-         $.post('/properties/ajax/search', {_token: _CsrfToken, data: map.getCenter().toUrlValue()})
-         .done(function (resp) {
-         console.log(resp);
-         });
-         });*/
+            /*google.maps.event.addListener(map, 'zoom_changed', function () {
+                         $.post('/properties/ajax/search', {_token: _CsrfToken, data: map.getCenter().toUrlValue()})
+                     .done(function (resp) {
+                     console.log(resp);
+                     });
+                     });*/
+        }
 
         addMarkers(_props, map);
 
