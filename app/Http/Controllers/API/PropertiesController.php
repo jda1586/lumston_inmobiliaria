@@ -120,6 +120,22 @@ class PropertiesController extends Controller
 
     public function publicProperty()
     {
+        if (Validator::make(Input::all(), [
+            'uid' => 'required|exists:users,id',
+            'property' => 'required|exists:properties,id'
+        ])->fails()
+        )
+            return response()->json([
+                'ok' => false,
+            ]);
+
+        $property = Property::find(Input::get('id'));
+        $property->status = 'active';
+        $property->save();
+
+        return response()->json([
+            'ok' => true,
+        ]);
 
     }
 

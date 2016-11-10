@@ -100,7 +100,7 @@
                                 Editar
                             </a>
                             @if($property->status == 'pending')
-                                <a data-toggle="modal" href="#contactAgent"
+                                <a data-toggle="modal" href="#contactAgent" id="pubProp" data-value="{{ $property->id }}"
                                    class="btn btn-lg btn-round btn-green contactBtn">
                                     <i class="fa fa-check-square-o" aria-hidden="true" style="float: left;"></i>
                                     Publicar
@@ -770,5 +770,20 @@
         var URL_PROPERTIES = "{!! route('properties.index') !!}";
     </script>
     @parent
+    <script>
+        $(document).ready(function () {
+            $('#pubProp').click(function () {
+                var $this = $(this);
+                $.post('/api/properties/change/status', {
+                    id: uid,
+                    property: $this.attr('data-value')
+                }).done(function (data) {
+                    if (data.ok) {
+                        location.reload();
+                    }
+                });
+            });
+        });
+    </script>
     <script src="{!! asset('js/jquery.visible.js') !!}"></script>
 @endsection
