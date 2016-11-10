@@ -190,7 +190,7 @@
                         <div class="col-xs-4">
                             <div data-linkto="single.html" class="card">
                                 <div class="figure">
-                                    <img src="{!! asset('images/prop/1-1.png') !!}" alt="image">
+                                    <img src="{!! asset('/images/prop/1-1.png') !!}" alt="image">
                                     <div class="figCaption">
                                         <div>$1,550,000</div>
                                         <span class="icon-eye"> 200</span>
@@ -215,7 +215,7 @@
                         <div class="col-xs-4">
                             <div data-linkto="single.html" class="card">
                                 <div class="figure">
-                                    <img src="{!! asset('images/prop/2-1.png') !!}" alt="image">
+                                    <img src="{!! asset('/images/prop/2-1.png') !!}" alt="image">
                                     <div class="figCaption">
                                         <div>$1,750,000</div>
                                         <span class="icon-eye"> 175</span>
@@ -240,7 +240,7 @@
                         <div class="col-xs-4">
                             <div data-linkto="single.html" class="card">
                                 <div class="figure">
-                                    <img src="{!! asset('images/prop/3-1.png') !!}" alt="image">
+                                    <img src="{!! asset('/images/prop/3-1.png') !!}" alt="image">
                                     <div class="figCaption">
                                         <div>$1,340,000</div>
                                         <span class="icon-eye"> 180</span>
@@ -269,7 +269,7 @@
                         <div class="col-xs-4">
                             <div data-linkto="single.html" class="card">
                                 <div class="figure">
-                                    <img src="images/prop/4-1.png" alt="image">
+                                    <img src="/images/prop/4-1.png" alt="image">
                                     <div class="figCaption">
                                         <div>$1,930,000</div>
                                         <span class="icon-eye"> 145</span>
@@ -294,7 +294,7 @@
                         <div class="col-xs-4">
                             <div data-linkto="single.html" class="card">
                                 <div class="figure">
-                                    <img src="images/prop/5-1.png" alt="image">
+                                    <img src="/images/prop/5-1.png" alt="image">
                                     <div class="figCaption">
                                         <div>$2,350,000</div>
                                         <span class="icon-eye"> 184</span>
@@ -319,7 +319,7 @@
                         <div class="col-xs-4">
                             <div data-linkto="single.html" class="card">
                                 <div class="figure">
-                                    <img src="images/prop/1-1.png" alt="image">
+                                    <img src="/images/prop/1-1.png" alt="image">
                                     <div class="figCaption">
                                         <div>$1,550,000</div>
                                         <span class="icon-eye"> 200</span>
@@ -350,7 +350,7 @@
                         class="fa fa-chevron-right"></span></a>
         </div>
 
-        <!-- carousel for small devices -->
+        {{--<!-- carousel for small devices -->
         <div id="carouselSimilar-2" class="carousel slide visible-md carousel-col">
             <ol class="carousel-indicators">
                 <li data-target="#carouselSimilar-2" data-slide-to="0" class="active"></li>
@@ -717,7 +717,7 @@
                         class="fa fa-chevron-left"></span></a>
             <a class="right carousel-control" href="#carouselSimilar-3" role="button" data-slide="next"><span
                         class="fa fa-chevron-right"></span></a>
-        </div>
+        </div>--}}
     </div>
 @endsection
 
@@ -780,6 +780,8 @@
                 }).done(function (data) {
                     if (data.ok) {
                         location.reload();
+                    }else{
+                        console.log(data);
                     }
                 });
             });
