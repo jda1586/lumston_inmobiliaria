@@ -14,7 +14,10 @@ class UsersController extends Controller
     {
         return view('users.index', [
             'user' => auth()->user(),
-            'recently' => Property::limit(6)->orderBy('created_at', 'DESC')->get(),
+            'recently' => Property::where(function ($q) {
+                $q->where('operation', 'for_rent')
+                    ->orWhere('operation', 'for_sale');
+            })->where('status', 'active')->orderBy('created_at', 'desc')->limit(6)->get(),
         ]);
     }
 }

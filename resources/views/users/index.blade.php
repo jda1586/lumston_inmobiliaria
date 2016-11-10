@@ -37,11 +37,11 @@
                 <div class="pc-title osLight">Informacion de Contacto</div>
                 <div class="row pb10">
                     <div class="col-xs-4"><strong>Telefono</strong></div>
-                    <div class="col-xs-8 align-right">(123) 456 789</div>
+                    <div class="col-xs-8 align-right edit_field" data-field="phone">(123) 456 789</div>
                 </div>
                 <div class="row pb10">
                     <div class="col-xs-4"><strong>Mobile</strong></div>
-                    <div class="col-xs-8 align-right">888 123 456 789</div>
+                    <div class="col-xs-8 align-right edit_field" data-field="mobile">888 123 456 789</div>
                 </div>
                 <div class="row pb10">
                     <div class="col-xs-4"><strong>Email</strong></div>
@@ -49,11 +49,11 @@
                         <a href="mailto:#" class="text-green">{{ $user->email }}</a>
                     </div>
                 </div>
-                <div class="row pb10">
+                {{--<div class="row pb10">
                     <div class="col-xs-4"><strong>Skype</strong></div>
                     <div class="col-xs-8 align-right">-</div>
-                </div>
-                <div class="pc-social">
+                </div>--}}
+                {{--<div class="pc-social">
                     <a href="#" class="btn btn-icon btn-facebook">
                         <span class="fa fa-facebook"></span>
                     </a>
@@ -66,7 +66,7 @@
                     <a href="#" class="btn btn-icon btn-pinterest">
                         <span class="fa fa-pinterest"></span>
                     </a>
-                </div>
+                </div>--}}
             </div>
         </div>
         <div class="row">
@@ -133,23 +133,27 @@
 
 @section('_footer')
     <script>
+        var price_set = [0, 0];
+        var price_limit = [0, 0];
+;
         var _latitude;
-        var _longitude;
+        var _longitude
         var _props = [@foreach($recently as $property)
         {
+            id: {{ $property->id }},
             title: "{{ $property->details->title }}",
-            image: '1-1-thmb.png',
-            type: '{{ trans('search.'.$property->status) }}',
+            image: '{!! $property->images->first()->system == 'URL' ? asset($property->images->first()->path):Storage::disk('public')->url($property->images->first()->path) !!}',
+            type: '{{ trans('search.'.$property->operation) }}',
             price: '${{ number_format($property->price, 2, '.',',') }}',
             address: '{{ $property->address }}',
             bedrooms: '{{ $property->bedrooms }}',
-            bathrooms: '2',
-            area: '3430 m<sup>2</sup>',
+            bathrooms: '{{ $property->bathrooms }}',
+            area: '{{ $property->details->ground }} m<sup>2</sup>',
             position: {
                 lat: {{ $property->latitude }},
                 lng: {{ $property->longitude }}
             },
-            markerIcon: "marker-blue.png"
+            markerIcon: "{{ $property->status == 'active'?"marker-blue.png":"marker-yellow.png" }}",
         },
             @endforeach
         ];
