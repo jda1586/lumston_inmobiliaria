@@ -19,7 +19,6 @@ use App\Http\Controllers\Controller;
 
 class PropertiesController extends Controller
 {
-
     /**
      * @return $this|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
