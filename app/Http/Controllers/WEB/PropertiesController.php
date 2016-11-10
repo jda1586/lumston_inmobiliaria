@@ -70,14 +70,12 @@ class PropertiesController extends Controller
                     $q->where('operation', 'for_' . Input::get('type'));
             })
             ->where(function ($q) {
-                if (Input::has('bedrooms')) {
-                    // search
-                }
+                if (Input::has('bedrooms'))
+                    $q->where('bedrooms', '>=', Input::get('bedrooms'));
             })
             ->where(function ($q) {
-                if (Input::has('bathrooms')) {
-                    //search
-                }
+                if (Input::has('bathrooms'))
+                    $q->where('bathrooms', '>=', Input::get('bathrooms'));
             })
             ->where(function ($q) {
                 $q->where('status', 'active')->orWhere(function ($q) {

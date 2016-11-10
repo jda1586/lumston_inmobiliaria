@@ -222,7 +222,7 @@
 
     </div>
     <div class="resultsList">
-        <div class="row">
+        <div class="row" id="resultListElements">
             @each('properties.partials.box',$properties,'property')
         </div>
         {{--<ul class="pagination">
@@ -252,7 +252,7 @@
             title: "{{ $property->details->title }}",
             image: '{!! $property->images->first()->system == 'URL' ? asset($property->images->first()->path):Storage::disk('public')->url($property->images->first()->path) !!}',
             type: '{{ trans('search.'.$property->operation) }}',
-            price: '${{ number_format($property->price, 2, '.',',') }}',
+            price: '$ {{ number_format($property->price, 2, '.',',') }}',
             address: '{{ $property->address }}',
             bedrooms: '{{ $property->bedrooms }}',
             bathrooms: '{{ $property->bathrooms }}',
@@ -292,6 +292,7 @@
     </script>
     @parent
     <script src="/js/download_pdf.js" type="text/javascript"></script>
+    <script src="/js/properties.box.js" type="text/javascript"></script>
     <script>
         @if(!auth()->check() && session('properties_login', true))
         $(document).ready(function () {

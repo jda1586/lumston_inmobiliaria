@@ -142,14 +142,14 @@
                             </a>
                             <ul class="dropdown-menu dropdown-select full" role="menu">
                                 <li class="active">
-                                    <input type="radio" name="p_bedrooms" checked="checked" value="0">
+                                    <input type="radio" name="bedrooms" checked="checked" value="0">
                                     <a href="#">Habitaciones</a>
                                 </li>
-                                <li><input type="radio" name="p_bedrooms" value="1"><a href="#">1+</a></li>
-                                <li><input type="radio" name="p_bedrooms" value="2"><a href="#">2+</a></li>
-                                <li><input type="radio" name="p_bedrooms" value="3"><a href="#">3+</a></li>
-                                <li><input type="radio" name="p_bedrooms" value="4"><a href="#">4+</a></li>
-                                <li><input type="radio" name="p_bedrooms" value="5"><a href="#">5+</a></li>
+                                <li><input type="radio" name="bedrooms" value="1"><a href="#">1+</a></li>
+                                <li><input type="radio" name="bedrooms" value="2"><a href="#">2+</a></li>
+                                <li><input type="radio" name="bedrooms" value="3"><a href="#">3+</a></li>
+                                <li><input type="radio" name="bedrooms" value="4"><a href="#">4+</a></li>
+                                <li><input type="radio" name="bedrooms" value="5"><a href="#">5+</a></li>
                             </ul>
                         </div>
 
@@ -304,8 +304,8 @@
     <script src="js/jquery.placeholder.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery.touchSwipe.min.js"></script>
-    <script src="http://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyA0pbui5wdR5fWMiaZ6CaGQ3p9Fv1R3nxs&sensor=true&amp;libraries=geometry&amp;libraries=places"
-            type="text/javascript"></script>
+    {{--<script src="http://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyA0pbui5wdR5fWMiaZ6CaGQ3p9Fv1R3nxs&sensor=true&amp;libraries=geometry&amp;libraries=places"
+            type="text/javascript"></script>--}}
     <script src="js/infobox.js"></script>
     <script src="js/jquery.visible.js"></script>
     <script src="js/home.js" type="text/javascript"></script>

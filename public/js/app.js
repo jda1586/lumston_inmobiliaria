@@ -65,7 +65,7 @@ function pSearch() {
         disableAutoPan: false,
         maxWidth: 202,
         pixelOffset: new google.maps.Size(-101, -285),
-        zIndex: null,
+        zIndex: 200,
         boxStyle: {
             background: "url('images/infobox-bg.png') no-repeat",
             opacity: 1,
@@ -94,13 +94,13 @@ function pSearch() {
                     new google.maps.Size(36, 36)
                 ),
                 draggable: false,
-                animation: google.maps.Animation.DROP,
+                // animation: google.maps.Animation.DROP,
             });
             var infoboxContent = '<div class="infoW">' +
                 '<div class="propImg">' +
                 '<img src="' + prop.image + '">' +
                 '<div class="propBg">' +
-                '<div class="propPrice">' + prop.price + '</div>' +
+                '<div class="propPrice">$ ' + prop.price + '</div>' +
                 '<div class="propType">' + prop.type + '</div>' +
                 '</div>' +
                 '</div>' +
@@ -133,6 +133,19 @@ function pSearch() {
 
             markers.push(marker);
         });
+    }
+
+    // Sets the map on all markers in the array.
+    function setMapOnAll(map) {
+        for (var i = 0; i < markers.length; i++) {
+            markers[i].setMap(map);
+        }
+    }
+
+    // Removes the markers from the map, but keeps them in the array.
+    function clearMarkers() {
+        setMapOnAll(null);
+        markers = [];
     }
 
     var map;
@@ -255,17 +268,32 @@ function pSearch() {
         }
 
         google.maps.event.addListener(map, 'dragend', function () {
-            $.post('/properties/ajax/search', {_token: _CsrfToken, data: map.getCenter().toUrlValue()})
-                .done(function (resp) {
-                    console.log(resp);
+            $.post('/api/properties/search', {
+                uid: uid,
+                map: map.getCenter().toUrlValue(),
+                price: price_set,
+                ground: ground_set,
+                inmobs: $('input[name=p_inmob]:checked').val(),
+                type: $('input[name=p_type]:checked').val(),
+                bedrooms: $('input[name=p_bedrooms]:checked').val(),
+                bathrooms: $('input[name=p_bathrooms]:checked').val(),
+                neighborhood: $('input[name=neighborhood]').val(),
+            }).done(function (resp) {
+                console.log(resp)
+                clearMarkers();
+                addMarkers(resp, map);
+                $('#resultListElements').empty();
+                $.each(resp, function (i, prop) {
+                    $('#resultListElements').append(putBox(prop));
                 });
+            });
         });
-        google.maps.event.addListener(map, 'zoom_changed', function () {
-            $.post('/properties/ajax/search', {_token: _CsrfToken, data: map.getCenter().toUrlValue()})
-                .done(function (resp) {
-                    console.log(resp);
-                });
-        });
+        /*google.maps.event.addListener(map, 'zoom_changed', function () {
+         $.post('/properties/ajax/search', {_token: _CsrfToken, data: map.getCenter().toUrlValue()})
+         .done(function (resp) {
+         console.log(resp);
+         });
+         });*/
 
         addMarkers(_props, map);
 
