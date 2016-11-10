@@ -12,9 +12,11 @@ class WelcomeController extends Controller
 {
     public function index()
     {
-//        dd(Property::whereStatus('for_sale')->orWhere('status', 'for_rent')->orderBy('created_at', 'desc')->limit(6)->get());
         return view('welcome.index', [
-            'properties' => Property::whereStatus('for_sale')->orWhere('status', 'for_rent')->orderBy('created_at', 'desc')->limit(6)->get(),
+            'properties' => Property::where(function ($q) {
+                $q->where('operation', 'for_rent')
+                    ->orWhere('operation', 'for_sale');
+            })->where('status', 'active')->orderBy('created_at', 'desc')->limit(6)->get(),
             'price_limit' => [
                 Property::min('price'),
                 Property::max('price')

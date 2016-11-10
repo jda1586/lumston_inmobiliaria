@@ -304,8 +304,8 @@
     <script src="js/jquery.placeholder.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery.touchSwipe.min.js"></script>
-    {{--<script src="http://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyA0pbui5wdR5fWMiaZ6CaGQ3p9Fv1R3nxs&sensor=true&amp;libraries=geometry&amp;libraries=places"
-            type="text/javascript"></script>--}}
+    <script src="http://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyA0pbui5wdR5fWMiaZ6CaGQ3p9Fv1R3nxs&sensor=true&amp;libraries=geometry&amp;libraries=places"
+            type="text/javascript"></script>
     <script src="js/infobox.js"></script>
     <script src="js/jquery.visible.js"></script>
     <script src="js/home.js" type="text/javascript"></script>
