@@ -171,9 +171,9 @@
                 Calefacción
             </div>
             <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"><span class="fa fa-fire"></span> Chimenea</div>
-            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"><span class="fa fa-arrows-v"></span> Balcón</div>
             <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"><span class="fa fa-desktop"></span> TV por Cable
             </div>
+            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"></div>
         </div>
     </div>
     <div class="similar">

@@ -78,7 +78,7 @@ class PropertiesController extends Controller
             })
             ->where(function ($q) {
                 $q->where('status', 'active')->orWhere(function ($q) {
-                    if (auth()->check() && Guardian::check('admin_property_status'))
+                    if (auth()->check() && Guardian::check('admin_property_views'))
                         $q->where('status', 'pending');
                 });
             })

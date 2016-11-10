@@ -57,7 +57,7 @@ class PropertiesController extends Controller
             })
             ->where(function ($q) {
                 $q->where('status', 'active')->orWhere(function ($q) {
-                    if (Guardian::check('admin_property_status', Input::get('uid')))
+                    if (Guardian::check('admin_property_views', Input::get('uid')))
                         $q->where('status', 'pending');
                 });
             })
@@ -116,6 +116,11 @@ class PropertiesController extends Controller
                 'status' => 'selected'
             ]);
         }
+    }
+
+    public function publicProperty()
+    {
+
     }
 
 }
