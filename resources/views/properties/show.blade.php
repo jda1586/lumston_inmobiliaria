@@ -85,13 +85,33 @@
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                     <div class="agentAvatar summaryItem">
                         <div class="clearfix"></div>
-                        @if(auth()->check() && Guardian::check('admin_property_status'))
+                        @if(auth()->check() && !Guardian::check('admin_property_status'))
                             <img class="avatar agentAvatarImg"
                                  src="{!! asset('images/web/'.$property->category.'.png') !!}" alt="avatar">
                             <div class="agentName">{{ ucwords($property->category) }}</div>
                             <a data-toggle="modal" href="#contactAgent"
                                class="btn btn-lg btn-round btn-green contactBtn">
                                 Contactar Agente
+                            </a>
+                        @elseif(Guardian::check('admin_property_status'))
+                            <a data-toggle="modal" href="#contactAgent" style="margin-top: 20px;"
+                               class="btn btn-lg btn-round btn-gray contactBtn">
+                                Editar
+                            </a>
+                            @if($property->status == 'pending')
+                                <a data-toggle="modal" href="#contactAgent"
+                                   class="btn btn-lg btn-round btn-green contactBtn">
+                                    Publicar
+                                </a>
+                            @else
+                                <a data-toggle="modal" href="#contactAgent"
+                                   class="btn btn-lg btn-round btn-yellow contactBtn">
+                                    Desactivar
+                                </a>
+                            @endif
+                            <a data-toggle="modal" href="#contactAgent"
+                               class="btn btn-lg btn-round btn-red contactBtn">
+                                Archivar
                             </a>
                         @endif
                     </div>

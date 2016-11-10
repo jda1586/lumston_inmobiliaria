@@ -65,7 +65,7 @@ function pSearch() {
         disableAutoPan: false,
         maxWidth: 202,
         pixelOffset: new google.maps.Size(-101, -285),
-        zIndex: 200,
+        zIndex: 1000,
         boxStyle: {
             background: "url('images/infobox-bg.png') no-repeat",
             opacity: 1,
