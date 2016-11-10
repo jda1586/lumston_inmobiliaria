@@ -39,6 +39,8 @@ Route::group(['namespace' => 'WEB'], function () {
         Route::group(['middleware' => ['auth', 'guardian']], function () {
             Route::get('/create', 'PropertiesController@create')->name('create');
             Route::post('/store', 'PropertiesController@store')->name('store');
+            Route::get('/edit/{id}', 'PropertiesController@edit')->name('edit');
+            Route::post('/update/{id}', 'PropertiesController@update')->name('update');
         });
     });
 

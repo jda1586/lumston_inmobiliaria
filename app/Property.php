@@ -81,4 +81,14 @@ class Property extends Model
     {
         return $this->hasMany('App\UserFavorite')->whereUserId($user_id)->count() > 0 ? true : false;
     }
+
+    public function state()
+    {
+        return $this->belongsTo('App\State');
+    }
+
+    public function city()
+    {
+        return $this->belongsTo('App\City');
+    }
 }

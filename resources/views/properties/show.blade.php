@@ -94,23 +94,27 @@
                                 Contactar Agente
                             </a>
                         @elseif(Guardian::check('admin_property_status'))
-                            <a data-toggle="modal" href="#contactAgent" style="margin-top: 20px;"
+                            <a href="{!! route('properties.edit',['id'=>$property->id]) !!}" style="margin-top: 20px;"
                                class="btn btn-lg btn-round btn-gray contactBtn">
+                                <i class="fa fa-pencil-square-o" aria-hidden="true" style="float: left;"></i>
                                 Editar
                             </a>
                             @if($property->status == 'pending')
                                 <a data-toggle="modal" href="#contactAgent"
                                    class="btn btn-lg btn-round btn-green contactBtn">
+                                    <i class="fa fa-check-square-o" aria-hidden="true" style="float: left;"></i>
                                     Publicar
                                 </a>
                             @else
                                 <a data-toggle="modal" href="#contactAgent"
                                    class="btn btn-lg btn-round btn-yellow contactBtn">
+                                    <i class="fa fa-eye-slash" aria-hidden="true" style="float: left;"></i>
                                     Desactivar
                                 </a>
                             @endif
                             <a data-toggle="modal" href="#contactAgent"
                                class="btn btn-lg btn-round btn-red contactBtn">
+                                <i class="fa fa-trash" aria-hidden="true" style="float: left;"></i>
                                 Archivar
                             </a>
                         @endif

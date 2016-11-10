@@ -205,4 +205,92 @@ class PropertiesController extends Controller
 
         return redirect()->route('properties.show', ['id' => $property->id]);
     }
+
+    public function edit($id)
+    {
+        if (Validator::make(['id' => $id], ['id' => 'required|exists:properties'])->fails())
+            return redirect()->route('properties.index');
+
+        $property = Property::find($id);
+        return view('properties.edit', [
+            'property' => $property,
+        ]);
+    }
+
+    public function update($id)
+    {
+        if (Validator::make(['id' => $id], ['id' => 'required|exists:properties'])->fails())
+            return redirect()->route('properties.index');
+
+        $validator = Validator::make(Input::all(), [
+            /* Property */
+            'type' => 'required|string',
+            'operation' => 'required',
+            'address' => 'required',
+            'category' => 'required',
+            'inside' => 'required',
+            'city' => 'required',
+            'state' => 'required',
+            'postalCode' => 'required',
+            'suburb' => 'required',
+            'price' => 'required',
+            'bedrooms' => 'required',
+            'bathrooms' => 'required',
+            'latitude' => 'required',
+            'longitude' => 'required',
+
+            /* PropertyDetails */
+            'title' => 'required',
+            'description' => 'required',
+            'ground' => 'required',
+            /*'construction' => 'required'*/
+
+            /* PropertyImages */
+            /*'images' => 'required',*/
+            'images.*' => 'image|mimes:jpeg,png,jpg|max:2048'
+        ]);
+        if ($validator->fails())
+            return redirect()->route('properties.edit', ['id' => $id])
+                ->withErrors($validator)->withInput(Input::all());
+
+        $property = Property::find($id);
+        $property->price = Input::get('price');
+        $property->state_id = Input::get('state');
+        $property->city_id = Input::get('city');
+        $property->address = Input::get('address');
+        $property->outside_number = Input::get('outside');
+        $property->inside_number = Input::get('inside');
+        $property->suburb = Input::get('suburb');
+        $property->postal_code = Input::get('postalCode');
+        $property->latitude = Input::get('latitude');
+        $property->longitude = Input::get('longitude');
+        $property->category = Input::get('category');
+        $property->type = Input::get('type');
+        $property->bedrooms = Input::get('bedrooms');
+        $property->bathrooms = Input::get('bathrooms');
+        $property->operation = Input::get('operation');
+        $property->save();
+
+
+        $property->details->title = Input::get('title');
+        $property->details->description = Input::get('description');
+        $property->details->ground = Input::get('ground');
+        $property->details->amenities = implode(';', (Input::has('amenities') ? Input::get('amenities') : []));
+        $property->details->save();
+
+        if (Input::has('images')) {
+            foreach (request()->file('images') as $file) {
+                $name = $property->id . $file->getClientOriginalName();
+                $path = $file->storeAs('properties', $name, 'public');
+                $property->images()->save(new PropertyImage([
+                    'name' => $name,
+                    'path' => $path,
+                    'system' => 'public'
+                ]));
+            }
+        }
+
+        return redirect()->route('properties.show', ['id' => $property->id]);
+
+    }
 }
