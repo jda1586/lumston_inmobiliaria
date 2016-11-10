@@ -7,15 +7,15 @@ function putBox(data) {
         '<div class="figFav figFavS" data-value="' + data.id + '" data-status="toggle">' +
         '<i class="fa fa-heart-o" aria-hidden="true"></i>' +
         '</div>' +
-        '<div class="figure" onclick="window.location = ' + URL_PROPERTIES + "'/show/" + data.id + "'" + '">' +
+        '<div class="figure" onclick="window.location = ' + "'" + URL_PROPERTIES + "/show/" + data.id + "'" + '">' +
         '<img src="' + data.image + '" alt="image">' +
         '<div class="propDetails">$ ' + data.price +
         '</div>' +
         '<div class="figView"><span class="icon-eye"></span></div>' +
         '<div class="figType">' + data.type + '</div>' +
         '</div>' +
-        '<h2 onclick="window.location = ' + URL_PROPERTIES + "'/show/" + data.id + "'" + '">' + data.title + '</h2>' +
-        '<div class="cardAddress" onclick="window.location =' + URL_PROPERTIES+"'/show/" + data.id + "'" + '">' +
+        '<h2 onclick="window.location = ' + "'" + URL_PROPERTIES + "/show/" + data.id + "'" + '">' + data.title + '</h2>' +
+        '<div class="cardAddress" onclick="window.location ='+ "'" + URL_PROPERTIES + "/show/" + data.id + "'" + '">' +
         '<i class="fa fa-map-marker" aria-hidden="true"></i> ' + data.address +
         '</div><ul class="cardFeat"><li>' +
         '<i class="fa fa-bed" aria-hidden="true"></i>' + data.bedrooms + '</li>' +
