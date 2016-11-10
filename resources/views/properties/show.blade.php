@@ -85,12 +85,15 @@
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                     <div class="agentAvatar summaryItem">
                         <div class="clearfix"></div>
-                        <img class="avatar agentAvatarImg"
-                             src="{!! asset('images/web/'.$property->category.'.png') !!}" alt="avatar">
-                        <div class="agentName">{{ ucwords($property->category) }}</div>
-                        <a data-toggle="modal" href="#contactAgent" class="btn btn-lg btn-round btn-green contactBtn">
-                            Contactar Agente
-                        </a>
+                        @if(auth()->check() && Guardian::check('admin_property_status'))
+                            <img class="avatar agentAvatarImg"
+                                 src="{!! asset('images/web/'.$property->category.'.png') !!}" alt="avatar">
+                            <div class="agentName">{{ ucwords($property->category) }}</div>
+                            <a data-toggle="modal" href="#contactAgent"
+                               class="btn btn-lg btn-round btn-green contactBtn">
+                                Contactar Agente
+                            </a>
+                        @endif
                     </div>
                 </div>
             </div>
