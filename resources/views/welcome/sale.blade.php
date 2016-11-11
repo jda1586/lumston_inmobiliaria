@@ -4,6 +4,9 @@
     <div class="row" style="margin-bottom: 50px;">
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <h1 style="color: #2C467F;">Opcionar tu propiedad</h1>
+            <div style="margin-top: 30px;">
+                <a href="{!! route('welcome.contact') !!}" class="btn btn-blue">Contactanos</a>
+            </div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <i style="color: #2C467F;" class="fa fa-gavel fa-4x" aria-hidden="true"></i>
@@ -20,7 +23,8 @@
             <h3>Medios Digitales</h3>
             <div>
                 <p>
-                    Promocionamos su inmueble en medios digitales en las páginas de internet inmobiliarias más frecuentadas
+                    Promocionamos su inmueble en medios digitales en las páginas de internet inmobiliarias más
+                    frecuentadas
                     del país y hacemos carteles diseñados con la finalidad de que llamen la atención de posibles
                     interesados. ¿Sabías que el 80% de las personas investigan en medios digitales antes de comprar
                     inmuebles?
@@ -34,7 +38,8 @@
             <h3>Agentes especializados</h3>
             <div>
                 <p>
-                    Le asignamos un asesor responsable del seguimiento de su propiedad, sin embargo cualquier miembro del
+                    Le asignamos un asesor responsable del seguimiento de su propiedad, sin embargo cualquier miembro
+                    del
                     equipo que le conteste en la oficina podrá apoyarle con cualquier pregunta o duda de su propiedad
                 </p>
             </div>
@@ -51,9 +56,11 @@
             <h3>Protección</h3>
             <div>
                 <p>
-                    Protegemos sus datos personales e identidad. Los interesados en comprar/arrendar su propiedad no tendrán
+                    Protegemos sus datos personales e identidad. Los interesados en comprar/arrendar su propiedad no
+                    tendrán
                     conocimiento de que usted es el propietario del inmueble, sino hasta la celebración del contrato.
-                    Nosotros nos convertimos en su representante y aseguramos que los ofrecimientos sean legales y serios.
+                    Nosotros nos convertimos en su representante y aseguramos que los ofrecimientos sean legales y
+                    serios.
                 </p>
             </div>
         </div>
@@ -83,7 +90,8 @@
             <h3>Reportes</h3>
             <div>
                 <p>
-                    Recibirá en su correo los días 15 y 30 de cada mes el reporte de las llamadas, visitas, ofrecimientos
+                    Recibirá en su correo los días 15 y 30 de cada mes el reporte de las llamadas, visitas,
+                    ofrecimientos
                     y/o comentarios que realicen las personas a las que les mostremos su propiedad.
                 </p>
             </div>

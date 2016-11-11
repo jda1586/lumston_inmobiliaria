@@ -260,12 +260,12 @@
                         <div class="osLight footer-header">Contactanos</div>
                         <ul class="footer-nav pb20">
                             <li class="widget-phone">
-                                <span class="fa fa-phone"></span> (123) 456-7890
+                                <span class="fa fa-phone"></span> Cel: 33 3166 5792
                             </li>
                             <li class="widget-address osLight">
-                                <p>196 Front St</p>
-                                <p>San Francisco, CA 94111</p>
-                                <p>United States</p>
+                                <p>Francisco Zarco #2392</p>
+                                <p>Col. Ladron de Guevara</p>
+                                <p>Guadalajara, Jal.</p>
                             </li>
                         </ul>
                     </li>

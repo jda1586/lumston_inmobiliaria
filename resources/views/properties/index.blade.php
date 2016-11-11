@@ -261,7 +261,7 @@
                 lat: {{ $property->latitude }},
                 lng: {{ $property->longitude }}
             },
-            markerIcon: "{{ $property->status == 'active'?"marker-blue.png":"marker-yellow.png" }}",
+            markerIcon: "{{ $property->status == 'active'?"marker-blue.png":($property->status == 'disable'?"marker-yellow.png":"marker-new.png") }}",
         },
             @endforeach
         ];

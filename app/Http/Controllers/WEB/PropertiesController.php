@@ -107,6 +107,9 @@ class PropertiesController extends Controller
             return redirect()->route('properties.index');
 
         $property = Property::find($id);
+        if ($property->status == 'achived')
+            return redirect()->route('properties.index');
+
         return view('properties.show', [
             'property' => $property,
             'images' => $property->images,

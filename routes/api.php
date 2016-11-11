@@ -21,7 +21,8 @@ Route::group(['namespace' => 'API'], function () {
     Route::group(['prefix' => 'properties', 'as' => 'properties.api.'], function () {
         Route::post('/search', 'PropertiesController@search')->name('search');
         Route::post('/fav/add', 'PropertiesController@fav_add')->name('fav.add');
-        Route::post('/change/status', 'PropertiesController@publicProperty')->name('public');
+        Route::post('/change/status', 'PropertiesController@changeStatus')->name('status');
+        Route::post('/change/archived', 'PropertiesController@archived')->name('archived');
     });
 
     Route::group(['prefix' => 'state', 'as' => 'location.api.'], function () {

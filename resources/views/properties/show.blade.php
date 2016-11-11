@@ -100,20 +100,26 @@
                                 Editar
                             </a>
                             @if($property->status == 'pending')
-                                <a data-toggle="modal" href="#contactAgent" id="pubProp" data-value="{{ $property->id }}"
-                                   class="btn btn-lg btn-round btn-green contactBtn">
+                                <a data-toggle="modal" href="#" data-value="{{ $property->id }}"
+                                   class="btn btn-lg btn-round btn-green contactBtn changeStatus">
                                     <i class="fa fa-check-square-o" aria-hidden="true" style="float: left;"></i>
                                     Publicar
                                 </a>
-                            @else
-                                <a data-toggle="modal" href="#contactAgent"
-                                   class="btn btn-lg btn-round btn-yellow contactBtn">
+                            @elseif($property->status == 'active')
+                                <a data-toggle="modal" href="#" data-value="{{ $property->id }}"
+                                   class="btn btn-lg btn-round btn-yellow contactBtn changeStatus">
                                     <i class="fa fa-eye-slash" aria-hidden="true" style="float: left;"></i>
                                     Desactivar
                                 </a>
+                            @elseif($property->status == 'disable')
+                                <a data-toggle="modal" href="#" data-value="{{ $property->id }}"
+                                   class="btn btn-lg btn-round btn-green contactBtn changeStatus">
+                                    <i class="fa fa-eye" aria-hidden="true" style="float: left;"></i>
+                                    Activar
+                                </a>
                             @endif
-                            <a data-toggle="modal" href="#contactAgent"
-                               class="btn btn-lg btn-round btn-red contactBtn">
+                            <a data-toggle="modal" href="#" data-value="{{ $property->id }}"
+                               class="btn btn-lg btn-round btn-red contactBtn archivedStatus">
                                 <i class="fa fa-trash" aria-hidden="true" style="float: left;"></i>
                                 Archivar
                             </a>
@@ -743,36 +749,16 @@
                     lat: {{ $property->latitude }},
                     lng: {{ $property->longitude }}
                 },
-                markerIcon: "{{ $property->status == 'active'?"marker-blue.png":"marker-yellow.png" }}",
+                markerIcon: "{{ $property->status == 'active'?"marker-blue.png":($property->status == 'disable'?"marker-yellow.png":"marker-new.png") }}",
             },
-        ];
+        ]
 
-                {{--@if($property->latitude && $property->longitude)
-                    _latitude = {!! $property->latitude !!};
-                _longitude = {!! $property->longitude !!};
-                @else
-
-                if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
-                }
-                //Get the latitude and the longitude;
-                function successFunction(position) {
-                    _latitude = position.coords.latitude;
-                    _longitude = position.coords.longitude;
-                    /*codeLatLng(lat, lng)*/
-                }
-
-                function errorFunction() {
-                    _latitude = 20.6690251;
-                    _longitude = -103.3388489;
-                }
-                        @endif--}}
         var URL_PROPERTIES = "{!! route('properties.index') !!}";
     </script>
     @parent
     <script>
         $(document).ready(function () {
-            $('#pubProp').click(function () {
+            $('.changeStatus').click(function () {
                 var $this = $(this);
                 $.post('/api/properties/change/status', {
                     id: uid,
@@ -780,7 +766,20 @@
                 }).done(function (data) {
                     if (data.ok) {
                         location.reload();
-                    }else{
+                    } else {
+                        console.log(data);
+                    }
+                });
+            });
+            $('.archivedStatus').click(function () {
+                var $this = $(this);
+                $.post('/api/properties/change/archived', {
+                    id: uid,
+                    property: $this.attr('data-value')
+                }).done(function (data) {
+                    if (data.ok) {
+                        location.reload();
+                    } else {
                         console.log(data);
                     }
                 });

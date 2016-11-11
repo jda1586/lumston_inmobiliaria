@@ -118,7 +118,7 @@ class PropertiesController extends Controller
         }
     }
 
-    public function publicProperty()
+    public function changeStatus()
     {
         $validator = Validator::make(Input::all(), [
             'id' => 'required|exists:users,id',
@@ -131,7 +131,19 @@ class PropertiesController extends Controller
             ]);
 
         $property = Property::find(Input::get('property'));
-        $property->status = 'active';
+        switch ($property->status) {
+            case 'pending':
+                $property->status = 'active';
+                break;
+            case 'active':
+                $property->status = 'disable';
+                break;
+            case 'disable':
+                $property->status = 'active';
+                break;
+            default:
+                break;
+        }
         $property->save();
 
         return response()->json([
@@ -140,4 +152,22 @@ class PropertiesController extends Controller
 
     }
 
+    public function achived()
+    {
+        $validator = Validator::make(Input::all(), [
+            'id' => 'required|exists:users,id',
+            'property' => 'required|exists:properties,id'
+        ]);
+        if ($validator->fails())
+            return response()->json([
+                'ok' => false,
+                'error' => $validator->errors(),
+            ]);
+
+        $property = Property::find(Input::get('property'));
+        $property->status = 'archived';
+        return response()->json([
+            'ok' => true,
+        ]);
+    }
 }
