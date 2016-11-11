@@ -76,15 +76,6 @@
                             <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-green">
                                 <span class="fa fa-envelope-o"></span>
                             </a>
-                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-facebook">
-                                <span class="fa fa-facebook"></span>
-                            </a>
-                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-twitter">
-                                <span class="fa fa-twitter"></span>
-                            </a>
-                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-google">
-                                <span class="fa fa-google-plus"></span>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -98,15 +89,6 @@
                         <div class="agent-contact">
                             <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-green">
                                 <span class="fa fa-envelope-o"></span>
-                            </a>
-                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-facebook">
-                                <span class="fa fa-facebook"></span>
-                            </a>
-                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-twitter">
-                                <span class="fa fa-twitter"></span>
-                            </a>
-                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-google">
-                                <span class="fa fa-google-plus"></span>
                             </a>
                         </div>
                     </div>
@@ -122,15 +104,6 @@
                             <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-green">
                                 <span class="fa fa-envelope-o"></span>
                             </a>
-                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-facebook">
-                                <span class="fa fa-facebook"></span>
-                            </a>
-                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-twitter">
-                                <span class="fa fa-twitter"></span>
-                            </a>
-                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-google">
-                                <span class="fa fa-google-plus"></span>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -144,15 +117,6 @@
                         <div class="agent-contact">
                             <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-green">
                                 <span class="fa fa-envelope-o"></span>
-                            </a>
-                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-facebook">
-                                <span class="fa fa-facebook"></span>
-                            </a>
-                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-twitter">
-                                <span class="fa fa-twitter"></span>
-                            </a>
-                            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-google">
-                                <span class="fa fa-google-plus"></span>
                             </a>
                         </div>
                     </div>
