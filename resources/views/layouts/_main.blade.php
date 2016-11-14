@@ -88,7 +88,11 @@
                             <span class="fa fa-user"></span>Perfil
                         </a>
                     </li>
-                    <li><a href="#"><span class="fa fa-heart"></span>Favoritos</a></li>
+                    <li>
+                        <a href="{!! route('properties.favorites') !!}">
+                            <span class="fa fa-heart"></span>Favoritos
+                        </a>
+                    </li>
                     <li>
                         <a href="#">
                             <span class="fa fa-bell"></span>Notificaciones

@@ -74,4 +74,8 @@ class User extends Authenticatable
         return $this->hasMany('App\UserFavorite');
     }
 
+    public function favProperties()
+    {
+        return $this->hasManyThrough('App\Property', 'App\UserFavorite', 'user_id', 'id');
+    }
 }

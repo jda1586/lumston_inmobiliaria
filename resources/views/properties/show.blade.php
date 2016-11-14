@@ -3,6 +3,12 @@
 @section('title','Propiedades')
 
 @section('content')
+    <div style="padding: 5px; font-size: 15px; font-weight: bold;">
+        <a href="#">
+            <i class="fa fa-chevron-left" aria-hidden="true" style="float: left; margin: 3px;"></i>
+            Volver
+        </a>
+    </div>
     <div class="singleTop">
         <div id="carouselFull" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">

@@ -296,4 +296,15 @@ class PropertiesController extends Controller
         return redirect()->route('properties.show', ['id' => $property->id]);
 
     }
+
+    public function favorites()
+    {
+        $user = auth()->user();
+//        dd($user->favProperties);
+        return view('properties.favorite', [
+            'properties' => $user->favorites->map(function ($item, $key) {
+                return Property::find($item->property_id);
+            }),
+        ]);
+    }
 }

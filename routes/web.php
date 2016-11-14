@@ -35,12 +35,14 @@ Route::group(['namespace' => 'WEB'], function () {
         Route::get('/', 'PropertiesController@index')->name('index');
         Route::get('/show/{id}', 'PropertiesController@show')->name('show');
 
+
         /* Authenticated */
         Route::group(['middleware' => ['auth', 'guardian']], function () {
             Route::get('/create', 'PropertiesController@create')->name('create');
             Route::post('/store', 'PropertiesController@store')->name('store');
             Route::get('/edit/{id}', 'PropertiesController@edit')->name('edit');
             Route::post('/update/{id}', 'PropertiesController@update')->name('update');
+            Route::get('/favorites', 'PropertiesController@favorites')->name('favorites');
         });
     });
 
