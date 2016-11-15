@@ -98,7 +98,7 @@
                 </div>--}}
             </div>
             <div class="col-md-6">
-                <div class="pc-title osLight">Envia un mensaje</div>
+                <div class="pc-title osLight">Envianos un mensaje</div>
                 <form role="form">
                     {{--<div class="form-group">
                         <input type="text" class="form-control" id="name" placeholder="Your Name">

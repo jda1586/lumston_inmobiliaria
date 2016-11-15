@@ -81,17 +81,6 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 formItem">
-                        <div class="formField">
-                            <label><b>Precio</b></label>
-                            <div class="slider priceSlider">
-                                <div class="sliderTooltip">
-                                    <div class="stArrow"></div>
-                                    <div class="stLabel"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 formItem">
                         <div class="formField">
                             <label><b>Inmuebles</b></label>
@@ -127,6 +116,17 @@
                                 <li><input type="radio" name="p_type" value="sale"><a href="#">Venta</a></li>
                                 <li><input type="radio" name="p_type" value="rent"><a href="#">Renta</a></li>
                             </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 formItem">
+                        <div class="formField">
+                            <label><b>Precio</b></label>
+                            <div class="slider priceSlider">
+                                <div class="sliderTooltip">
+                                    <div class="stArrow"></div>
+                                    <div class="stLabel"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -12,7 +12,7 @@
             <h2 class="osLight">Conocenos</h2>
             <div class="row pb40">
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 s-menu-item">
-                    <a href="#">
+                    {{--<a href="#">--}}
                         <span class="fa fa-handshake-o s-icon" aria-hidden="true"></span>
                         <div class="s-content">
                             <h2 class="s-main osLight">Amigable y práctica</h2>
@@ -20,10 +20,10 @@
                                 Plataforma amigable y práctica para buscar en nuestro catálogo de propiedades.
                             </h3>
                         </div>
-                    </a>
+                    {{--</a>--}}
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 s-menu-item">
-                    <a href="#">
+                    {{--<a href="#">--}}
                         <span class="s-icon fa fa-key" aria-hidden="true"></span>
                         <div class="s-content">
                             <h2 class="s-main osLight">Siempre contigo</h2>
@@ -32,10 +32,10 @@
                                 contrato de arrendamiento
                             </h3>
                         </div>
-                    </a>
+                    {{--</a>--}}
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 s-menu-item">
-                    <a href="#">
+                    {{--<a href="#">--}}
                         <span class="s-icon fa fa-street-view" aria-hidden="true"></span>
                         <div class="s-content">
                             <h2 class="s-main osLight">Especialistas</h2>
@@ -44,7 +44,7 @@
                                 empresarial
                             </h3>
                         </div>
-                    </a>
+                    {{--</a>--}}
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 s-menu-item">
                     <a href="{!! route('welcome.why') !!}">
@@ -63,7 +63,7 @@
             <div class="row pb40">
                 @each('welcome.partials.box',$properties,'property')
             </div>
-            <h2 class="osLight">Asesores</h2>
+            <h2 class="osLight">Asesores especializados</h2>
             <div class="row pb40">
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                     <div class="agent">
