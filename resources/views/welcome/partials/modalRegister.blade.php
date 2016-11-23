@@ -7,6 +7,7 @@
                 </div>
                 <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                     <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" id="signupLabel">Registrate</h4>
                     </div>
                     <div class="modal-body">

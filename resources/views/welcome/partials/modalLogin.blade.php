@@ -1,12 +1,13 @@
 <div class="modal fade" id="signin" role="dialog" aria-labelledby="signinLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
-        <div class="modal-content">
+        <div class="modal-content" style="position: relative;">
             <div class="row">
                 <div class="col-lg-7 col-md-7 hidden-sm hidden-xs">
 
                 </div>
                 <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                     <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" id="signinLabel">Ingresar</h4>
                     </div>
                     <div class="modal-body">
