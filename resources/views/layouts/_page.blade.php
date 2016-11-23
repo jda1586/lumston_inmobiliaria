@@ -43,11 +43,42 @@
             <li><a href="{!! route("welcome.sale") !!}">OPCIONAR TU PROPIEDAD</a></li>
             <li><a href="{!! route("welcome.why") !!}">¿POR QUÉ NOSOTROS?</a></li>
             <li><a href="{!! route("welcome.contact") !!}">CONTACTO</a></li>
-            <li style="padding-top: 9px;">
-                <a href="#" data-toggle="modal" data-target="#signin">INGRESAR</a>
-            </li>
-            <li><a href="#" class="btn btn-blue" style="color: white !important;" data-toggle="modal"
-                   data-target="#signup">REGISTRATE</a></li>
+            @if(auth()->check())
+                <li>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false" style="border: none !important;">
+                            {{ strtoupper(auth()->user()->first_name) }} <span class="fa fa-angle-down"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li>
+                                <a href="{!! route('user.index') !!}">
+                                    <span class="fa fa-user"></span>  Perfil
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{!! route('properties.favorites') !!}">
+                                    <span class="fa fa-heart"></span> Favoritos
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="{!! route('auth.logout') !!}">
+                                    <span class="fa fa-power-off"></span> Salir
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            @else
+                <li style="padding-top: 9px;">
+                    <a href="#" data-toggle="modal" data-target="#signin">INGRESAR</a>
+                </li>
+                <li>
+                    <a href="#" class="btn btn-blue" style="color: white !important;" data-toggle="modal"
+                       data-target="#signup">REGISTRATE</a>
+                </li>
+            @endif
         </ul>
     </div>
 </div>

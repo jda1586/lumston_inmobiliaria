@@ -70,16 +70,16 @@
                 <span class="icon-user"></span><span class="counter">5</span>
             </a>
             <a href="#" class="headerUser dropdown-toggle" data-toggle="dropdown">
-                <img class="avatar headerAvatar pull-left" src="http://lorempixel.com/200/200/people/1" alt="avatar">
+                {{--<img class="avatar headerAvatar pull-left" src="http://lorempixel.com/200/200/people/1" alt="avatar">--}}
                 <div class="userTop pull-left">
-                    <span class="headerUserName">{{ auth()->user()->first_name }}</span>
+                    <span class="headerUserName">{{ strtoupper(auth()->user()->first_name) }}</span>
                     <span class="fa fa-angle-down"></span>
                 </div>
                 <div class="clearfix"></div>
             </a>
             <div class="dropdown-menu pull-right userMenu" role="menu">
                 <div class="mobAvatar">
-                    <img class="avatar mobAvatarImg" src="http://lorempixel.com/200/200/people/" alt="avatar">
+                    {{--<img class="avatar mobAvatarImg" src="http://lorempixel.com/200/200/people/" alt="avatar">--}}
                     <div class="mobAvatarName">{{ auth()->user()->first_name }}</div>
                 </div>
                 <ul>
@@ -91,12 +91,6 @@
                     <li>
                         <a href="{!! route('properties.favorites') !!}">
                             <span class="fa fa-heart"></span>Favoritos
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="fa fa-bell"></span>Notificaciones
-                            {{--<span class="badge pull-right bg-red">5</span>--}}
                         </a>
                     </li>
                     <li class="divider"></li>
