@@ -419,7 +419,6 @@ function pSearch() {
         var $this = $(this).find('input');
         $.post('/api/properties/prices', {'type': $this.val()})
             .done(function (data) {
-                console.log(data.prices);
                 $('.priceSlider').slider('option', 'min', data.prices[0]);
                 $('.priceSlider').slider('option', 'max', data.prices[1]);
                 $('.priceSlider').slider('option', 'values', data.prices);

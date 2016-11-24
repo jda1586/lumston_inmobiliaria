@@ -3,6 +3,11 @@
         <div class="modal-content">
             <div class="row">
                 <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Ficha</h4>
+                    </div>
                     <div id="modalImgContent">
                         <img src="" id="downloadImg" style="width: 100%;">
                         <span id="modalOperation">VENTA</span>
@@ -14,18 +19,10 @@
             </div>
             <div class="row">
                 <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                    <div class="card">
-                        {{--<div class="figure">
-                            <img id="downloadImg" src="" alt="image">
-                            <div class="propDetails">
-                                $ 616,619.00
-                            </div>
-                            <div class="figType">RENTA</div>
-
-                        </div>--}}
-                        <h2> Prof. </h2>
-                        <div class="cardAddress">
-                            <i class="fa fa-map-marker" aria-hidden="true"></i> Johnnie Road
+                    <div class="card" style="margin-bottom: 5px;">
+                        <h2 id="modalTitle"> </h2>
+                        <div class="cardAddress" id="modalAddress">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i> <span>Johnnie Road</span>
                         </div>
                         <ul class="cardFeat">
                             <li>
@@ -40,38 +37,11 @@
                         </ul>
                         <div class="clearfix"></div>
                     </div>
-                    <div style="width: 100%;">
-                        <a href="#" class="btn btn-lg btn-green">
+                    <div style="width: 398px; padding: 5px;">
+                        <a href="#" class="btn btn-lg btn-green" style="width: 100%;">
                             Descargar PDF
                         </a>
                     </div>
-                    {{--<div id="modalDownContent" style="padding: 10px;">
-                        <div id="modalTitle"></div>
-                        <div id="modalAddress">
-                            <i class="fa fa-map-marker" aria-hidden="true"></i> <span></span>
-                        </div>
-                        <div id="modalPrice">
-                            $ <span></span>
-                        </div>
-                        <div class="card" style="border: none;">
-                            <ul class="cardFeat">
-                                <li>
-                                    <i class="fa fa-bed" aria-hidden="true"></i> 8
-                                </li>
-                                <li>
-                                    <i class="fa fa-bath" aria-hidden="true"></i> 4
-                                </li>
-                                <li>
-                                    <span class="icon-frame"></span> 1950 m<sup>2</sup>
-                                </li>
-                            </ul>
-                        </div>
-                        <div style="width: 100%;">
-                            <a href="#" class="btn btn-lg btn-green">
-                                Descargar PDF
-                            </a>
-                        </div>
-                    </div>--}}
                 </div>
             </div>
         </div>

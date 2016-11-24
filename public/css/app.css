@@ -6693,12 +6693,13 @@ blockquote {
 #modalOperation {
     position: absolute;
     top: 10px;
-    left: 20px;
+    left: 10px;
     background-color: #eab134;
     color: white;
     font-weight: bold;
     font-size: 10px;
     padding: 2px 4px;
+    border-radius: 3px;
 }
 
 #modalTitle {
