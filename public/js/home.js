@@ -423,7 +423,17 @@ function pSearch() {
                 $('.priceSlider').slider('option', 'min', data.prices[0]);
                 $('.priceSlider').slider('option', 'max', data.prices[1]);
                 $('.priceSlider').slider('option', 'values', data.prices);
-                console.log($('.priceSlider').slider('option', 'values'));
+
+                $('.priceSlider .sliderTooltip .stLabel').html(
+                    '$' + data.prices[0].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") +
+                    ' <span class="fa fa-arrows-h"></span> ' +
+                    '$' + data.prices[1].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
+                );
+                var priceSliderRangeLeft = parseInt($('.priceSlider .ui-slider-range').css('left'));
+                var priceSliderRangeWidth = $('.priceSlider .ui-slider-range').width();
+                var priceSliderLeft = priceSliderRangeLeft + ( priceSliderRangeWidth / 2 ) - ( $('.priceSlider .sliderTooltip').width() / 2 );
+                $('.priceSlider .sliderTooltip').css('left', priceSliderLeft);
+
             })
             .fail(function (data) {
                 console.log(data);
