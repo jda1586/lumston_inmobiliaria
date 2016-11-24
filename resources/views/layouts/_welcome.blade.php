@@ -140,12 +140,12 @@
                                 <span class="fa fa-angle-down dsArrow"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-select full" role="menu">
-                                <li class="active">
+                                <li class="active getPrices">
                                     <input type="radio" name="p_type" checked="checked" value="all">
                                     <a href="#">Todos</a>
                                 </li>
-                                <li><input type="radio" name="p_type" value="sale"><a href="#">Venta</a></li>
-                                <li><input type="radio" name="p_type" value="rent"><a href="#">Renta</a></li>
+                                <li class="getPrices"><input type="radio" name="p_type" value="sale"><a href="#">Venta</a></li>
+                                <li class="getPrices"><input type="radio" name="p_type" value="rent"><a href="#">Renta</a></li>
                             </ul>
                         </div>
                     </div>

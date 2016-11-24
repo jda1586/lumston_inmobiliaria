@@ -23,6 +23,7 @@ Route::group(['namespace' => 'API'], function () {
         Route::post('/fav/add', 'PropertiesController@fav_add')->name('fav.add');
         Route::post('/change/status', 'PropertiesController@changeStatus')->name('status');
         Route::post('/change/archived', 'PropertiesController@archived')->name('archived');
+        Route::post('/prices', 'PropertiesController@getPrices')->name('prices');
     });
 
     Route::group(['prefix' => 'state', 'as' => 'location.api.'], function () {

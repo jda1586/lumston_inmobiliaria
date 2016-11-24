@@ -170,4 +170,30 @@ class PropertiesController extends Controller
             'ok' => true,
         ]);
     }
+
+    public function getPrices()
+    {
+        $validator = Validator::make(Input::all(), [
+            'type' => 'required|string',
+        ]);
+        if ($validator->fails())
+            return response()->json([
+                'ok' => false,
+                'error' => $validator->errors()->toArray(),
+            ]);
+
+        return response()->json([
+            'ok' => true,
+            'prices' => [
+                Property::where('status', 'active')->where(function ($q) {
+                    if (Input::has('type') && Input::get('type') != 'all')
+                        $q->where('operation', 'for_' . Input::get('type'));
+                })->min('price'),
+                Property::where('status', 'active')->where(function ($q) {
+                    if (Input::has('type') && Input::get('type') != 'all')
+                        $q->where('operation', 'for_' . Input::get('type'));
+                })->max('price')
+            ]
+        ]);
+    }
 }

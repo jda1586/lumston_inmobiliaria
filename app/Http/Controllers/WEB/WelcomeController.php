@@ -18,8 +18,8 @@ class WelcomeController extends Controller
                     ->orWhere('operation', 'for_sale');
             })->where('status', 'active')->orderBy('created_at', 'desc')->limit(6)->get(),
             'price_limit' => [
-                Property::min('price'),
-                Property::max('price')
+                Property::where('status', 'active')->min('price'),
+                Property::where('status', 'active')->max('price')
             ]
         ]);
     }
