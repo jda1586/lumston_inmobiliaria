@@ -37,10 +37,17 @@
                         </ul>
                         <div class="clearfix"></div>
                     </div>
-                    <div style="width: 398px; padding: 5px;">
-                        <a href="#" class="btn btn-lg btn-green" style="width: 100%;">
-                            Descargar PDF
-                        </a>
+                    <div style="width: 398px; padding: 3px 5px;">
+                        <p>
+                            <a href="#" class="btn btn-lg btn-green" style="width: 100%;">
+                                Enviar por Correo
+                            </a>
+                        </p>
+                        <p>
+                            <a href="#" class="btn btn-lg btn-green" style="width: 100%;">
+                                Descargar PDF
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>

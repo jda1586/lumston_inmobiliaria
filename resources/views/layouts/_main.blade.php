@@ -48,7 +48,7 @@
                data-toggle="modal" data-target="#signup">
                 <div class="userTop pull-left" style="margin: 10px 0 0 0 !important;">
                 <span class="headerUserName btn btn-green">
-                    Registrate
+                    REGISTRATE
                 </span>
                 </div>
                 <div class="clearfix"></div>
@@ -58,7 +58,7 @@
             <a href="#" class="headerUser" data-toggle="modal" data-target="#signin" id="btn_signin">
                 <div class="userTop pull-left">
                 <span class="headerUserName">
-                    Ingresar
+                    INGRESAR
                 </span>
                 </div>
                 <div class="clearfix"></div>
