@@ -190,7 +190,7 @@
                         <div class="form-group">
                             <label for="search_neighborhood">Colonia / Sector</label>
                             <input type="text" class="form-control" name="neighborhood" id="search_neighborhood"
-                                   value="" placeholder="Colonia / Delegacion" autocomplete="off">
+                                   value="" placeholder="Colonia / Sector" autocomplete="off">
                         </div>
 
                     </div>

@@ -85,18 +85,18 @@
                 <ul>
                     <li>
                         <a href="{!! route('user.index') !!}">
-                            <span class="fa fa-user"></span>Perfil
+                            <span class="fa fa-user"></span>  Perfil
                         </a>
                     </li>
                     <li>
                         <a href="{!! route('properties.favorites') !!}">
-                            <span class="fa fa-heart"></span>Favoritos
+                            <span class="fa fa-heart"></span>  Favoritos
                         </a>
                     </li>
                     <li class="divider"></li>
                     <li>
                         <a href="{!! route('auth.logout') !!}">
-                            <span class="fa fa-power-off"></span>Salir
+                            <span class="fa fa-power-off"></span>  Salir
                         </a>
                     </li>
                 </ul>

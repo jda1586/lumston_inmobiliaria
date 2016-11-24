@@ -643,7 +643,7 @@ function pSearch() {
     $('.icon_contact').click(function () {
         var $this = $(this);
         $this.hide();
-        var $modal = $('<div style="width: 300px; height: 150px; background-color: white; box-shadow: 0px 0px 10px gray;' +
+        var $modal = $('<div style="width: 300px; height: 200px; background-color: white; box-shadow: 0px 0px 10px gray;' +
             'position: fixed; z-index: 99999999; right: 40px; bottom: 30px; border-radius: 15px; display: none;">' +
             '<div id="modClose" style="cursor: pointer; position: absolute; top: -5px; right: 3px; font-size: 25px; color: white;">' +
             '<i class="fa fa-times-circle" aria-hidden="true"></i>' +
@@ -651,6 +651,7 @@ function pSearch() {
             '<p align="center" style="border-radius: 15px 15px 0px 0px; padding-top: 5px; font-size: 20px; ' +
             'color: white; background-color: #2C467F;"><b>Contactanos</b></p>' +
             '<div style="padding: 0px 10px; font-size: medium;">' +
+            '<p><img src="http://localhost:8000/images/web/logo.svg" width="120px"></p>' +
             'Francisco Zarco #2392<br>' +
             'Col. Ladron de Guevara<br>' +
             'Guadalajara, Jal.<br>' +
