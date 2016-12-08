@@ -107,9 +107,15 @@ class PropertiesController extends Controller
             return redirect()->route('properties.index');
 
         $property = Property::find($id);
-        if ($property->status == 'achived')
+        if ($property->status == 'archived')
             return redirect()->route('properties.index');
 
+        if (auth()->check()) {
+            $user = auth()->user();
+            if ($property->views()->where('user_id', $user->id)->count() == 0) {
+                $property->views()->create(['user_id' => $user->id]);
+            }
+        }
         return view('properties.show', [
             'property' => $property,
             'images' => $property->images,

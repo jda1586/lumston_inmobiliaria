@@ -91,4 +91,9 @@ class Property extends Model
     {
         return $this->belongsTo('App\City');
     }
+
+    public function views()
+    {
+        return $this->hasMany('App\PropertyView');
+    }
 }
